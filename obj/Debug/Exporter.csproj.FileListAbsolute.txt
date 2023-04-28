@@ -20,3 +20,14 @@ C:\Users\sistemas\Proyectos\Exporter\obj\Debug\Exporter.csproj.GenerateResource.
 C:\Users\sistemas\Proyectos\Exporter\obj\Debug\Exporter.csproj.CoreCompileInputs.cache
 C:\Users\sistemas\Proyectos\Exporter\obj\Debug\Exporter.exe
 C:\Users\sistemas\Proyectos\Exporter\obj\Debug\Exporter.pdb
+C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\Exporter.exe.config
+C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\Exporter.exe
+C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\Exporter.pdb
+C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.csproj.AssemblyReference.cache
+C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.csproj.SuggestedBindingRedirects.cache
+C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.Form1.resources
+C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.Properties.Resources.resources
+C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.csproj.GenerateResource.cache
+C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.csproj.CoreCompileInputs.cache
+C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.exe
+C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.pdb

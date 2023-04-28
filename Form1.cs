@@ -143,5 +143,15 @@ namespace Exporter
         {
             System.IO.File.WriteAllText(@"C:\RZ\txt.rtf", richTextBox1.Rtf);
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
