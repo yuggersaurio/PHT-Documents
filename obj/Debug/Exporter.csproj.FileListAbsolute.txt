@@ -31,3 +31,7 @@ C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.csproj.GenerateReso
 C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.csproj.CoreCompileInputs.cache
 C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.exe
 C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.pdb
+C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\Humanizer.dll
+C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\Humanizer.xml
+C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\es\Humanizer.resources.dll
+C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.csproj.CopyComplete

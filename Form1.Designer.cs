@@ -94,9 +94,10 @@
             this.label27 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.contratoGroup = new System.Windows.Forms.GroupBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.vigenciaTXT = new System.Windows.Forms.ComboBox();
             this.copiasTXT = new System.Windows.Forms.ComboBox();
             this.label48 = new System.Windows.Forms.Label();
-            this.vigenciaTXT = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
             this.administracionTXT = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -107,7 +108,6 @@
             this.fechaIniTXT = new System.Windows.Forms.TextBox();
             this.fechaFinTXT = new System.Windows.Forms.TextBox();
             this.canonTXT = new System.Windows.Forms.TextBox();
-            this.inmuebleTXT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -115,7 +115,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.arrendatarioGroup = new System.Windows.Forms.GroupBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -153,10 +152,12 @@
             this.formatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONTRATODEARRENDAMIENTODEUNBIENINMUEBLESOMETIDOACOPROPIEDADYDESTINADOAVIVIENDAURBANAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONTRATODEARRENDAMIENTODEUNBIENINMUEBLESOMETIDOACOPROPIEDADYDESTINADOAVIVIENDAURBANAPRUEBAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inmuebleDestinadoALocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inmuebleDestinadoAViviendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inmuebleSometidoACopropiedadYDestinadoALocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inmuebleSometidoACopropiedadYDestinadoAViviendaDirectoConPropietarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inmuebleDestinadoALocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inmuebleDestinadoAViviendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -176,11 +177,11 @@
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(809, 42);
+            this.richTextBox1.Location = new System.Drawing.Point(809, 67);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.richTextBox1.Size = new System.Drawing.Size(589, 653);
+            this.richTextBox1.Size = new System.Drawing.Size(589, 632);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -219,7 +220,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(79, 11);
+            this.button4.Location = new System.Drawing.Point(56, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(205, 34);
             this.button4.TabIndex = 24;
@@ -260,9 +261,9 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(290, 11);
+            this.button6.Location = new System.Drawing.Point(267, 12);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(196, 34);
+            this.button6.Size = new System.Drawing.Size(235, 34);
             this.button6.TabIndex = 25;
             this.button6.Text = "Generar contrato en WORD";
             this.button6.UseVisualStyleBackColor = true;
@@ -278,7 +279,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(787, 653);
+            this.tabPage4.Size = new System.Drawing.Size(787, 628);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Coarrendatarios";
             // 
@@ -306,7 +307,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(348, 21);
+            this.label16.Location = new System.Drawing.Point(354, 24);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(85, 16);
             this.label16.TabIndex = 99;
@@ -323,59 +324,65 @@
             // 
             // direccionCoarrendatario4TXT
             // 
-            this.direccionCoarrendatario4TXT.Location = new System.Drawing.Point(445, 105);
+            this.direccionCoarrendatario4TXT.Location = new System.Drawing.Point(462, 105);
             this.direccionCoarrendatario4TXT.Name = "direccionCoarrendatario4TXT";
             this.direccionCoarrendatario4TXT.Size = new System.Drawing.Size(203, 22);
             this.direccionCoarrendatario4TXT.TabIndex = 46;
+            this.direccionCoarrendatario4TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // emailCoarrendatario4TXT
             // 
-            this.emailCoarrendatario4TXT.Location = new System.Drawing.Point(108, 102);
+            this.emailCoarrendatario4TXT.Location = new System.Drawing.Point(143, 102);
             this.emailCoarrendatario4TXT.Name = "emailCoarrendatario4TXT";
             this.emailCoarrendatario4TXT.Size = new System.Drawing.Size(203, 22);
             this.emailCoarrendatario4TXT.TabIndex = 45;
+            this.emailCoarrendatario4TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // celularCoarrendatario4TXT
             // 
-            this.celularCoarrendatario4TXT.Location = new System.Drawing.Point(445, 62);
+            this.celularCoarrendatario4TXT.Location = new System.Drawing.Point(462, 62);
             this.celularCoarrendatario4TXT.Name = "celularCoarrendatario4TXT";
             this.celularCoarrendatario4TXT.Size = new System.Drawing.Size(203, 22);
             this.celularCoarrendatario4TXT.TabIndex = 44;
+            this.celularCoarrendatario4TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(42, 29);
+            this.label17.Location = new System.Drawing.Point(22, 24);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(56, 16);
+            this.label17.Size = new System.Drawing.Size(115, 16);
             this.label17.TabIndex = 98;
-            this.label17.Text = "Nombre";
+            this.label17.Text = "Nombre completo";
             // 
             // nombreCoarrendatario4TXT
             // 
-            this.nombreCoarrendatario4TXT.Location = new System.Drawing.Point(108, 21);
+            this.nombreCoarrendatario4TXT.Location = new System.Drawing.Point(143, 21);
             this.nombreCoarrendatario4TXT.Name = "nombreCoarrendatario4TXT";
             this.nombreCoarrendatario4TXT.Size = new System.Drawing.Size(203, 22);
             this.nombreCoarrendatario4TXT.TabIndex = 41;
+            this.nombreCoarrendatario4TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // telefonoCoarrendatario4TXT
             // 
-            this.telefonoCoarrendatario4TXT.Location = new System.Drawing.Point(109, 62);
+            this.telefonoCoarrendatario4TXT.Location = new System.Drawing.Point(144, 62);
             this.telefonoCoarrendatario4TXT.Name = "telefonoCoarrendatario4TXT";
             this.telefonoCoarrendatario4TXT.Size = new System.Drawing.Size(203, 22);
             this.telefonoCoarrendatario4TXT.TabIndex = 43;
+            this.telefonoCoarrendatario4TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // idCoarrendatario4TXT
             // 
-            this.idCoarrendatario4TXT.Location = new System.Drawing.Point(445, 21);
+            this.idCoarrendatario4TXT.Location = new System.Drawing.Point(462, 21);
             this.idCoarrendatario4TXT.Name = "idCoarrendatario4TXT";
             this.idCoarrendatario4TXT.Size = new System.Drawing.Size(203, 22);
             this.idCoarrendatario4TXT.TabIndex = 42;
+            this.idCoarrendatario4TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(53, 105);
+            this.label36.Location = new System.Drawing.Point(96, 105);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(41, 16);
             this.label36.TabIndex = 84;
@@ -393,7 +400,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(42, 65);
+            this.label38.Location = new System.Drawing.Point(76, 65);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(61, 16);
             this.label38.TabIndex = 80;
@@ -423,7 +430,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(347, 19);
+            this.label9.Location = new System.Drawing.Point(354, 19);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 16);
             this.label9.TabIndex = 98;
@@ -432,53 +439,59 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(41, 22);
+            this.label15.Location = new System.Drawing.Point(22, 22);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 16);
+            this.label15.Size = new System.Drawing.Size(115, 16);
             this.label15.TabIndex = 97;
-            this.label15.Text = "Nombre";
+            this.label15.Text = "Nombre completo";
             // 
             // direccionCoarrendatario3TXT
             // 
-            this.direccionCoarrendatario3TXT.Location = new System.Drawing.Point(445, 104);
+            this.direccionCoarrendatario3TXT.Location = new System.Drawing.Point(462, 104);
             this.direccionCoarrendatario3TXT.Name = "direccionCoarrendatario3TXT";
             this.direccionCoarrendatario3TXT.Size = new System.Drawing.Size(203, 22);
             this.direccionCoarrendatario3TXT.TabIndex = 40;
+            this.direccionCoarrendatario3TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nombreCoarrendatario3TXT
             // 
-            this.nombreCoarrendatario3TXT.Location = new System.Drawing.Point(108, 19);
+            this.nombreCoarrendatario3TXT.Location = new System.Drawing.Point(143, 19);
             this.nombreCoarrendatario3TXT.Name = "nombreCoarrendatario3TXT";
             this.nombreCoarrendatario3TXT.Size = new System.Drawing.Size(203, 22);
             this.nombreCoarrendatario3TXT.TabIndex = 35;
+            this.nombreCoarrendatario3TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // idCoarrendatario3TXT
             // 
-            this.idCoarrendatario3TXT.Location = new System.Drawing.Point(445, 16);
+            this.idCoarrendatario3TXT.Location = new System.Drawing.Point(462, 16);
             this.idCoarrendatario3TXT.Name = "idCoarrendatario3TXT";
             this.idCoarrendatario3TXT.Size = new System.Drawing.Size(203, 22);
             this.idCoarrendatario3TXT.TabIndex = 36;
+            this.idCoarrendatario3TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // emailCoarrendatario3TXT
             // 
-            this.emailCoarrendatario3TXT.Location = new System.Drawing.Point(108, 107);
+            this.emailCoarrendatario3TXT.Location = new System.Drawing.Point(143, 107);
             this.emailCoarrendatario3TXT.Name = "emailCoarrendatario3TXT";
             this.emailCoarrendatario3TXT.Size = new System.Drawing.Size(203, 22);
             this.emailCoarrendatario3TXT.TabIndex = 39;
+            this.emailCoarrendatario3TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // celularCoarrendatario3TXT
             // 
-            this.celularCoarrendatario3TXT.Location = new System.Drawing.Point(444, 59);
+            this.celularCoarrendatario3TXT.Location = new System.Drawing.Point(461, 59);
             this.celularCoarrendatario3TXT.Name = "celularCoarrendatario3TXT";
             this.celularCoarrendatario3TXT.Size = new System.Drawing.Size(203, 22);
             this.celularCoarrendatario3TXT.TabIndex = 38;
+            this.celularCoarrendatario3TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // telefonoCoarrendatario3TXT
             // 
-            this.telefonoCoarrendatario3TXT.Location = new System.Drawing.Point(107, 62);
+            this.telefonoCoarrendatario3TXT.Location = new System.Drawing.Point(142, 62);
             this.telefonoCoarrendatario3TXT.Name = "telefonoCoarrendatario3TXT";
             this.telefonoCoarrendatario3TXT.Size = new System.Drawing.Size(203, 22);
             this.telefonoCoarrendatario3TXT.TabIndex = 37;
+            this.telefonoCoarrendatario3TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label43
             // 
@@ -492,7 +505,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(53, 110);
+            this.label33.Location = new System.Drawing.Point(95, 110);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(41, 16);
             this.label33.TabIndex = 78;
@@ -510,7 +523,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(40, 65);
+            this.label35.Location = new System.Drawing.Point(75, 65);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(61, 16);
             this.label35.TabIndex = 74;
@@ -540,7 +553,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(348, 22);
+            this.label13.Location = new System.Drawing.Point(354, 22);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(85, 16);
             this.label13.TabIndex = 93;
@@ -548,45 +561,51 @@
             // 
             // nombreCoarrendatario2TXT
             // 
-            this.nombreCoarrendatario2TXT.Location = new System.Drawing.Point(108, 19);
+            this.nombreCoarrendatario2TXT.Location = new System.Drawing.Point(144, 19);
             this.nombreCoarrendatario2TXT.Name = "nombreCoarrendatario2TXT";
             this.nombreCoarrendatario2TXT.Size = new System.Drawing.Size(203, 22);
             this.nombreCoarrendatario2TXT.TabIndex = 30;
+            this.nombreCoarrendatario2TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // direccionCoarrendatario2TXT
             // 
-            this.direccionCoarrendatario2TXT.Location = new System.Drawing.Point(445, 100);
+            this.direccionCoarrendatario2TXT.Location = new System.Drawing.Point(462, 100);
             this.direccionCoarrendatario2TXT.Name = "direccionCoarrendatario2TXT";
             this.direccionCoarrendatario2TXT.Size = new System.Drawing.Size(203, 22);
             this.direccionCoarrendatario2TXT.TabIndex = 34;
+            this.direccionCoarrendatario2TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // idCoarrendatario2TXT
             // 
-            this.idCoarrendatario2TXT.Location = new System.Drawing.Point(445, 19);
+            this.idCoarrendatario2TXT.Location = new System.Drawing.Point(462, 19);
             this.idCoarrendatario2TXT.Name = "idCoarrendatario2TXT";
             this.idCoarrendatario2TXT.Size = new System.Drawing.Size(203, 22);
             this.idCoarrendatario2TXT.TabIndex = 31;
+            this.idCoarrendatario2TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // emailCoarrendatario2TXT
             // 
-            this.emailCoarrendatario2TXT.Location = new System.Drawing.Point(108, 103);
+            this.emailCoarrendatario2TXT.Location = new System.Drawing.Point(144, 103);
             this.emailCoarrendatario2TXT.Name = "emailCoarrendatario2TXT";
             this.emailCoarrendatario2TXT.Size = new System.Drawing.Size(203, 22);
             this.emailCoarrendatario2TXT.TabIndex = 33;
+            this.emailCoarrendatario2TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // telefonoCoarrendatario2TXT
             // 
-            this.telefonoCoarrendatario2TXT.Location = new System.Drawing.Point(107, 60);
+            this.telefonoCoarrendatario2TXT.Location = new System.Drawing.Point(143, 60);
             this.telefonoCoarrendatario2TXT.Name = "telefonoCoarrendatario2TXT";
             this.telefonoCoarrendatario2TXT.Size = new System.Drawing.Size(203, 22);
             this.telefonoCoarrendatario2TXT.TabIndex = 31;
+            this.telefonoCoarrendatario2TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // celularCoarrendatario2TXT
             // 
-            this.celularCoarrendatario2TXT.Location = new System.Drawing.Point(445, 57);
+            this.celularCoarrendatario2TXT.Location = new System.Drawing.Point(462, 57);
             this.celularCoarrendatario2TXT.Name = "celularCoarrendatario2TXT";
             this.celularCoarrendatario2TXT.Size = new System.Drawing.Size(203, 22);
             this.celularCoarrendatario2TXT.TabIndex = 32;
+            this.celularCoarrendatario2TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label42
             // 
@@ -600,11 +619,11 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(41, 19);
+            this.label14.Location = new System.Drawing.Point(23, 19);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(56, 16);
+            this.label14.Size = new System.Drawing.Size(115, 16);
             this.label14.TabIndex = 32;
-            this.label14.Text = "Nombre";
+            this.label14.Text = "Nombre completo";
             // 
             // label30
             // 
@@ -657,59 +676,65 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(38, 21);
+            this.label12.Location = new System.Drawing.Point(23, 21);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 16);
+            this.label12.Size = new System.Drawing.Size(115, 16);
             this.label12.TabIndex = 28;
-            this.label12.Text = "Nombre";
+            this.label12.Text = "Nombre completo";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // nombreCoarrendatarioTXT
             // 
-            this.nombreCoarrendatarioTXT.Location = new System.Drawing.Point(103, 21);
+            this.nombreCoarrendatarioTXT.Location = new System.Drawing.Point(144, 18);
             this.nombreCoarrendatarioTXT.Name = "nombreCoarrendatarioTXT";
             this.nombreCoarrendatarioTXT.Size = new System.Drawing.Size(203, 22);
             this.nombreCoarrendatarioTXT.TabIndex = 24;
+            this.nombreCoarrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // idCoarrendatarioTXT
             // 
-            this.idCoarrendatarioTXT.Location = new System.Drawing.Point(445, 18);
+            this.idCoarrendatarioTXT.Location = new System.Drawing.Point(462, 18);
             this.idCoarrendatarioTXT.Name = "idCoarrendatarioTXT";
             this.idCoarrendatarioTXT.Size = new System.Drawing.Size(203, 22);
             this.idCoarrendatarioTXT.TabIndex = 25;
+            this.idCoarrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // direccionCoarrendatarioTXT
             // 
-            this.direccionCoarrendatarioTXT.Location = new System.Drawing.Point(445, 101);
+            this.direccionCoarrendatarioTXT.Location = new System.Drawing.Point(462, 101);
             this.direccionCoarrendatarioTXT.Name = "direccionCoarrendatarioTXT";
             this.direccionCoarrendatarioTXT.Size = new System.Drawing.Size(203, 22);
             this.direccionCoarrendatarioTXT.TabIndex = 29;
+            this.direccionCoarrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // telefonoCoarrendatarioTXT
             // 
-            this.telefonoCoarrendatarioTXT.Location = new System.Drawing.Point(103, 59);
+            this.telefonoCoarrendatarioTXT.Location = new System.Drawing.Point(144, 56);
             this.telefonoCoarrendatarioTXT.Name = "telefonoCoarrendatarioTXT";
             this.telefonoCoarrendatarioTXT.Size = new System.Drawing.Size(203, 22);
             this.telefonoCoarrendatarioTXT.TabIndex = 26;
+            this.telefonoCoarrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // celularCoarrendatarioTXT
             // 
-            this.celularCoarrendatarioTXT.Location = new System.Drawing.Point(445, 59);
+            this.celularCoarrendatarioTXT.Location = new System.Drawing.Point(462, 59);
             this.celularCoarrendatarioTXT.Name = "celularCoarrendatarioTXT";
             this.celularCoarrendatarioTXT.Size = new System.Drawing.Size(203, 22);
             this.celularCoarrendatarioTXT.TabIndex = 27;
+            this.celularCoarrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // emailCoarrendatarioTXT
             // 
-            this.emailCoarrendatarioTXT.Location = new System.Drawing.Point(103, 101);
+            this.emailCoarrendatarioTXT.Location = new System.Drawing.Point(144, 98);
             this.emailCoarrendatarioTXT.Name = "emailCoarrendatarioTXT";
             this.emailCoarrendatarioTXT.Size = new System.Drawing.Size(203, 22);
             this.emailCoarrendatarioTXT.TabIndex = 28;
+            this.emailCoarrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(353, 18);
+            this.label11.Location = new System.Drawing.Point(354, 18);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(85, 16);
             this.label11.TabIndex = 30;
@@ -727,7 +752,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(36, 62);
+            this.label29.Location = new System.Drawing.Point(77, 62);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(61, 16);
             this.label29.TabIndex = 62;
@@ -745,7 +770,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(48, 104);
+            this.label27.Location = new System.Drawing.Point(97, 104);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(41, 16);
             this.label27.TabIndex = 66;
@@ -760,16 +785,17 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(787, 653);
+            this.tabPage1.Size = new System.Drawing.Size(787, 628);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Contrato";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // contratoGroup
             // 
+            this.contratoGroup.Controls.Add(this.label49);
+            this.contratoGroup.Controls.Add(this.vigenciaTXT);
             this.contratoGroup.Controls.Add(this.copiasTXT);
             this.contratoGroup.Controls.Add(this.label48);
-            this.contratoGroup.Controls.Add(this.vigenciaTXT);
             this.contratoGroup.Controls.Add(this.label47);
             this.contratoGroup.Controls.Add(this.administracionTXT);
             this.contratoGroup.Controls.Add(this.label45);
@@ -780,7 +806,6 @@
             this.contratoGroup.Controls.Add(this.fechaIniTXT);
             this.contratoGroup.Controls.Add(this.fechaFinTXT);
             this.contratoGroup.Controls.Add(this.canonTXT);
-            this.contratoGroup.Controls.Add(this.inmuebleTXT);
             this.contratoGroup.Controls.Add(this.label4);
             this.contratoGroup.Controls.Add(this.label1);
             this.contratoGroup.Controls.Add(this.label2);
@@ -788,13 +813,33 @@
             this.contratoGroup.Controls.Add(this.label5);
             this.contratoGroup.Controls.Add(this.label6);
             this.contratoGroup.Controls.Add(this.label7);
-            this.contratoGroup.Controls.Add(this.label20);
             this.contratoGroup.Location = new System.Drawing.Point(10, 29);
             this.contratoGroup.Name = "contratoGroup";
             this.contratoGroup.Size = new System.Drawing.Size(758, 222);
             this.contratoGroup.TabIndex = 115;
             this.contratoGroup.TabStop = false;
             this.contratoGroup.Text = "Datos de contrato";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(190, 182);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(48, 16);
+            this.label49.TabIndex = 117;
+            this.label49.Text = "Meses";
+            // 
+            // vigenciaTXT
+            // 
+            this.vigenciaTXT.FormattingEnabled = true;
+            this.vigenciaTXT.Items.AddRange(new object[] {
+            "6",
+            "12",
+            "24"});
+            this.vigenciaTXT.Location = new System.Drawing.Point(120, 179);
+            this.vigenciaTXT.Name = "vigenciaTXT";
+            this.vigenciaTXT.Size = new System.Drawing.Size(64, 24);
+            this.vigenciaTXT.TabIndex = 116;
             // 
             // copiasTXT
             // 
@@ -805,33 +850,26 @@
             "Tres (3) Copias",
             "Cuatro (4) Copias",
             "Cinco (5) Copias",
-            "Seis (5) Copias"});
-            this.copiasTXT.Location = new System.Drawing.Point(561, 180);
+            "Seis (6) Copias",
+            "Siete (7) Copias"});
+            this.copiasTXT.Location = new System.Drawing.Point(305, 179);
             this.copiasTXT.Name = "copiasTXT";
-            this.copiasTXT.Size = new System.Drawing.Size(172, 24);
+            this.copiasTXT.Size = new System.Drawing.Size(149, 24);
             this.copiasTXT.TabIndex = 11;
             // 
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(505, 183);
+            this.label48.Location = new System.Drawing.Point(249, 182);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(50, 16);
             this.label48.TabIndex = 116;
             this.label48.Text = "Copias";
             // 
-            // vigenciaTXT
-            // 
-            this.vigenciaTXT.Location = new System.Drawing.Point(435, 180);
-            this.vigenciaTXT.Name = "vigenciaTXT";
-            this.vigenciaTXT.Size = new System.Drawing.Size(61, 22);
-            this.vigenciaTXT.TabIndex = 10;
-            this.vigenciaTXT.Text = "1 Año";
-            // 
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(369, 183);
+            this.label47.Location = new System.Drawing.Point(54, 182);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(60, 16);
             this.label47.TabIndex = 114;
@@ -843,6 +881,7 @@
             this.administracionTXT.Name = "administracionTXT";
             this.administracionTXT.Size = new System.Drawing.Size(165, 22);
             this.administracionTXT.TabIndex = 8;
+            this.administracionTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label45
             // 
@@ -859,6 +898,7 @@
             this.direccionTXT.Name = "direccionTXT";
             this.direccionTXT.Size = new System.Drawing.Size(338, 22);
             this.direccionTXT.TabIndex = 2;
+            this.direccionTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ciudadTXT
             // 
@@ -866,14 +906,18 @@
             this.ciudadTXT.Name = "ciudadTXT";
             this.ciudadTXT.Size = new System.Drawing.Size(123, 22);
             this.ciudadTXT.TabIndex = 3;
+            this.ciudadTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // destinoTXT
             // 
+            this.destinoTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.destinoTXT.ForeColor = System.Drawing.Color.Red;
             this.destinoTXT.Location = new System.Drawing.Point(528, 102);
             this.destinoTXT.Name = "destinoTXT";
+            this.destinoTXT.ReadOnly = true;
             this.destinoTXT.Size = new System.Drawing.Size(123, 22);
             this.destinoTXT.TabIndex = 6;
-            this.destinoTXT.Text = "Vivienda";
+            this.destinoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // contratoTXT
             // 
@@ -881,6 +925,7 @@
             this.contratoTXT.Name = "contratoTXT";
             this.contratoTXT.Size = new System.Drawing.Size(123, 22);
             this.contratoTXT.TabIndex = 1;
+            this.contratoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fechaIniTXT
             // 
@@ -888,6 +933,7 @@
             this.fechaIniTXT.Name = "fechaIniTXT";
             this.fechaIniTXT.Size = new System.Drawing.Size(123, 22);
             this.fechaIniTXT.TabIndex = 4;
+            this.fechaIniTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fechaFinTXT
             // 
@@ -895,6 +941,7 @@
             this.fechaFinTXT.Name = "fechaFinTXT";
             this.fechaFinTXT.Size = new System.Drawing.Size(123, 22);
             this.fechaFinTXT.TabIndex = 5;
+            this.fechaFinTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // canonTXT
             // 
@@ -902,15 +949,9 @@
             this.canonTXT.Name = "canonTXT";
             this.canonTXT.Size = new System.Drawing.Size(165, 22);
             this.canonTXT.TabIndex = 7;
+            this.canonTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.canonTXT.TextChanged += new System.EventHandler(this.canonTXT_TextChanged);
             this.canonTXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.canonTXT_KeyPress);
-            // 
-            // inmuebleTXT
-            // 
-            this.inmuebleTXT.Location = new System.Drawing.Point(120, 180);
-            this.inmuebleTXT.Name = "inmuebleTXT";
-            this.inmuebleTXT.Size = new System.Drawing.Size(231, 22);
-            this.inmuebleTXT.TabIndex = 9;
             // 
             // label4
             // 
@@ -976,16 +1017,6 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "Canon";
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(52, 183);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(62, 16);
-            this.label20.TabIndex = 48;
-            this.label20.Text = "Inmueble";
-            this.label20.Click += new System.EventHandler(this.label20_Click);
-            // 
             // arrendatarioGroup
             // 
             this.arrendatarioGroup.Controls.Add(this.label24);
@@ -1010,7 +1041,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(67, 203);
+            this.label24.Location = new System.Drawing.Point(76, 203);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(41, 16);
             this.label24.TabIndex = 108;
@@ -1019,16 +1050,16 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(55, 31);
+            this.label8.Location = new System.Drawing.Point(9, 34);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 16);
+            this.label8.Size = new System.Drawing.Size(115, 16);
             this.label8.TabIndex = 100;
-            this.label8.Text = "Nombre";
+            this.label8.Text = "Nombre completo";
             // 
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(52, 246);
+            this.label40.Location = new System.Drawing.Point(61, 246);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(64, 16);
             this.label40.TabIndex = 110;
@@ -1036,15 +1067,16 @@
             // 
             // nombreArrendatarioTXT
             // 
-            this.nombreArrendatarioTXT.Location = new System.Drawing.Point(122, 31);
+            this.nombreArrendatarioTXT.Location = new System.Drawing.Point(131, 31);
             this.nombreArrendatarioTXT.Name = "nombreArrendatarioTXT";
             this.nombreArrendatarioTXT.Size = new System.Drawing.Size(231, 22);
             this.nombreArrendatarioTXT.TabIndex = 18;
+            this.nombreArrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(67, 157);
+            this.label25.Location = new System.Drawing.Point(76, 157);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(49, 16);
             this.label25.TabIndex = 106;
@@ -1052,15 +1084,16 @@
             // 
             // idArrendatarioTXT
             // 
-            this.idArrendatarioTXT.Location = new System.Drawing.Point(122, 72);
+            this.idArrendatarioTXT.Location = new System.Drawing.Point(131, 72);
             this.idArrendatarioTXT.Name = "idArrendatarioTXT";
             this.idArrendatarioTXT.Size = new System.Drawing.Size(231, 22);
             this.idArrendatarioTXT.TabIndex = 19;
+            this.idArrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(55, 114);
+            this.label26.Location = new System.Drawing.Point(64, 114);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(61, 16);
             this.label26.TabIndex = 104;
@@ -1068,15 +1101,16 @@
             // 
             // telefonoArrendatarioTXT
             // 
-            this.telefonoArrendatarioTXT.Location = new System.Drawing.Point(122, 111);
+            this.telefonoArrendatarioTXT.Location = new System.Drawing.Point(131, 111);
             this.telefonoArrendatarioTXT.Name = "telefonoArrendatarioTXT";
             this.telefonoArrendatarioTXT.Size = new System.Drawing.Size(231, 22);
             this.telefonoArrendatarioTXT.TabIndex = 20;
+            this.telefonoArrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(31, 72);
+            this.label10.Location = new System.Drawing.Point(40, 72);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(85, 16);
             this.label10.TabIndex = 102;
@@ -1084,25 +1118,28 @@
             // 
             // celularArrendatarioTXT
             // 
-            this.celularArrendatarioTXT.Location = new System.Drawing.Point(122, 154);
+            this.celularArrendatarioTXT.Location = new System.Drawing.Point(131, 154);
             this.celularArrendatarioTXT.Name = "celularArrendatarioTXT";
             this.celularArrendatarioTXT.Size = new System.Drawing.Size(231, 22);
             this.celularArrendatarioTXT.TabIndex = 21;
+            this.celularArrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // direccionArrendatarioTXT
             // 
-            this.direccionArrendatarioTXT.Location = new System.Drawing.Point(122, 243);
+            this.direccionArrendatarioTXT.Location = new System.Drawing.Point(131, 243);
             this.direccionArrendatarioTXT.Name = "direccionArrendatarioTXT";
             this.direccionArrendatarioTXT.Size = new System.Drawing.Size(231, 22);
             this.direccionArrendatarioTXT.TabIndex = 23;
+            this.direccionArrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.direccionArrendatarioTXT.TextChanged += new System.EventHandler(this.direccionArrendatario_TextChanged);
             // 
             // emailArrendatarioTXT
             // 
-            this.emailArrendatarioTXT.Location = new System.Drawing.Point(122, 200);
+            this.emailArrendatarioTXT.Location = new System.Drawing.Point(131, 200);
             this.emailArrendatarioTXT.Name = "emailArrendatarioTXT";
             this.emailArrendatarioTXT.Size = new System.Drawing.Size(231, 22);
             this.emailArrendatarioTXT.TabIndex = 22;
+            this.emailArrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // propietarioGroup
             // 
@@ -1131,6 +1168,7 @@
             this.nombrePropietarioTXT.Name = "nombrePropietarioTXT";
             this.nombrePropietarioTXT.Size = new System.Drawing.Size(231, 22);
             this.nombrePropietarioTXT.TabIndex = 12;
+            this.nombrePropietarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label39
             // 
@@ -1156,6 +1194,7 @@
             this.idPropietarioTXT.Name = "idPropietarioTXT";
             this.idPropietarioTXT.Size = new System.Drawing.Size(231, 22);
             this.idPropietarioTXT.TabIndex = 13;
+            this.idPropietarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label22
             // 
@@ -1172,6 +1211,7 @@
             this.telefonoPropietarioTXT.Name = "telefonoPropietarioTXT";
             this.telefonoPropietarioTXT.Size = new System.Drawing.Size(231, 22);
             this.telefonoPropietarioTXT.TabIndex = 14;
+            this.telefonoPropietarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label21
             // 
@@ -1188,6 +1228,7 @@
             this.celularPropietarioTXT.Name = "celularPropietarioTXT";
             this.celularPropietarioTXT.Size = new System.Drawing.Size(231, 22);
             this.celularPropietarioTXT.TabIndex = 15;
+            this.celularPropietarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label19
             // 
@@ -1204,15 +1245,16 @@
             this.emailPropietarioTXT.Name = "emailPropietarioTXT";
             this.emailPropietarioTXT.Size = new System.Drawing.Size(231, 22);
             this.emailPropietarioTXT.TabIndex = 16;
+            this.emailPropietarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(57, 34);
+            this.label18.Location = new System.Drawing.Point(6, 34);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(56, 16);
+            this.label18.Size = new System.Drawing.Size(115, 16);
             this.label18.TabIndex = 88;
-            this.label18.Text = "Nombre";
+            this.label18.Text = "Nombre completo";
             // 
             // direccionPropietarioTXT
             // 
@@ -1220,6 +1262,7 @@
             this.direccionPropietarioTXT.Name = "direccionPropietarioTXT";
             this.direccionPropietarioTXT.Size = new System.Drawing.Size(231, 22);
             this.direccionPropietarioTXT.TabIndex = 17;
+            this.direccionPropietarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabControl1
             // 
@@ -1228,7 +1271,7 @@
             this.tabControl1.Location = new System.Drawing.Point(8, 42);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(795, 682);
+            this.tabControl1.Size = new System.Drawing.Size(795, 657);
             this.tabControl1.TabIndex = 97;
             // 
             // label46
@@ -1236,36 +1279,36 @@
             this.label46.AutoSize = true;
             this.label46.BackColor = System.Drawing.Color.Transparent;
             this.label46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.ForeColor = System.Drawing.Color.Black;
             this.label46.Location = new System.Drawing.Point(105, 9);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(363, 16);
+            this.label46.Size = new System.Drawing.Size(313, 16);
             this.label46.TabIndex = 98;
             this.label46.Text = "Vista previa de formato elaborado por: Yenni Olaya";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button6);
-            this.panel1.Location = new System.Drawing.Point(809, 642);
+            this.panel1.Location = new System.Drawing.Point(809, 641);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(568, 57);
             this.panel1.TabIndex = 116;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.label46);
-            this.panel2.Location = new System.Drawing.Point(809, 42);
+            this.panel2.Location = new System.Drawing.Point(809, 67);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(568, 37);
             this.panel2.TabIndex = 117;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(1164, 264);
+            this.button7.Location = new System.Drawing.Point(1150, 355);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(170, 34);
             this.button7.TabIndex = 9;
@@ -1282,7 +1325,7 @@
             this.formatosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1417, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1457, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1297,7 +1340,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // formatosToolStripMenuItem
@@ -1330,18 +1373,6 @@
             this.cONTRATODEARRENDAMIENTODEUNBIENINMUEBLESOMETIDOACOPROPIEDADYDESTINADOAVIVIENDAURBANAPRUEBAToolStripMenuItem.Text = "Inmueble sometido a copropiedad y destinado a vivienda urbana ";
             this.cONTRATODEARRENDAMIENTODEUNBIENINMUEBLESOMETIDOACOPROPIEDADYDESTINADOAVIVIENDAURBANAPRUEBAToolStripMenuItem.Click += new System.EventHandler(this.cONTRATODEARRENDAMIENTODEUNBIENINMUEBLESOMETIDOACOPROPIEDADYDESTINADOAVIVIENDAURBANAPRUEBAToolStripMenuItem_Click);
             // 
-            // inmuebleDestinadoALocalToolStripMenuItem
-            // 
-            this.inmuebleDestinadoALocalToolStripMenuItem.Name = "inmuebleDestinadoALocalToolStripMenuItem";
-            this.inmuebleDestinadoALocalToolStripMenuItem.Size = new System.Drawing.Size(641, 26);
-            this.inmuebleDestinadoALocalToolStripMenuItem.Text = "inmueble  destinado a Local";
-            // 
-            // inmuebleDestinadoAViviendaToolStripMenuItem
-            // 
-            this.inmuebleDestinadoAViviendaToolStripMenuItem.Name = "inmuebleDestinadoAViviendaToolStripMenuItem";
-            this.inmuebleDestinadoAViviendaToolStripMenuItem.Size = new System.Drawing.Size(641, 26);
-            this.inmuebleDestinadoAViviendaToolStripMenuItem.Text = "Inmueble  destinado a Vivienda";
-            // 
             // inmuebleSometidoACopropiedadYDestinadoALocalToolStripMenuItem
             // 
             this.inmuebleSometidoACopropiedadYDestinadoALocalToolStripMenuItem.Name = "inmuebleSometidoACopropiedadYDestinadoALocalToolStripMenuItem";
@@ -1355,11 +1386,45 @@
             this.inmuebleSometidoACopropiedadYDestinadoAViviendaDirectoConPropietarioToolStripMenuItem.Size = new System.Drawing.Size(641, 26);
             this.inmuebleSometidoACopropiedadYDestinadoAViviendaDirectoConPropietarioToolStripMenuItem.Text = "Inmueble  sometido a copropiedad y destinado a Vivienda Directo con propietario";
             // 
+            // inmuebleDestinadoALocalToolStripMenuItem
+            // 
+            this.inmuebleDestinadoALocalToolStripMenuItem.Name = "inmuebleDestinadoALocalToolStripMenuItem";
+            this.inmuebleDestinadoALocalToolStripMenuItem.Size = new System.Drawing.Size(641, 26);
+            this.inmuebleDestinadoALocalToolStripMenuItem.Text = "inmueble  destinado a Local";
+            // 
+            // inmuebleDestinadoAViviendaToolStripMenuItem
+            // 
+            this.inmuebleDestinadoAViviendaToolStripMenuItem.Name = "inmuebleDestinadoAViviendaToolStripMenuItem";
+            this.inmuebleDestinadoAViviendaToolStripMenuItem.Size = new System.Drawing.Size(641, 26);
+            this.inmuebleDestinadoAViviendaToolStripMenuItem.Text = "Inmueble  destinado a Vivienda";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(883, 339);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(155, 112);
+            this.button8.TabIndex = 118;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(914, 129);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(205, 164);
+            this.button9.TabIndex = 119;
+            this.button9.Text = "button9";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1417, 715);
+            this.ClientSize = new System.Drawing.Size(1457, 713);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button5);
@@ -1370,7 +1435,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "PHT Documents";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1478,7 +1546,6 @@
         private System.Windows.Forms.TextBox fechaIniTXT;
         private System.Windows.Forms.TextBox fechaFinTXT;
         private System.Windows.Forms.TextBox canonTXT;
-        private System.Windows.Forms.TextBox inmuebleTXT;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
@@ -1497,7 +1564,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label15;
@@ -1517,7 +1583,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox vigenciaTXT;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.ComboBox copiasTXT;
         private System.Windows.Forms.Button button7;
@@ -1531,6 +1596,10 @@
         private System.Windows.Forms.ToolStripMenuItem inmuebleSometidoACopropiedadYDestinadoAViviendaDirectoConPropietarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inmuebleDestinadoALocalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inmuebleDestinadoAViviendaToolStripMenuItem;
+        private System.Windows.Forms.ComboBox vigenciaTXT;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
     }
 }
 
