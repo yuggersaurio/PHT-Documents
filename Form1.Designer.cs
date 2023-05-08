@@ -81,12 +81,12 @@
             this.label32 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.nombreCoarrendatarioTXT = new System.Windows.Forms.TextBox();
-            this.idCoarrendatarioTXT = new System.Windows.Forms.TextBox();
-            this.direccionCoarrendatarioTXT = new System.Windows.Forms.TextBox();
-            this.telefonoCoarrendatarioTXT = new System.Windows.Forms.TextBox();
-            this.celularCoarrendatarioTXT = new System.Windows.Forms.TextBox();
-            this.emailCoarrendatarioTXT = new System.Windows.Forms.TextBox();
+            this.nombreCoarrendatario1TXT = new System.Windows.Forms.TextBox();
+            this.idCoarrendatario1TXT = new System.Windows.Forms.TextBox();
+            this.direccionCoarrendatario1TXT = new System.Windows.Forms.TextBox();
+            this.telefonoCoarrendatario1TXT = new System.Windows.Forms.TextBox();
+            this.celularCoarrendatario1TXT = new System.Windows.Forms.TextBox();
+            this.emailCoarrendatario1TXT = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -156,8 +156,6 @@
             this.inmuebleSometidoACopropiedadYDestinadoAViviendaDirectoConPropietarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inmuebleDestinadoALocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inmuebleDestinadoAViviendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -655,12 +653,12 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.nombreCoarrendatarioTXT);
-            this.groupBox4.Controls.Add(this.idCoarrendatarioTXT);
-            this.groupBox4.Controls.Add(this.direccionCoarrendatarioTXT);
-            this.groupBox4.Controls.Add(this.telefonoCoarrendatarioTXT);
-            this.groupBox4.Controls.Add(this.celularCoarrendatarioTXT);
-            this.groupBox4.Controls.Add(this.emailCoarrendatarioTXT);
+            this.groupBox4.Controls.Add(this.nombreCoarrendatario1TXT);
+            this.groupBox4.Controls.Add(this.idCoarrendatario1TXT);
+            this.groupBox4.Controls.Add(this.direccionCoarrendatario1TXT);
+            this.groupBox4.Controls.Add(this.telefonoCoarrendatario1TXT);
+            this.groupBox4.Controls.Add(this.celularCoarrendatario1TXT);
+            this.groupBox4.Controls.Add(this.emailCoarrendatario1TXT);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.label41);
             this.groupBox4.Controls.Add(this.label29);
@@ -683,53 +681,53 @@
             this.label12.Text = "Nombre completo";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
-            // nombreCoarrendatarioTXT
+            // nombreCoarrendatario1TXT
             // 
-            this.nombreCoarrendatarioTXT.Location = new System.Drawing.Point(144, 18);
-            this.nombreCoarrendatarioTXT.Name = "nombreCoarrendatarioTXT";
-            this.nombreCoarrendatarioTXT.Size = new System.Drawing.Size(203, 22);
-            this.nombreCoarrendatarioTXT.TabIndex = 24;
-            this.nombreCoarrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nombreCoarrendatario1TXT.Location = new System.Drawing.Point(144, 18);
+            this.nombreCoarrendatario1TXT.Name = "nombreCoarrendatario1TXT";
+            this.nombreCoarrendatario1TXT.Size = new System.Drawing.Size(203, 22);
+            this.nombreCoarrendatario1TXT.TabIndex = 24;
+            this.nombreCoarrendatario1TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // idCoarrendatarioTXT
+            // idCoarrendatario1TXT
             // 
-            this.idCoarrendatarioTXT.Location = new System.Drawing.Point(462, 18);
-            this.idCoarrendatarioTXT.Name = "idCoarrendatarioTXT";
-            this.idCoarrendatarioTXT.Size = new System.Drawing.Size(203, 22);
-            this.idCoarrendatarioTXT.TabIndex = 25;
-            this.idCoarrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.idCoarrendatario1TXT.Location = new System.Drawing.Point(462, 18);
+            this.idCoarrendatario1TXT.Name = "idCoarrendatario1TXT";
+            this.idCoarrendatario1TXT.Size = new System.Drawing.Size(203, 22);
+            this.idCoarrendatario1TXT.TabIndex = 25;
+            this.idCoarrendatario1TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // direccionCoarrendatarioTXT
+            // direccionCoarrendatario1TXT
             // 
-            this.direccionCoarrendatarioTXT.Location = new System.Drawing.Point(462, 101);
-            this.direccionCoarrendatarioTXT.Name = "direccionCoarrendatarioTXT";
-            this.direccionCoarrendatarioTXT.Size = new System.Drawing.Size(203, 22);
-            this.direccionCoarrendatarioTXT.TabIndex = 29;
-            this.direccionCoarrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.direccionCoarrendatario1TXT.Location = new System.Drawing.Point(462, 101);
+            this.direccionCoarrendatario1TXT.Name = "direccionCoarrendatario1TXT";
+            this.direccionCoarrendatario1TXT.Size = new System.Drawing.Size(203, 22);
+            this.direccionCoarrendatario1TXT.TabIndex = 29;
+            this.direccionCoarrendatario1TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // telefonoCoarrendatarioTXT
+            // telefonoCoarrendatario1TXT
             // 
-            this.telefonoCoarrendatarioTXT.Location = new System.Drawing.Point(144, 56);
-            this.telefonoCoarrendatarioTXT.Name = "telefonoCoarrendatarioTXT";
-            this.telefonoCoarrendatarioTXT.Size = new System.Drawing.Size(203, 22);
-            this.telefonoCoarrendatarioTXT.TabIndex = 26;
-            this.telefonoCoarrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.telefonoCoarrendatario1TXT.Location = new System.Drawing.Point(144, 56);
+            this.telefonoCoarrendatario1TXT.Name = "telefonoCoarrendatario1TXT";
+            this.telefonoCoarrendatario1TXT.Size = new System.Drawing.Size(203, 22);
+            this.telefonoCoarrendatario1TXT.TabIndex = 26;
+            this.telefonoCoarrendatario1TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // celularCoarrendatarioTXT
+            // celularCoarrendatario1TXT
             // 
-            this.celularCoarrendatarioTXT.Location = new System.Drawing.Point(462, 59);
-            this.celularCoarrendatarioTXT.Name = "celularCoarrendatarioTXT";
-            this.celularCoarrendatarioTXT.Size = new System.Drawing.Size(203, 22);
-            this.celularCoarrendatarioTXT.TabIndex = 27;
-            this.celularCoarrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.celularCoarrendatario1TXT.Location = new System.Drawing.Point(462, 59);
+            this.celularCoarrendatario1TXT.Name = "celularCoarrendatario1TXT";
+            this.celularCoarrendatario1TXT.Size = new System.Drawing.Size(203, 22);
+            this.celularCoarrendatario1TXT.TabIndex = 27;
+            this.celularCoarrendatario1TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // emailCoarrendatarioTXT
+            // emailCoarrendatario1TXT
             // 
-            this.emailCoarrendatarioTXT.Location = new System.Drawing.Point(144, 98);
-            this.emailCoarrendatarioTXT.Name = "emailCoarrendatarioTXT";
-            this.emailCoarrendatarioTXT.Size = new System.Drawing.Size(203, 22);
-            this.emailCoarrendatarioTXT.TabIndex = 28;
-            this.emailCoarrendatarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.emailCoarrendatario1TXT.Location = new System.Drawing.Point(144, 98);
+            this.emailCoarrendatario1TXT.Name = "emailCoarrendatario1TXT";
+            this.emailCoarrendatario1TXT.Size = new System.Drawing.Size(203, 22);
+            this.emailCoarrendatario1TXT.TabIndex = 28;
+            this.emailCoarrendatario1TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 
@@ -1398,33 +1396,11 @@
             this.inmuebleDestinadoAViviendaToolStripMenuItem.Size = new System.Drawing.Size(641, 26);
             this.inmuebleDestinadoAViviendaToolStripMenuItem.Text = "Inmueble  destinado a Vivienda";
             // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(883, 339);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(155, 112);
-            this.button8.TabIndex = 118;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(914, 129);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(205, 164);
-            this.button9.TabIndex = 119;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1457, 713);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button5);
@@ -1485,13 +1461,13 @@
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox direccionCoarrendatario4TXT;
-        private System.Windows.Forms.TextBox nombreCoarrendatarioTXT;
-        private System.Windows.Forms.TextBox idCoarrendatarioTXT;
+        private System.Windows.Forms.TextBox nombreCoarrendatario1TXT;
+        private System.Windows.Forms.TextBox idCoarrendatario1TXT;
         private System.Windows.Forms.TextBox direccionCoarrendatario3TXT;
         private System.Windows.Forms.TextBox nombreCoarrendatario2TXT;
         private System.Windows.Forms.TextBox direccionCoarrendatario2TXT;
         private System.Windows.Forms.TextBox idCoarrendatario2TXT;
-        private System.Windows.Forms.TextBox direccionCoarrendatarioTXT;
+        private System.Windows.Forms.TextBox direccionCoarrendatario1TXT;
         private System.Windows.Forms.TextBox nombreCoarrendatario3TXT;
         private System.Windows.Forms.TextBox emailCoarrendatario4TXT;
         private System.Windows.Forms.TextBox idCoarrendatario3TXT;
@@ -1500,11 +1476,11 @@
         private System.Windows.Forms.TextBox telefonoCoarrendatario4TXT;
         private System.Windows.Forms.TextBox idCoarrendatario4TXT;
         private System.Windows.Forms.TextBox emailCoarrendatario3TXT;
-        private System.Windows.Forms.TextBox telefonoCoarrendatarioTXT;
+        private System.Windows.Forms.TextBox telefonoCoarrendatario1TXT;
         private System.Windows.Forms.TextBox celularCoarrendatario3TXT;
-        private System.Windows.Forms.TextBox celularCoarrendatarioTXT;
+        private System.Windows.Forms.TextBox celularCoarrendatario1TXT;
         private System.Windows.Forms.TextBox telefonoCoarrendatario3TXT;
-        private System.Windows.Forms.TextBox emailCoarrendatarioTXT;
+        private System.Windows.Forms.TextBox emailCoarrendatario1TXT;
         private System.Windows.Forms.TextBox emailCoarrendatario2TXT;
         private System.Windows.Forms.TextBox telefonoCoarrendatario2TXT;
         private System.Windows.Forms.TextBox celularCoarrendatario2TXT;
@@ -1598,8 +1574,6 @@
         private System.Windows.Forms.ToolStripMenuItem inmuebleDestinadoAViviendaToolStripMenuItem;
         private System.Windows.Forms.ComboBox vigenciaTXT;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
     }
 }
 

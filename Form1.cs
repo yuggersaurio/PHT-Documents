@@ -15,7 +15,7 @@ namespace Exporter
             InitializeComponent();
         }
 
-        private void canonAdminLetrasFn(string numero, string tipo, int vigencia) //FUNCION QUE FORMATEA VALORES DE CANON Y ADMIN, CALCULA CUANTIA Y DEVUELVE VALORES EN LETRAS
+        private void canonAdminLetrasFn(string numero, string tipo, int vigencia) //FUNCION QUE FORMATEA VALORES DE CANON Y ADMIN, CALCULA CUANTIA Y DEVUELVE VALORES EN LETRAS E IMPRIME RESULTADO EN FORMATO
         {
             int numeroInteger;
             int cuantiaInteger;
@@ -46,7 +46,7 @@ namespace Exporter
            
         }
 
-        public void terceroFn(string[] arr , string tipoTercero)
+        public void terceroFn(string[] arr , string tipoTercero) //FUNCION QUE FORMATEA ID DE TERCEROS E IMPRIME RESULTADOS EN FORMATO
         {
             //FORMATEO TERCEROS ------------------------------------
             
@@ -66,21 +66,36 @@ namespace Exporter
                 {
                     case 0:
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idArrendatarioTXT**", terceroFormateado);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreArrendatarioTXT**", nombreArrendatarioTXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoArrendatarioTXT**", telefonoArrendatarioTXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularArrendatarioTXT**", celularArrendatarioTXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailArrendatarioTXT**", emailArrendatarioTXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionArrendatarioTXT**", direccionArrendatarioTXT.Text);
+
                         break;
                     case 1:
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idPropietarioTXT**", terceroFormateado);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombrePropietarioTXT**", nombrePropietarioTXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoPropietarioTXT**", telefonoPropietarioTXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularPropietarioTXT**", celularPropietarioTXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailPropietarioTXT**", emailPropietarioTXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionPropietarioTXT**", direccionPropietarioTXT.Text);
                         break;
                     case 2:
-                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatarioTXT**", terceroFormateado);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario1TXT**", terceroFormateado);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario1TXT**", nombreCoarrendatario1TXT.Text);
                         break;
                     case 3:
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario2TXT**", terceroFormateado);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario2TXT**", nombreCoarrendatario2TXT.Text);
                         break;
                     case 4:
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario3TXT**", terceroFormateado);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario3TXT**", nombreCoarrendatario3TXT.Text);
                         break;
                     case 5:
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario4TXT**", terceroFormateado);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario4TXT**", nombreCoarrendatario4TXT.Text);
                         break;
                     
                 }
@@ -168,6 +183,8 @@ namespace Exporter
             foreach (string strText in textArray)
             {
                 if (!string.IsNullOrEmpty(strText))
+                
+                                    
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**contratoTXT**", contratoTXT.Text);
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**fechaIniTXT**", fechaIniTXT.Text);
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**fechaFinTXT**", fechaFinTXT.Text);
@@ -175,9 +192,30 @@ namespace Exporter
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**destinoTXT**", destinoTXT.Text);
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionTXT**", direccionTXT.Text);
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**vigenciaTXT**", vigenciaTXT.Text);
+                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**copiasTXT**", copiasTXT.Text);
 
 
-               
+                //LLAMAMOS FUNCION PARA FORMATEAR CANON Y ADMIN Y REGRESAR LETRAS
+                canonAdminLetrasFn(canonTXT.Text, "canon", 12);
+                canonAdminLetrasFn(administracionTXT.Text, "admin", 12);
+                //------------------------------------------
+
+                //LLAMAMOS FUNCION PARA FORMATEAR ID TERCEROS
+                string[] arr = new string[6];
+                arr[0] = idArrendatarioTXT.Text;
+                arr[1] = idPropietarioTXT.Text;
+                arr[2] = idCoarrendatario1TXT.Text;
+                arr[3] = idCoarrendatario2TXT.Text;
+                arr[4] = idCoarrendatario3TXT.Text;
+                arr[5] = idCoarrendatario4TXT.Text;
+
+                var tercero = idArrendatarioTXT.Text;
+                var tipoTercero = "arrendatario";
+                terceroFn(arr, tipoTercero);
+
+                //------------------------------------------
+
+
 
                 //CONVERTIMOS DE STRING A INT EL VALOR DEL CANON Y EL ADMIN PARA USAR EL HUMANIZER DE NUMEROS A LETRAS
                 /*int canonInteger;
@@ -197,7 +235,7 @@ namespace Exporter
 
 
                 //CONVERTIMOS DE STRING A INT EL VALOR DEL ADMIN
-                
+
 
 
                 //-------------FINALIZA CONVERSION NUMERO A TEXTO
@@ -237,38 +275,11 @@ namespace Exporter
 
                 ///////////------------
 
-               // richTextBox1.Rtf = richTextBox1.Rtf.Replace("**cuantiaTXT**", "( " + calculoCuantiaStr + " ) " + (calculoCuantia.ToWords()).Humanize(LetterCasing.AllCaps) + " PESOS MCTE") ;
-               // richTextBox1.Rtf = richTextBox1.Rtf.Replace("**canonTXT**", "( " + canonTXTFormato + " ) " + (canonInteger.ToWords()).Humanize(LetterCasing.AllCaps) + " PESOS MCTE");
+                // richTextBox1.Rtf = richTextBox1.Rtf.Replace("**cuantiaTXT**", "( " + calculoCuantiaStr + " ) " + (calculoCuantia.ToWords()).Humanize(LetterCasing.AllCaps) + " PESOS MCTE") ;
+                // richTextBox1.Rtf = richTextBox1.Rtf.Replace("**canonTXT**", "( " + canonTXTFormato + " ) " + (canonInteger.ToWords()).Humanize(LetterCasing.AllCaps) + " PESOS MCTE");
                 //richTextBox1.Rtf = richTextBox1.Rtf.Replace("**administracionTXT**", "( " + adminTXTFormato + " ) " + (adminInteger.ToWords()).Humanize(LetterCasing.AllCaps) + " PESOS MCTE");
-                
 
 
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreArrendatarioTXT**", nombreArrendatarioTXT.Text);
-                //richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idArrendatarioTXT**", arrendatarioTXTFormato);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoArrendatarioTXT**", telefonoArrendatarioTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularArrendatarioTXT**", celularArrendatarioTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailArrendatarioTXT**", emailArrendatarioTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionArrendatarioTXT**", direccionArrendatarioTXT.Text);
-
-
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombrePropietarioTXT**", nombrePropietarioTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idPropietarioTXT**", idPropietarioTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoPropietarioTXT**", telefonoPropietarioTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularPropietarioTXT**", celularPropietarioTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailPropietarioTXT**", emailPropietarioTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionPropietarioTXT**", direccionPropietarioTXT.Text);
-
-
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatarioTXT**", nombreCoarrendatarioTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatarioTXT**", idCoarrendatarioTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatarioTXT**", idCoarrendatarioTXT.Text);
-
-
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario2TXT**", nombreCoarrendatario2TXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario2TXT**", idCoarrendatario2TXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario3TXT**", nombreCoarrendatario3TXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario3TXT**", idCoarrendatario3TXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario4TXT**", nombreCoarrendatario4TXT.Text);
 
             }
 
@@ -416,22 +427,6 @@ namespace Exporter
 
 
 
-            //LLAMAMOS FUNCION PARA FORMATEAR ID TERCEROS
-            string[] arr = new string[6];
-            arr[0] = idArrendatarioTXT.Text;
-            arr[1] = idPropietarioTXT.Text;
-            arr[2] = idCoarrendatarioTXT.Text;
-            arr[3] = idCoarrendatario2TXT.Text;
-            arr[3] = idCoarrendatario3TXT.Text;
-            arr[3] = idCoarrendatario4TXT.Text;
-            
-            var tercero = idArrendatarioTXT.Text;
-            var tipoTercero = "arrendatario";
-            terceroFn(arr, tipoTercero);
-
-            //------------------------------------------
-
-
 
 
            
@@ -442,9 +437,14 @@ namespace Exporter
 
         private void button9_Click(object sender, EventArgs e)
         {
-            canonAdminLetrasFn(canonTXT.Text, "canon", 12);
+           
          
 
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
