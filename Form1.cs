@@ -34,13 +34,13 @@ namespace Exporter
             switch (tipo)
             {
                 case "canon":
-                    richTextBox1.Rtf = richTextBox1.Rtf.Replace("**canonTXT**", "( " + numeroFormateado + " ) " + (numeroInteger.ToWords()).Humanize(LetterCasing.AllCaps) + " PESOS MCTE");
-                    richTextBox1.Rtf = richTextBox1.Rtf.Replace("**cuantiaTXT**", "( " + cuantiaFormateado + " ) " + (cuantiaInteger.ToWords()).Humanize(LetterCasing.AllCaps) + " PESOS MCTE");
+                    richTextBox1.Rtf = richTextBox1.Rtf.Replace("**canonTXT**", (numeroInteger.ToWords()).Humanize(LetterCasing.AllCaps) + " PESOS M/CTE " + "( " + numeroFormateado + " ) " );
+                    richTextBox1.Rtf = richTextBox1.Rtf.Replace("**cuantiaTXT**", (cuantiaInteger.ToWords()).Humanize(LetterCasing.AllCaps) + " PESOS M/CTE " + "( " + cuantiaFormateado + " ) " );
                     break;
                 case "admin":
-                    richTextBox1.Rtf = richTextBox1.Rtf.Replace("**administracionTXT**", "( " + numeroFormateado + " ) " + (numeroInteger.ToWords()).Humanize(LetterCasing.AllCaps) + " PESOS MCTE");
+                    richTextBox1.Rtf = richTextBox1.Rtf.Replace("**administracionTXT**",  (numeroInteger.ToWords()).Humanize(LetterCasing.AllCaps) + " PESOS M/CTE " + "( " + numeroFormateado + " ) " );
                     break;
-                          }
+                    }
 
 
            
@@ -186,8 +186,6 @@ namespace Exporter
                 
                                     
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**contratoTXT**", contratoTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**fechaIniTXT**", fechaIniTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**fechaFinTXT**", fechaFinTXT.Text);
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**ciudadTXT**", ciudadTXT.Text);
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**destinoTXT**", destinoTXT.Text);
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionTXT**", direccionTXT.Text);
@@ -214,6 +212,21 @@ namespace Exporter
                 terceroFn(arr, tipoTercero);
 
                 //------------------------------------------
+
+
+                //FECHAS DE INICIO Y FIN EN LETRAS
+                string fechaInicio = fechaIniTXT.Text;
+                string fechaFin = fechaFinTXT.Text;
+                fechaFinTXT.Value = fechaIniTXT.Value;
+                fechaFinTXT.Value = DateTime.Now.AddYears(1);
+                fechaFin = fechaFinTXT.Text;
+                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**fechaIniTXT**", fechaInicio.Humanize(LetterCasing.AllCaps));
+                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**fechaFinTXT**", fechaFin.Humanize(LetterCasing.AllCaps));
+
+                //------------------------------------------
+
+
+
 
 
 
@@ -354,10 +367,13 @@ namespace Exporter
 
         private void canonTXT_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
-            
-            
-        
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+
+
         }
 
         private void button7_Click_1(object sender, EventArgs e)
@@ -445,6 +461,258 @@ namespace Exporter
         private void button10_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+            
+            
+
+
+        }
+
+        private void fechaIniTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+                
+            
+        }
+
+        private void fechaIniTXT_ValueChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void fechaFinTXT_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contratoTXT_TextChanged(object sender, EventArgs e)
+        {
+           
+
+
+        }
+
+        private void contratoTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void idPropietarioTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idPropietarioTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void idArrendatarioTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idArrendatarioTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void administracionTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void administracionTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void idCoarrendatario1TXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void idCoarrendatario2TXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void idCoarrendatario3TXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void idCoarrendatario4TXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void telefonoPropietarioTXT_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void telefonoPropietarioTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void telefonoArrendatarioTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void telefonoArrendatarioTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void celularPropietarioTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void celularArrendatarioTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void telefonoCoarrendatario1TXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void telefonoCoarrendatario1TXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void celularCoarrendatario1TXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void telefonoCoarrendatario2TXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void telefonoCoarrendatario2TXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void celularCoarrendatario2TXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void celularCoarrendatario2TXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void telefonoCoarrendatario3TXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void telefonoCoarrendatario3TXT_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void telefonoCoarrendatario3TXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void celularCoarrendatario3TXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void celularCoarrendatario3TXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void telefonoCoarrendatario4TXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void celularCoarrendatario4TXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
