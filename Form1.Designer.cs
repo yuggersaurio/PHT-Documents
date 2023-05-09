@@ -824,6 +824,7 @@
             this.contratoGroup.TabIndex = 115;
             this.contratoGroup.TabStop = false;
             this.contratoGroup.Text = "Datos de contrato";
+            this.contratoGroup.Enter += new System.EventHandler(this.contratoGroup_Enter);
             // 
             // fechaFinTXT
             // 

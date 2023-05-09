@@ -4,12 +4,18 @@ using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 using System.Globalization;
 using Humanizer;
+using AltoHttp;
+using Clases.ApiRest;
+using Newtonsoft.Json;
 using System.Diagnostics;
+
 
 namespace Exporter
 {
     public partial class Form1 : Form
     {
+
+        DBApi dBApi = new DBApi();
         public Form1()
         {
             InitializeComponent();
@@ -471,8 +477,143 @@ namespace Exporter
         private void button2_Click_1(object sender, EventArgs e)
         {
 
+            //dynamic respuesta = dBApi.Get("https://portalhouses.com/administrador/ApiDocuments/post.php?tipo=2");
+            /* dynamic respuesta = dBApi.Get("https://portalhouses.com/administrador/ApiDocuments/post.php?tipo=insertar"
+
+                 +"&contratoTXTdb=" + contratoTXT.Text
+                 +"&direccionTXTdb=" + direccionTXT.Text
+                 +"&ciudadTXTdb=" + ciudadTXT.Text
+                 +"&fechaIniTXTdb="+fechaIniTXT.Text
+                 +"&fechaFinTXTdb=" + fechaFinTXT.Text
+                 +"&canonTXTdb=" + canonTXT.Text
+                 +"&administracionTXTdb=" + administracionTXT.Text
+                 +"&destinoTXTdb=" + destinoTXT.Text
+                 +"&nombrePropietarioTXTdb=" + nombrePropietarioTXT.Text
+                 +"&idPropietarioTXTdb=" + idPropietarioTXT.Text
+                 +"&telefonoPropietarioTXTdb=" + telefonoPropietarioTXT.Text
+                 +"&celularPropietarioTXTdb=" + celularPropietarioTXT.Text
+                 +"&emailPropietarioTXTdb=" + emailPropietarioTXT.Text
+                 +"&direccionPropietarioTXTdb=" + direccionPropietarioTXT.Text
+                 +"&nombreArrendatarioTXTdb=" + nombreArrendatarioTXT.Text
+                 +"&idArrendatarioTXTdb=" + idArrendatarioTXT.Text
+                 +"&telefonoArrendatarioTXTdb=" + telefonoArrendatarioTXT.Text
+                 +"&celularArrendatarioTXTdb=" + celularArrendatarioTXT.Text
+                 +"&emailArrendatarioTXTdb=" + emailArrendatarioTXT.Text
+                 +"&direccionArrendatarioTXTdb=" + direccionArrendatarioTXT.Text
+
+                 +"&nombreCoarrendatario1TXTdb=" + nombreCoarrendatario1TXT.Text
+                 +"&idCoarrendatario1TXTdb=" + idCoarrendatario1TXT.Text
+                 +"&telefonoCoarrendatario1TXTdb=" + telefonoCoarrendatario1TXT.Text
+                 +"&celularCoarrendatario1TXTdb=" + celularCoarrendatario1TXT.Text
+                 +"&direccionCoarrendatario1TXTdb=" + direccionCoarrendatario1TXT.Text
+                 +"&emailCoarrendatario1TXTdb=" + emailCoarrendatario1TXT.Text
+
+                 +"&nombreCoarrendatario2TXTdb=" + nombreCoarrendatario2TXT.Text
+                 +"&idCoarrendatario2TXTdb=" + idCoarrendatario2TXT.Text
+                 +"&telefonoCoarrendatario2TXTdb=" + telefonoCoarrendatario2TXT.Text
+                 +"&celularCoarrendatario2TXTdb=" + celularCoarrendatario2TXT.Text
+                 +"&direccionCoarrendatario2TXTdb=" + direccionCoarrendatario2TXT.Text
+                 +"&emailCoarrendatario2TXTdb=" + emailCoarrendatario2TXT.Text
+
+                 +"&nombreCoarrendatario3TXTdb=" + nombreCoarrendatario3TXT.Text
+                 +"&idCoarrendatario3TXTdb=" + idCoarrendatario3TXT.Text
+                 +"&telefonoCoarrendatario3TXTdb=" + telefonoCoarrendatario3TXT.Text
+                 +"&celularCoarrendatario3TXTdb=" + celularCoarrendatario3TXT.Text
+                 +"&direccionCoarrendatario3TXTdb=" + direccionCoarrendatario3TXT.Text
+                 +"&emailCoarrendatario3TXTdb=" + emailCoarrendatario3TXT.Text
+
+                 +"&nombreCoarrendatario4TXTdb=" + nombreCoarrendatario4TXT.Text
+                 +"&idCoarrendatario4TXTdb=" + idCoarrendatario4TXT.Text
+                 +"&telefonoCoarrendatario4TXTdb=" + telefonoCoarrendatario4TXT.Text
+                 +"&celularCoarrendatario4TXTdb=" + celularCoarrendatario4TXT.Text
+                 +"&direccionCoarrendatario4TXTdb=" + direccionCoarrendatario4TXT.Text
+                 +"&emailCoarrendatario4TXTdb=" + emailCoarrendatario4TXT.Text
+
+
+                 );*/
+
+            Console.WriteLine("https://portalhouses.com/administrador/ApiDocuments/post.php?tipo=insertar"
+
+               + "&contratoTXTdb=" + contratoTXT.Text
+               + "&direccionTXTdb=" + direccionTXT.Text
+               + "&ciudadTXTdb=" + ciudadTXT.Text
+               + "&fechaIniTXTdb=" + fechaIniTXT.Text
+               + "&fechaFinTXTdb=" + fechaFinTXT.Text
+               + "&canonTXTdb=" + canonTXT.Text
+               + "&administracionTXTdb=" + administracionTXT.Text
+               + "&destinoTXTdb=" + destinoTXT.Text
+               + "&nombrePropietarioTXTdb=" + nombrePropietarioTXT.Text
+               + "&idPropietarioTXTdb=" + idPropietarioTXT.Text
+               + "&telefonoPropietarioTXTdb=" + telefonoPropietarioTXT.Text
+               + "&celularPropietarioTXTdb=" + celularPropietarioTXT.Text
+               + "&emailPropietarioTXTdb=" + emailPropietarioTXT.Text
+               + "&direccionPropietarioTXTdb=" + direccionPropietarioTXT.Text
+               + "&nombreArrendatarioTXTdb=" + nombreArrendatarioTXT.Text
+               + "&idArrendatarioTXTdb=" + idArrendatarioTXT.Text
+               + "&telefonoArrendatarioTXTdb=" + telefonoArrendatarioTXT.Text
+               + "&celularArrendatarioTXTdb=" + celularArrendatarioTXT.Text
+               + "&emailArrendatarioTXTdb=" + emailArrendatarioTXT.Text
+               + "&direccionArrendatarioTXTdb=" + direccionArrendatarioTXT.Text
+
+               + "&nombreCoarrendatario1TXTdb=" + nombreCoarrendatario1TXT.Text
+               + "&idCoarrendatario1TXTdb=" + idCoarrendatario1TXT.Text
+               + "&telefonoCoarrendatario1TXTdb=" + telefonoCoarrendatario1TXT.Text
+               + "&celularCoarrendatario1TXTdb=" + celularCoarrendatario1TXT.Text
+               + "&direccionCoarrendatario1TXTdb=" + direccionCoarrendatario1TXT.Text
+               + "&emailCoarrendatario1TXTdb=" + emailCoarrendatario1TXT.Text
+
+               + "&nombreCoarrendatario2TXTdb=" + nombreCoarrendatario2TXT.Text
+               + "&idCoarrendatario2TXTdb=" + idCoarrendatario2TXT.Text
+               + "&telefonoCoarrendatario2TXTdb=" + telefonoCoarrendatario2TXT.Text
+               + "&celularCoarrendatario2TXTdb=" + celularCoarrendatario2TXT.Text
+               + "&direccionCoarrendatario2TXTdb=" + direccionCoarrendatario2TXT.Text
+               + "&emailCoarrendatario2TXTdb=" + emailCoarrendatario2TXT.Text
+
+               + "&nombreCoarrendatario3TXTdb=" + nombreCoarrendatario3TXT.Text
+               + "&idCoarrendatario3TXTdb=" + idCoarrendatario3TXT.Text
+               + "&telefonoCoarrendatario3TXTdb=" + telefonoCoarrendatario3TXT.Text
+               + "&celularCoarrendatario3TXTdb=" + celularCoarrendatario3TXT.Text
+               + "&direccionCoarrendatario3TXTdb=" + direccionCoarrendatario3TXT.Text
+               + "&emailCoarrendatario3TXTdb=" + emailCoarrendatario3TXT.Text
+
+               + "&nombreCoarrendatario4TXTdb=" + nombreCoarrendatario4TXT.Text
+               + "&idCoarrendatario4TXTdb=" + idCoarrendatario4TXT.Text
+               + "&telefonoCoarrendatario4TXTdb=" + telefonoCoarrendatario4TXT.Text
+               + "&celularCoarrendatario4TXTdb=" + celularCoarrendatario4TXT.Text
+               + "&direccionCoarrendatario4TXTdb=" + direccionCoarrendatario4TXT.Text
+               + "&emailCoarrendatario4TXTdb=" + emailCoarrendatario4TXT.Text
+               );
+
+
+            //label46.Text = "https://portalhouses.com/administrador/apiPlantas/upload_inv/asesores_documentos/" + respuesta[0].contrato.ToString() + ".pdf";
+            /*contratoTXT.Text = respuesta[0].contratoTXTdb.ToString();
+            direccionTXT.Text = respuesta[0].direccionTXTdb.ToString();
+            ciudadTXT.Text = respuesta[0].ciudadTXTdb.ToString();
+            fechaIniTXT.Text = respuesta[0].fechaIniTXTdb.ToString();
+            fechaFinTXT.Text = respuesta[0].fechaFinTXTdb.ToString();
+            canonTXT.Text = respuesta[0].canonTXTdb.ToString();
+            administracionTXT.Text = respuesta[0].administracionTXTdb.ToString();
+            destinoTXT.Text = respuesta[0].destinoTXTdb.ToString();
             
+            nombrePropietarioTXT.Text = respuesta[0].nombrePropietarioTXTdb.ToString();
+            idPropietarioTXT.Text = respuesta[0].idPropietarioTXTdb.ToString();
+            telefonoPropietarioTXT.Text = respuesta[0].telefonoPropietarioTXTdb.ToString();
+            celularPropietarioTXT.Text = respuesta[0].celularPropietarioTXTdb.ToString();
+            emailPropietarioTXT.Text = respuesta[0].emailPropietarioTXTdb.ToString();
+            direccionPropietarioTXT.Text = respuesta[0].direccionPropietarioTXTdb.ToString();
             
+            nombreArrendatarioTXT.Text = respuesta[0].nombreArrendatarioTXTdb.ToString();
+            idArrendatarioTXT.Text = respuesta[0].idArrendatarioTXTdb.ToString();
+            telefonoArrendatarioTXT.Text = respuesta[0].telefonoArrendatarioTXTdb.ToString();
+            celularArrendatarioTXT.Text = respuesta[0].celularArrendatarioTXTdb.ToString();
+            emailArrendatarioTXT.Text = respuesta[0].emailArrendatarioTXTdb.ToString();
+            direccionArrendatarioTXT.Text = respuesta[0].direccionArrendatarioTXTdb.ToString();
+            */
+
+
+
+
+
 
 
         }
@@ -713,6 +854,17 @@ namespace Exporter
             {
                 e.Handled = true;
             }
+        }
+
+        private void contratoGroup_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click_2(object sender, EventArgs e)
+        {
+            dynamic respuesta = dBApi.Get("https://portalhouses.com/administrador/ApiDocuments/post.php?tipo=mostrar");
+            fechaIniTXT.Text = respuesta[0].fechaIniTXTdb.ToString();
         }
     }
 }

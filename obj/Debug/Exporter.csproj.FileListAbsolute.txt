@@ -35,3 +35,8 @@ C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\Humanizer.dll
 C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\Humanizer.xml
 C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\es\Humanizer.resources.dll
 C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.csproj.CopyComplete
+C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\AltoHttp.dll
+C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\Newtonsoft.Json.dll
+C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\RestSharp.dll
+C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\Newtonsoft.Json.xml
+C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\RestSharp.xml
