@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.actualizarBTN = new System.Windows.Forms.Button();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
@@ -92,6 +90,8 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.listaContratosBox = new System.Windows.Forms.ComboBox();
             this.contratoGroup = new System.Windows.Forms.GroupBox();
             this.fechaFinTXT = new System.Windows.Forms.DateTimePicker();
             this.fechaIniTXT = new System.Windows.Forms.DateTimePicker();
@@ -140,9 +140,10 @@
             this.emailPropietarioTXT = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.direccionPropietarioTXT = new System.Windows.Forms.TextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.datosContratoTab = new System.Windows.Forms.TabControl();
             this.label46 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guardarBTN = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -154,7 +155,7 @@
             this.inmuebleSometidoACopropiedadYDestinadoAViviendaDirectoConPropietarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inmuebleDestinadoALocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inmuebleDestinadoAViviendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button2 = new System.Windows.Forms.Button();
+            this.nuevoContratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage4.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -164,7 +165,7 @@
             this.contratoGroup.SuspendLayout();
             this.arrendatarioGroup.SuspendLayout();
             this.propietarioGroup.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.datosContratoTab.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -183,48 +184,27 @@
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1164, 193);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 61);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Export";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1196, 142);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(138, 37);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(56, 12);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(224, 13);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(205, 34);
+            this.button4.Size = new System.Drawing.Size(132, 34);
             this.button4.TabIndex = 24;
-            this.button4.Text = "Vista previa de contrato";
+            this.button4.Text = "Vista previa";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // actualizarBTN
             // 
-            this.button5.Location = new System.Drawing.Point(1259, 190);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 66);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Visible = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.actualizarBTN.Enabled = false;
+            this.actualizarBTN.Location = new System.Drawing.Point(114, 13);
+            this.actualizarBTN.Name = "actualizarBTN";
+            this.actualizarBTN.Size = new System.Drawing.Size(104, 34);
+            this.actualizarBTN.TabIndex = 7;
+            this.actualizarBTN.Text = "Actualizar";
+            this.actualizarBTN.UseVisualStyleBackColor = true;
+            this.actualizarBTN.Click += new System.EventHandler(this.button5_Click);
             // 
             // printDialog1
             // 
@@ -248,11 +228,12 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(267, 12);
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(362, 13);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(235, 34);
+            this.button6.Size = new System.Drawing.Size(194, 34);
             this.button6.TabIndex = 25;
-            this.button6.Text = "Generar contrato en WORD";
+            this.button6.Text = "Generar documento WORD";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -784,6 +765,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.label20);
+            this.tabPage1.Controls.Add(this.listaContratosBox);
             this.tabPage1.Controls.Add(this.contratoGroup);
             this.tabPage1.Controls.Add(this.arrendatarioGroup);
             this.tabPage1.Controls.Add(this.propietarioGroup);
@@ -794,6 +777,26 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Contrato";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Red;
+            this.label20.Location = new System.Drawing.Point(424, 600);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(179, 16);
+            this.label20.TabIndex = 120;
+            this.label20.Text = "Cargar datos de contrato";
+            // 
+            // listaContratosBox
+            // 
+            this.listaContratosBox.FormattingEnabled = true;
+            this.listaContratosBox.Location = new System.Drawing.Point(627, 597);
+            this.listaContratosBox.Name = "listaContratosBox";
+            this.listaContratosBox.Size = new System.Drawing.Size(141, 24);
+            this.listaContratosBox.TabIndex = 120;
+            this.listaContratosBox.SelectedIndexChanged += new System.EventHandler(this.listaContratosBox_SelectedIndexChanged);
             // 
             // contratoGroup
             // 
@@ -828,6 +831,7 @@
             // 
             // fechaFinTXT
             // 
+            this.fechaFinTXT.CustomFormat = "dd \'de\' MMMM \'del\' yyyy";
             this.fechaFinTXT.Location = new System.Drawing.Point(468, 102);
             this.fechaFinTXT.Name = "fechaFinTXT";
             this.fechaFinTXT.Size = new System.Drawing.Size(264, 22);
@@ -836,6 +840,7 @@
             // 
             // fechaIniTXT
             // 
+            this.fechaIniTXT.CustomFormat = "";
             this.fechaIniTXT.Location = new System.Drawing.Point(120, 102);
             this.fechaIniTXT.Name = "fechaIniTXT";
             this.fechaIniTXT.Size = new System.Drawing.Size(264, 22);
@@ -931,6 +936,7 @@
             this.ciudadTXT.Name = "ciudadTXT";
             this.ciudadTXT.Size = new System.Drawing.Size(123, 22);
             this.ciudadTXT.TabIndex = 3;
+            this.ciudadTXT.Text = "Cali";
             this.ciudadTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // destinoTXT
@@ -1285,15 +1291,15 @@
             this.direccionPropietarioTXT.TabIndex = 17;
             this.direccionPropietarioTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tabControl1
+            // datosContratoTab
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(8, 42);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(795, 657);
-            this.tabControl1.TabIndex = 97;
+            this.datosContratoTab.Controls.Add(this.tabPage1);
+            this.datosContratoTab.Controls.Add(this.tabPage4);
+            this.datosContratoTab.Location = new System.Drawing.Point(8, 42);
+            this.datosContratoTab.Name = "datosContratoTab";
+            this.datosContratoTab.SelectedIndex = 0;
+            this.datosContratoTab.Size = new System.Drawing.Size(795, 657);
+            this.datosContratoTab.TabIndex = 97;
             // 
             // label46
             // 
@@ -1311,12 +1317,25 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.actualizarBTN);
             this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.guardarBTN);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Location = new System.Drawing.Point(809, 641);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(568, 57);
             this.panel1.TabIndex = 116;
+            // 
+            // guardarBTN
+            // 
+            this.guardarBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guardarBTN.Location = new System.Drawing.Point(14, 13);
+            this.guardarBTN.Name = "guardarBTN";
+            this.guardarBTN.Size = new System.Drawing.Size(94, 34);
+            this.guardarBTN.TabIndex = 118;
+            this.guardarBTN.Text = "Guardar";
+            this.guardarBTN.UseVisualStyleBackColor = true;
+            this.guardarBTN.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // panel2
             // 
@@ -1342,15 +1361,17 @@
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoContratoToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
+            this.archivoToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // formatosToolStripMenuItem
@@ -1358,8 +1379,9 @@
             this.formatosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cONTRATODEARRENDAMIENTODEUNBIENINMUEBLESOMETIDOACOPROPIEDADYDESTINADOAVIVIENDAURBANAToolStripMenuItem});
             this.formatosToolStripMenuItem.Name = "formatosToolStripMenuItem";
-            this.formatosToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
-            this.formatosToolStripMenuItem.Text = "Formatos";
+            this.formatosToolStripMenuItem.Size = new System.Drawing.Size(131, 24);
+            this.formatosToolStripMenuItem.Text = "Cargar formatos";
+            this.formatosToolStripMenuItem.Click += new System.EventHandler(this.formatosToolStripMenuItem_Click);
             // 
             // cONTRATODEARRENDAMIENTODEUNBIENINMUEBLESOMETIDOACOPROPIEDADYDESTINADOAVIVIENDAURBANAToolStripMenuItem
             // 
@@ -1408,26 +1430,19 @@
             this.inmuebleDestinadoAViviendaToolStripMenuItem.Size = new System.Drawing.Size(641, 26);
             this.inmuebleDestinadoAViviendaToolStripMenuItem.Text = "Inmueble  destinado a Vivienda";
             // 
-            // button2
+            // nuevoContratoToolStripMenuItem
             // 
-            this.button2.Location = new System.Drawing.Point(973, 320);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(223, 152);
-            this.button2.TabIndex = 118;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.nuevoContratoToolStripMenuItem.Name = "nuevoContratoToolStripMenuItem";
+            this.nuevoContratoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nuevoContratoToolStripMenuItem.Text = "Nuevo contrato";
+            this.nuevoContratoToolStripMenuItem.Click += new System.EventHandler(this.nuevoContratoToolStripMenuItem_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1457, 713);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.datosContratoTab);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.richTextBox1);
@@ -1449,13 +1464,14 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.contratoGroup.ResumeLayout(false);
             this.contratoGroup.PerformLayout();
             this.arrendatarioGroup.ResumeLayout(false);
             this.arrendatarioGroup.PerformLayout();
             this.propietarioGroup.ResumeLayout(false);
             this.propietarioGroup.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.datosContratoTab.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -1469,10 +1485,8 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button actualizarBTN;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
@@ -1558,7 +1572,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl datosContratoTab;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox administracionTXT;
@@ -1591,9 +1605,12 @@
         private System.Windows.Forms.ToolStripMenuItem inmuebleDestinadoAViviendaToolStripMenuItem;
         private System.Windows.Forms.ComboBox vigenciaTXT;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button guardarBTN;
         private System.Windows.Forms.DateTimePicker fechaIniTXT;
         private System.Windows.Forms.DateTimePicker fechaFinTXT;
+        private System.Windows.Forms.ComboBox listaContratosBox;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ToolStripMenuItem nuevoContratoToolStripMenuItem;
     }
 }
 
