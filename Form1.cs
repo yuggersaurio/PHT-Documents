@@ -21,8 +21,89 @@ namespace Exporter
             InitializeComponent();
         }
 
-    
 
+        public void generarWord()
+        {
+
+
+            //ESCRIBO ARCHIVO EN WORD
+            var rutaArchivo = @"\\servidor1\Fotos\FOTOS_FIRMA_DE_CONTRATOS\CTO_" + contratoTXT.Text + @"\" + @"DOCUMENTOS\" + contratoTXT.Text + ".rtf";
+            System.IO.File.WriteAllText(rutaArchivo, richTextBox1.Rtf);
+            //------------------------------------
+
+            //ABRO AUTOMATICAMENTE ARCHIVO GENERADO
+            Process.Start(rutaArchivo);
+            //------------------------------------
+
+
+        }
+
+        public void vistaPrevia(){
+
+            //REALIZO REMPLAZO DE VARIABLES EN VISTA PREVIA
+
+            richTextBox1.SelectAll();
+
+            string[] textArray = richTextBox1.SelectedText.Split(new char[] { '\n' });
+
+            foreach (string strText in textArray)
+            {
+                if (!string.IsNullOrEmpty(strText))
+
+
+                    richTextBox1.Rtf = richTextBox1.Rtf.Replace("**contratoTXT**", contratoTXT.Text);
+                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**ciudadTXT**", ciudadTXT.Text);
+                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**destinoTXT**", destinoTXT.Text);
+                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionTXT**", direccionTXT.Text);
+                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**vigenciaTXT**", vigenciaTXT.Text);
+                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**copiasTXT**", copiasTXT.Text);
+
+
+                //LLAMAMOS FUNCION PARA FORMATEAR CANON Y ADMIN Y REGRESAR LETRAS
+                canonAdminLetrasFn(canonTXT.Text, "canon", 12);
+                canonAdminLetrasFn(administracionTXT.Text, "admin", 12);
+                //------------------------------------------
+
+                //LLAMAMOS FUNCION PARA FORMATEAR ID TERCEROS
+                string[] arr = new string[6];
+                arr[0] = idArrendatarioTXT.Text;
+                arr[1] = idPropietarioTXT.Text;
+                arr[2] = idCoarrendatario1TXT.Text;
+                arr[3] = idCoarrendatario2TXT.Text;
+                arr[4] = idCoarrendatario3TXT.Text;
+                arr[5] = idCoarrendatario4TXT.Text;
+
+                var tercero = idArrendatarioTXT.Text;
+                var tipoTercero = "arrendatario";
+                terceroFn(arr, tipoTercero);
+
+                //------------------------------------------
+
+
+                //FECHAS DE INICIO Y FIN EN LETRAS
+                string fechaInicio = fechaIniTXT.Text;
+                string fechaFin = fechaFinTXT.Text;
+
+                fechaFin = fechaFinTXT.Text;
+                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**fechaIniTXT**", fechaInicio.Humanize(LetterCasing.AllCaps));
+                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**fechaFinTXT**", fechaFin.Humanize(LetterCasing.AllCaps));
+
+                //------------------------------------------
+
+
+
+
+
+
+
+
+
+            }
+
+
+            //------------------------------------FIN DE GENERAR REMPLAZO VISTA PREVIA
+
+        }
         private void canonAdminLetrasFn(string numero, string tipo, int vigencia) //FUNCION QUE FORMATEA VALORES DE CANON Y ADMIN, CALCULA CUANTIA Y DEVUELVE VALORES EN LETRAS E IMPRIME RESULTADO EN FORMATO
         {
             int numeroInteger;
@@ -53,60 +134,115 @@ namespace Exporter
 
            
         }
-        public void limpiarCampos()
+
+        public void cargarFormato(string tipoFormato)
+        {
+            int i;
+           for(i=0 ; i<=1; i++) {
+                //TRAIGO EL FORMATO CORRESPONDIENTE
+
+            string URL = "";
+            object readOnly = true;
+            object visible = true;
+            object save = false;
+                if (i == 0) { URL = @"\\servidor1\sistemas\PROYECTOS\Exporter\Formatos\formato1Arren.docx"; } else 
+                            { URL = @"\\servidor1\sistemas\PROYECTOS\Exporter\Formatos\formato1Prop.docx"; }
+            object fileName = URL;
+            object missing = Type.Missing;
+            object newTemplate = false;
+            object docType = 0;
+            Microsoft.Office.Interop.Word._Document oDoc = null;
+            Microsoft.Office.Interop.Word._Application oWord = new Microsoft.Office.Interop.Word.Application() { Visible = false };
+            oDoc = oWord.Documents.Open(
+                    ref fileName, ref missing, ref readOnly, ref missing,
+                    ref missing, ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing, ref visible,
+                    ref missing, ref missing, ref missing, ref missing);
+            oDoc.ActiveWindow.Selection.WholeStory();
+            oDoc.ActiveWindow.Selection.Copy();
+            IDataObject data = Clipboard.GetDataObject();
+                if (i == 0) { richTextBox1.Rtf = data.GetData(DataFormats.Rtf).ToString(); } else { richTextBox2.Rtf = data.GetData(DataFormats.Rtf).ToString(); }
+            
+            oWord.Quit(ref missing, ref missing, ref missing);
+
+
+            };
+
+            //-----------------------FIN DE TRAER CONTRATO
+
+
+            //DESHABILITO LO QUE NO SE NECESITA
+            // propietarioGroup.Enabled = false;
+            //----------------------------
+
+            //COPIAS POR DEFECTO
+            copiasTXT.SelectedIndex = 3;
+
+            //VIGENCIA POR DEFECTO
+            vigenciaTXT.SelectedIndex = 1;
+
+            //CAMBIO DESTINO
+            destinoTXT.Text = "Vivienda";
+
+
+
+
+
+        }
+
+
+        public void limpiarCampos() // LIMPIO LOS TEXTBOX
         {
 
-            contratoTXT.Text = "";
-            direccionTXT.Text = "";
-            ciudadTXT.Text = "";
-            fechaIniTXT.Text = "";
-            fechaFinTXT.Text = "";
-            canonTXT.Text = "";
-            administracionTXT.Text = "";
-            destinoTXT.Text = "";
-            vigenciaTXT.Text = "";
+            TextBox[] arrText = new TextBox[] {    
+            contratoTXT,
+            direccionTXT,
+            ciudadTXT,                      
+            canonTXT,
+            administracionTXT,
+            destinoTXT,
+            nombrePropietarioTXT,
+            idPropietarioTXT,
+            telefonoPropietarioTXT,
+            celularPropietarioTXT,
+            emailPropietarioTXT,
+            direccionPropietarioTXT,
+            nombreArrendatarioTXT,
+            idArrendatarioTXT,
+            telefonoArrendatarioTXT,
+            celularArrendatarioTXT,
+            emailArrendatarioTXT,
+            direccionArrendatarioTXT,
+            nombreCoarrendatario1TXT,
+            idCoarrendatario1TXT,
+            telefonoCoarrendatario1TXT,
+            celularCoarrendatario1TXT,
+            emailCoarrendatario1TXT,
+            direccionCoarrendatario1TXT,
+             nombreCoarrendatario2TXT,
+            idCoarrendatario2TXT,
+            telefonoCoarrendatario2TXT,
+            celularCoarrendatario2TXT,
+            emailCoarrendatario2TXT,
+            direccionCoarrendatario2TXT,
+            nombreCoarrendatario3TXT,
+            idCoarrendatario3TXT,
+            telefonoCoarrendatario3TXT,
+            celularCoarrendatario3TXT,
+            emailCoarrendatario3TXT,
+            direccionCoarrendatario3TXT,
+            nombreCoarrendatario4TXT,
+            idCoarrendatario4TXT,
+            telefonoCoarrendatario4TXT,
+            celularCoarrendatario4TXT,
+            emailCoarrendatario4TXT,
+            direccionCoarrendatario4TXT  };  
 
-            nombrePropietarioTXT.Text = "";
-            idPropietarioTXT.Text = "";
-            telefonoPropietarioTXT.Text = "";
-            celularPropietarioTXT.Text = "";
-            emailPropietarioTXT.Text = "";
-            direccionPropietarioTXT.Text = "";
+            for (int i = 0, len = arrText.Length; i < len; i++)  {             
+               arrText[i].Text = "";
+                          }
 
-            nombreArrendatarioTXT.Text = "";
-            idArrendatarioTXT.Text = "";
-            telefonoArrendatarioTXT.Text = "";
-            celularArrendatarioTXT.Text = "";
-            emailArrendatarioTXT.Text = "";
-            direccionArrendatarioTXT.Text = "";
 
-            nombreCoarrendatario1TXT.Text = "";
-            idCoarrendatario1TXT.Text = "";
-            telefonoCoarrendatario1TXT.Text = "";
-            celularCoarrendatario1TXT.Text = "";
-            emailCoarrendatario1TXT.Text = "";
-            direccionCoarrendatario1TXT.Text = "";
-
-            nombreCoarrendatario2TXT.Text = "";
-            idCoarrendatario2TXT.Text = "";
-            telefonoCoarrendatario2TXT.Text = "";
-            celularCoarrendatario2TXT.Text = "";
-            emailCoarrendatario2TXT.Text = "";
-            direccionCoarrendatario2TXT.Text = "";
-
-            nombreCoarrendatario3TXT.Text = "";
-            idCoarrendatario3TXT.Text = "";
-            telefonoCoarrendatario3TXT.Text = "";
-            celularCoarrendatario3TXT.Text = "";
-            emailCoarrendatario3TXT.Text = "";
-            direccionCoarrendatario3TXT.Text = "";
-
-            nombreCoarrendatario4TXT.Text = "";
-            idCoarrendatario4TXT.Text = "";
-            telefonoCoarrendatario4TXT.Text = "";
-            celularCoarrendatario4TXT.Text = "";
-            emailCoarrendatario4TXT.Text = "";
-            direccionCoarrendatario4TXT.Text = "";
         }
 
 
@@ -123,6 +259,7 @@ namespace Exporter
             while (i < respuesta.Count)
             {
                 listaContratosBox.Items.Add(respuesta[i].contratoTXTdb.ToString());
+                
                 i++;
             }
 
@@ -284,18 +421,36 @@ namespace Exporter
                     case 2:
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario1TXT**", terceroFormateado);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario1TXT**", nombreCoarrendatario1TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoCoarrendatario1TXT**", telefonoCoarrendatario1TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularCoarrendatario1TXT**", celularCoarrendatario1TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionCoarrendatario1TXT**", direccionCoarrendatario1TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailCoarrendatario1TXT**", emailCoarrendatario1TXT.Text);
                         break;
                     case 3:
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario2TXT**", terceroFormateado);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario2TXT**", nombreCoarrendatario2TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoCoarrendatario2TXT**", telefonoCoarrendatario2TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularCoarrendatario2TXT**", celularCoarrendatario2TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionCoarrendatario2TXT**", direccionCoarrendatario2TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailCoarrendatario2TXT**", emailCoarrendatario2TXT.Text);
                         break;
                     case 4:
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario3TXT**", terceroFormateado);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario3TXT**", nombreCoarrendatario3TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoCoarrendatario3TXT**", telefonoCoarrendatario3TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularCoarrendatario3TXT**", celularCoarrendatario3TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionCoarrendatario3TXT**", direccionCoarrendatario3TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailCoarrendatario3TXT**", emailCoarrendatario3TXT.Text);
+
                         break;
                     case 5:
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario4TXT**", terceroFormateado);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario4TXT**", nombreCoarrendatario4TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoCoarrendatario4TXT**", telefonoCoarrendatario4TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularCoarrendatario4TXT**", celularCoarrendatario4TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionCoarrendatario4TXT**", direccionCoarrendatario4TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailCoarrendatario4TXT**", emailCoarrendatario4TXT.Text);
+
                         break;
                     
                 }
@@ -376,134 +531,12 @@ namespace Exporter
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //REALIZO REMPLAZO DE VARIABLES EN VISTA PREVIA
-
-            richTextBox1.SelectAll();
-
-            string[] textArray = richTextBox1.SelectedText.Split(new char[] { '\n' });
-
-            foreach (string strText in textArray)
-            {
-                if (!string.IsNullOrEmpty(strText))
-                
-                                    
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**contratoTXT**", contratoTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**ciudadTXT**", ciudadTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**destinoTXT**", destinoTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionTXT**", direccionTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**vigenciaTXT**", vigenciaTXT.Text);
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**copiasTXT**", copiasTXT.Text);
-
-
-                //LLAMAMOS FUNCION PARA FORMATEAR CANON Y ADMIN Y REGRESAR LETRAS
-                canonAdminLetrasFn(canonTXT.Text, "canon", 12);
-                canonAdminLetrasFn(administracionTXT.Text, "admin", 12);
-                //------------------------------------------
-
-                //LLAMAMOS FUNCION PARA FORMATEAR ID TERCEROS
-                string[] arr = new string[6];
-                arr[0] = idArrendatarioTXT.Text;
-                arr[1] = idPropietarioTXT.Text;
-                arr[2] = idCoarrendatario1TXT.Text;
-                arr[3] = idCoarrendatario2TXT.Text;
-                arr[4] = idCoarrendatario3TXT.Text;
-                arr[5] = idCoarrendatario4TXT.Text;
-
-                var tercero = idArrendatarioTXT.Text;
-                var tipoTercero = "arrendatario";
-                terceroFn(arr, tipoTercero);
-
-                //------------------------------------------
-
-
-                //FECHAS DE INICIO Y FIN EN LETRAS
-                string fechaInicio = fechaIniTXT.Text;
-                string fechaFin = fechaFinTXT.Text;
-                
-                fechaFin = fechaFinTXT.Text;
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**fechaIniTXT**", fechaInicio.Humanize(LetterCasing.AllCaps));
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**fechaFinTXT**", fechaFin.Humanize(LetterCasing.AllCaps));
-
-                //------------------------------------------
-
-
-
-
-
-
-                //CONVERTIMOS DE STRING A INT EL VALOR DEL CANON Y EL ADMIN PARA USAR EL HUMANIZER DE NUMEROS A LETRAS
-                /*int canonInteger;
-                int adminInteger;
-                int.TryParse(administracionTXT.Text, out adminInteger);
-                int.TryParse(canonTXT.Text, out canonInteger);*/
-                //-------------FINALIZA CONVERSION NUMERO A TEXTO
-
-
-                //GENERAMOS VALOR DE CANON DEL TEXTBOX Y LO PASO A NUMERO MONEDA Y QUITAMOS DECIMALES
-                /*
-                string canonTXTFormato = string.Format(CultureInfo.CreateSpecificCulture("es-CO"), "{00:C}", double.Parse(canonTXT.Text));
-                canonTXTFormato = canonTXTFormato.Substring(0, canonTXTFormato.Length - 3);
-                */
-                ///////////------------
-
-
-
-                //CONVERTIMOS DE STRING A INT EL VALOR DEL ADMIN
-
-
-
-                //-------------FINALIZA CONVERSION NUMERO A TEXTO
-
-
-                //GENERAMOS VALOR DE ADMIN DEL TEXTBOX Y LO PASO A NUMERO MONEDA Y QUITAMOS DECIMALES
-
-                /*
-                string adminTXTFormato = string.Format(CultureInfo.CreateSpecificCulture("es-CO"), "{00:C}", double.Parse(administracionTXT.Text));
-                adminTXTFormato = adminTXTFormato.Substring(0, adminTXTFormato.Length - 3);
-                */
-
-                ///////////------------
-
-
-
-                //CALCULAMOS LA CUANTIA = CANON X VIGENCIA
-                /*
-                int vigenciaInteger;
-                int.TryParse(vigenciaTXT.Text, out vigenciaInteger);
-                int calculoCuantia = canonInteger * vigenciaInteger;
-                string calculoCuantiaStr = string.Format(CultureInfo.CreateSpecificCulture("es-CO"), "{00:C}", double.Parse(calculoCuantia.ToString())); //<-- VOLVEMOS EN MILES
-                calculoCuantiaStr = calculoCuantiaStr.Substring(0, calculoCuantiaStr.Length - 3); //<--- QUITAMOS DECIMALES
-                */
-
-                //-------------FINALIZA CALCULO CUANTIA
-
-
-                //GENERAMOS VALOR DE CANON DE LOS TERCEROS TEXTBOX Y LO PASO A NUMERO  Y QUITAMOS DECIMALES
-
-                /*
-                 * int idArrendatarioInteger;
-                int.TryParse(idArrendatarioTXT.Text, out idArrendatarioInteger);
-                string usFormated = idArrendatarioInteger.ToString("N", new CultureInfo("es-CL"));
-                calculoCuantiaStr = calculoCuantiaStr.Substring(0, calculoCuantiaStr.Length - 3);
-                */
-
-                ///////////------------
-
-                // richTextBox1.Rtf = richTextBox1.Rtf.Replace("**cuantiaTXT**", "( " + calculoCuantiaStr + " ) " + (calculoCuantia.ToWords()).Humanize(LetterCasing.AllCaps) + " PESOS MCTE") ;
-                // richTextBox1.Rtf = richTextBox1.Rtf.Replace("**canonTXT**", "( " + canonTXTFormato + " ) " + (canonInteger.ToWords()).Humanize(LetterCasing.AllCaps) + " PESOS MCTE");
-                //richTextBox1.Rtf = richTextBox1.Rtf.Replace("**administracionTXT**", "( " + adminTXTFormato + " ) " + (adminInteger.ToWords()).Humanize(LetterCasing.AllCaps) + " PESOS MCTE");
-
-
-
-            }
-
-
-            //------------------------------------FIN DE GENERAR REMPLAZO VISTA PREVIA
+           
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            guardarContrato("actualizar","formato1");
+            
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -514,18 +547,6 @@ namespace Exporter
 
         private void button6_Click(object sender, EventArgs e)
         {
-
-
-
-
-            //ESCRIBO ARCHIVO EN WORD
-            var rutaArchivo = @"\\servidor1\Fotos\FOTOS_FIRMA_DE_CONTRATOS\CTO_" + contratoTXT.Text + @"\" + @"DOCUMENTOS\" + contratoTXT.Text + ".rtf";
-            System.IO.File.WriteAllText( rutaArchivo, richTextBox1.Rtf);
-            //------------------------------------
-
-            //ABRO AUTOMATICAMENTE ARCHIVO GENERADO
-            Process.Start(rutaArchivo);
-            //------------------------------------
 
         }
 
@@ -595,47 +616,7 @@ namespace Exporter
 
         private void cONTRATODEARRENDAMIENTODEUNBIENINMUEBLESOMETIDOACOPROPIEDADYDESTINADOAVIVIENDAURBANAPRUEBAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //TRAIGO EL FORMATO CORRESPONDIENTE
-            
-            object readOnly = true;
-            object visible = true;
-            object save = false;
-            object fileName = @"\\servidor1\sistemas\PROYECTOS\Exporter\Formatos\formato1.docx";
-            object missing = Type.Missing;
-            object newTemplate = false;
-            object docType = 0;
-            Microsoft.Office.Interop.Word._Document oDoc = null;
-            Microsoft.Office.Interop.Word._Application oWord = new Microsoft.Office.Interop.Word.Application() { Visible = false };
-            oDoc = oWord.Documents.Open(
-                    ref fileName, ref missing, ref readOnly, ref missing,
-                    ref missing, ref missing, ref missing, ref missing,
-                    ref missing, ref missing, ref missing, ref visible,
-                    ref missing, ref missing, ref missing, ref missing);
-            oDoc.ActiveWindow.Selection.WholeStory();
-            oDoc.ActiveWindow.Selection.Copy();
-            IDataObject data = Clipboard.GetDataObject();
-            richTextBox1.Rtf = data.GetData(DataFormats.Rtf).ToString();
-            oWord.Quit(ref missing, ref missing, ref missing);
-
-            //-----------------------FIN DE TRAER CONTRATO
-
-
-            //DESHABILITO LO QUE NO SE NECESITA
-           // propietarioGroup.Enabled = false;
-            //----------------------------
-
-            //COPIAS POR DEFECTO
-            copiasTXT.SelectedIndex = 3;
-
-            //VIGENCIA POR DEFECTO
-            vigenciaTXT.SelectedIndex = 1;
-
-            //CAMBIO DESTINO
-            destinoTXT.Text = "Vivienda";
-
-
-            
-
+            cargarFormato("formato1");
 
         }
 
@@ -674,9 +655,7 @@ namespace Exporter
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            guardarContrato("insertar","formato1");
-            
-            listarContratos();
+          
 
 
 
@@ -943,9 +922,11 @@ namespace Exporter
         private void listaContratosBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Console.WriteLine("seleccionado es " + listaContratosBox.Text);
-            actualizarBTN.Enabled = true;
-            guardarBTN.Text = "Duplicar";
+           // menuStrip1.Items().Enabled = true;
+            //guardarBTN.Text = "Duplicar";
             traerInfoApi(listaContratosBox.Text);
+            GuardarDuplicarToolStripMenuItem.Text = "Duplicar cómo contrato nuevo";
+            GuardartoolStripMenuItem.Enabled = true;
         }
 
         private void nuevoContratoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -966,9 +947,79 @@ namespace Exporter
         private void nuevoContratoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             datosContratoTab.Enabled = true;
-            guardarBTN.Enabled = true;
+            //guardarBTN.Enabled = true;
+            //guardarBTN.Text = "Guardar";
             limpiarCampos();
+            GuardarDuplicarToolStripMenuItem.Enabled = true;
+            GuardartoolStripMenuItem.Enabled = false;
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+           
+           
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
             
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            guardarContrato("actualizar", "formato1");
+            listarContratos();
+        }
+
+        private void generarVistaPreviaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vistaPrevia();
+        }
+
+        private void generarContratosEnWORDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            generarWord();
+        }
+
+        private void duplicarComoContratoNuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            guardarContrato("insertar", "formato1");
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void propietarioGroup_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void arrendatarioGroup_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label65_Click(object sender, EventArgs e)
+        {
 
         }
     }
