@@ -34,7 +34,21 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.idCoarrendatario4TXT = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.direccionCoarrendatario4TXT = new System.Windows.Forms.TextBox();
@@ -43,16 +57,15 @@
             this.label17 = new System.Windows.Forms.Label();
             this.nombreCoarrendatario4TXT = new System.Windows.Forms.TextBox();
             this.telefonoCoarrendatario4TXT = new System.Windows.Forms.TextBox();
-            this.idCoarrendatario4TXT = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.idCoarrendatario3TXT = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.direccionCoarrendatario3TXT = new System.Windows.Forms.TextBox();
             this.nombreCoarrendatario3TXT = new System.Windows.Forms.TextBox();
-            this.idCoarrendatario3TXT = new System.Windows.Forms.TextBox();
             this.emailCoarrendatario3TXT = new System.Windows.Forms.TextBox();
             this.celularCoarrendatario3TXT = new System.Windows.Forms.TextBox();
             this.telefonoCoarrendatario3TXT = new System.Windows.Forms.TextBox();
@@ -61,10 +74,10 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.idCoarrendatario2TXT = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.nombreCoarrendatario2TXT = new System.Windows.Forms.TextBox();
             this.direccionCoarrendatario2TXT = new System.Windows.Forms.TextBox();
-            this.idCoarrendatario2TXT = new System.Windows.Forms.TextBox();
             this.emailCoarrendatario2TXT = new System.Windows.Forms.TextBox();
             this.telefonoCoarrendatario2TXT = new System.Windows.Forms.TextBox();
             this.celularCoarrendatario2TXT = new System.Windows.Forms.TextBox();
@@ -87,9 +100,29 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label20 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label65 = new System.Windows.Forms.Label();
             this.listaContratosBox = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.nombreEncargadoTXT = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.idEncargadoTXT = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.telefonoEncargadoTXT = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.celularEncargadoTXT = new System.Windows.Forms.TextBox();
+            this.direccionEncargadoTXT = new System.Windows.Forms.TextBox();
+            this.emailEncargadoTXT = new System.Windows.Forms.TextBox();
             this.contratoGroup = new System.Windows.Forms.GroupBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.servicioCTXT = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.clausulaTXT = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
             this.fechaFinTXT = new System.Windows.Forms.DateTimePicker();
             this.fechaIniTXT = new System.Windows.Forms.DateTimePicker();
             this.label49 = new System.Windows.Forms.Label();
@@ -138,9 +171,24 @@
             this.label18 = new System.Windows.Forms.Label();
             this.direccionPropietarioTXT = new System.Windows.Forms.TextBox();
             this.datosContratoTab = new System.Windows.Forms.TabControl();
+            this.Vista_previa = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label46 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label50 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoContratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GuardarDuplicarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.GuardartoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarVistaPreviaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarContratosEnWORDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONTRATODEARRENDAMIENTODEUNBIENINMUEBLESOMETIDOACOPROPIEDADYDESTINADOAVIVIENDAURBANAPRUEBAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -148,79 +196,51 @@
             this.inmuebleSometidoACopropiedadYDestinadoALocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inmuebleSometidoACopropiedadYDestinadoAViviendaDirectoConPropietarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inmuebleDestinadoALocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.GuardartoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generarVistaPreviaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generarContratosEnWORDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.GuardarDuplicarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.clausulaTXT = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.servicioCTXT = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.nombreEncargadoTXT = new System.Windows.Forms.TextBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.idEncargadoTXT = new System.Windows.Forms.TextBox();
-            this.label57 = new System.Windows.Forms.Label();
-            this.telefonoEncargadoTXT = new System.Windows.Forms.TextBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.celularEncargadoTXT = new System.Windows.Forms.TextBox();
-            this.direccionEncargadoTXT = new System.Windows.Forms.TextBox();
-            this.emailEncargadoTXT = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label65 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.contratoGroup.SuspendLayout();
             this.arrendatarioGroup.SuspendLayout();
             this.propietarioGroup.SuspendLayout();
             this.datosContratoTab.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.Vista_previa.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(13, 43);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 44);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.richTextBox1.Size = new System.Drawing.Size(1307, 248);
+            this.richTextBox1.Size = new System.Drawing.Size(1331, 485);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -256,9 +276,132 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1348, 628);
+            this.tabPage4.Size = new System.Drawing.Size(1348, 582);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Coarrendatarios";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label59);
+            this.groupBox2.Controls.Add(this.label60);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.label61);
+            this.groupBox2.Controls.Add(this.label62);
+            this.groupBox2.Controls.Add(this.label63);
+            this.groupBox2.Controls.Add(this.label64);
+            this.groupBox2.Location = new System.Drawing.Point(10, 393);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(652, 176);
+            this.groupBox2.TabIndex = 102;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Coarrendatario 5";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(445, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(190, 22);
+            this.textBox1.TabIndex = 36;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(353, 35);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(85, 16);
+            this.label59.TabIndex = 98;
+            this.label59.Text = "Identificación";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(22, 41);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(115, 16);
+            this.label60.TabIndex = 97;
+            this.label60.Text = "Nombre completo";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(445, 120);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(190, 22);
+            this.textBox2.TabIndex = 40;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(143, 38);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(190, 22);
+            this.textBox3.TabIndex = 35;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(143, 126);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(190, 22);
+            this.textBox4.TabIndex = 39;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(444, 75);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(190, 22);
+            this.textBox5.TabIndex = 38;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(142, 81);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(190, 22);
+            this.textBox6.TabIndex = 37;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(375, 126);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(64, 16);
+            this.label61.TabIndex = 94;
+            this.label61.Text = "Direccion";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(95, 129);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(41, 16);
+            this.label62.TabIndex = 78;
+            this.label62.Text = "Email";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(389, 81);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(49, 16);
+            this.label63.TabIndex = 76;
+            this.label63.Text = "Celular";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(75, 84);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(61, 16);
+            this.label64.TabIndex = 74;
+            this.label64.Text = "Telefono";
             // 
             // groupBox7
             // 
@@ -274,12 +417,21 @@
             this.groupBox7.Controls.Add(this.label36);
             this.groupBox7.Controls.Add(this.label37);
             this.groupBox7.Controls.Add(this.label38);
-            this.groupBox7.Location = new System.Drawing.Point(684, 226);
+            this.groupBox7.Location = new System.Drawing.Point(684, 210);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(652, 176);
             this.groupBox7.TabIndex = 102;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Coarrendatario 4";
+            // 
+            // idCoarrendatario4TXT
+            // 
+            this.idCoarrendatario4TXT.Location = new System.Drawing.Point(445, 32);
+            this.idCoarrendatario4TXT.Name = "idCoarrendatario4TXT";
+            this.idCoarrendatario4TXT.Size = new System.Drawing.Size(190, 22);
+            this.idCoarrendatario4TXT.TabIndex = 42;
+            this.idCoarrendatario4TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.idCoarrendatario4TXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idCoarrendatario4TXT_KeyPress);
             // 
             // label16
             // 
@@ -350,15 +502,6 @@
             this.telefonoCoarrendatario4TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.telefonoCoarrendatario4TXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefonoCoarrendatario4TXT_KeyPress);
             // 
-            // idCoarrendatario4TXT
-            // 
-            this.idCoarrendatario4TXT.Location = new System.Drawing.Point(445, 32);
-            this.idCoarrendatario4TXT.Name = "idCoarrendatario4TXT";
-            this.idCoarrendatario4TXT.Size = new System.Drawing.Size(190, 22);
-            this.idCoarrendatario4TXT.TabIndex = 42;
-            this.idCoarrendatario4TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.idCoarrendatario4TXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idCoarrendatario4TXT_KeyPress);
-            // 
             // label36
             // 
             this.label36.AutoSize = true;
@@ -400,12 +543,21 @@
             this.groupBox6.Controls.Add(this.label33);
             this.groupBox6.Controls.Add(this.label34);
             this.groupBox6.Controls.Add(this.label35);
-            this.groupBox6.Location = new System.Drawing.Point(10, 226);
+            this.groupBox6.Location = new System.Drawing.Point(10, 210);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(652, 176);
             this.groupBox6.TabIndex = 101;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Coarrendatario 3";
+            // 
+            // idCoarrendatario3TXT
+            // 
+            this.idCoarrendatario3TXT.Location = new System.Drawing.Point(445, 32);
+            this.idCoarrendatario3TXT.Name = "idCoarrendatario3TXT";
+            this.idCoarrendatario3TXT.Size = new System.Drawing.Size(190, 22);
+            this.idCoarrendatario3TXT.TabIndex = 36;
+            this.idCoarrendatario3TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.idCoarrendatario3TXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idCoarrendatario3TXT_KeyPress);
             // 
             // label9
             // 
@@ -440,15 +592,6 @@
             this.nombreCoarrendatario3TXT.Size = new System.Drawing.Size(190, 22);
             this.nombreCoarrendatario3TXT.TabIndex = 35;
             this.nombreCoarrendatario3TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // idCoarrendatario3TXT
-            // 
-            this.idCoarrendatario3TXT.Location = new System.Drawing.Point(445, 32);
-            this.idCoarrendatario3TXT.Name = "idCoarrendatario3TXT";
-            this.idCoarrendatario3TXT.Size = new System.Drawing.Size(190, 22);
-            this.idCoarrendatario3TXT.TabIndex = 36;
-            this.idCoarrendatario3TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.idCoarrendatario3TXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idCoarrendatario3TXT_KeyPress);
             // 
             // emailCoarrendatario3TXT
             // 
@@ -536,6 +679,15 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Coarrendatario 2";
             // 
+            // idCoarrendatario2TXT
+            // 
+            this.idCoarrendatario2TXT.Location = new System.Drawing.Point(444, 35);
+            this.idCoarrendatario2TXT.Name = "idCoarrendatario2TXT";
+            this.idCoarrendatario2TXT.Size = new System.Drawing.Size(190, 22);
+            this.idCoarrendatario2TXT.TabIndex = 31;
+            this.idCoarrendatario2TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.idCoarrendatario2TXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idCoarrendatario2TXT_KeyPress);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -560,15 +712,6 @@
             this.direccionCoarrendatario2TXT.Size = new System.Drawing.Size(190, 22);
             this.direccionCoarrendatario2TXT.TabIndex = 34;
             this.direccionCoarrendatario2TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // idCoarrendatario2TXT
-            // 
-            this.idCoarrendatario2TXT.Location = new System.Drawing.Point(444, 35);
-            this.idCoarrendatario2TXT.Name = "idCoarrendatario2TXT";
-            this.idCoarrendatario2TXT.Size = new System.Drawing.Size(190, 22);
-            this.idCoarrendatario2TXT.TabIndex = 31;
-            this.idCoarrendatario2TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.idCoarrendatario2TXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idCoarrendatario2TXT_KeyPress);
             // 
             // emailCoarrendatario2TXT
             // 
@@ -774,43 +917,177 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.groupBox8);
             this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.richTextBox3);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.label20);
             this.tabPage1.Controls.Add(this.contratoGroup);
             this.tabPage1.Controls.Add(this.arrendatarioGroup);
             this.tabPage1.Controls.Add(this.propietarioGroup);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1348, 628);
+            this.tabPage1.Size = new System.Drawing.Size(1348, 582);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Contrato";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // label20
+            // groupBox3
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(865, 548);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(179, 16);
-            this.label20.TabIndex = 120;
-            this.label20.Text = "Cargar datos de contrato";
+            this.groupBox3.Controls.Add(this.listaContratosBox);
+            this.groupBox3.Controls.Add(this.label65);
+            this.groupBox3.Location = new System.Drawing.Point(1048, 236);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(280, 47);
+            this.groupBox3.TabIndex = 122;
+            this.groupBox3.TabStop = false;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(14, 17);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(102, 16);
+            this.label65.TabIndex = 111;
+            this.label65.Text = "Cargar contrato:";
+            this.label65.Click += new System.EventHandler(this.label65_Click);
             // 
             // listaContratosBox
             // 
             this.listaContratosBox.FormattingEnabled = true;
-            this.listaContratosBox.Location = new System.Drawing.Point(15, 70);
+            this.listaContratosBox.Location = new System.Drawing.Point(122, 14);
             this.listaContratosBox.Name = "listaContratosBox";
-            this.listaContratosBox.Size = new System.Drawing.Size(153, 24);
+            this.listaContratosBox.Size = new System.Drawing.Size(143, 24);
             this.listaContratosBox.TabIndex = 120;
             this.listaContratosBox.SelectedIndexChanged += new System.EventHandler(this.listaContratosBox_SelectedIndexChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label53);
+            this.groupBox1.Controls.Add(this.label54);
+            this.groupBox1.Controls.Add(this.label55);
+            this.groupBox1.Controls.Add(this.nombreEncargadoTXT);
+            this.groupBox1.Controls.Add(this.label56);
+            this.groupBox1.Controls.Add(this.idEncargadoTXT);
+            this.groupBox1.Controls.Add(this.label57);
+            this.groupBox1.Controls.Add(this.telefonoEncargadoTXT);
+            this.groupBox1.Controls.Add(this.label58);
+            this.groupBox1.Controls.Add(this.celularEncargadoTXT);
+            this.groupBox1.Controls.Add(this.direccionEncargadoTXT);
+            this.groupBox1.Controls.Add(this.emailEncargadoTXT);
+            this.groupBox1.Location = new System.Drawing.Point(701, 237);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(327, 293);
+            this.groupBox1.TabIndex = 114;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos de encargado";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(76, 203);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(41, 16);
+            this.label53.TabIndex = 108;
+            this.label53.Text = "Email";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(9, 34);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(115, 16);
+            this.label54.TabIndex = 100;
+            this.label54.Text = "Nombre completo";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(61, 246);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(64, 16);
+            this.label55.TabIndex = 110;
+            this.label55.Text = "Direccion";
+            // 
+            // nombreEncargadoTXT
+            // 
+            this.nombreEncargadoTXT.Location = new System.Drawing.Point(131, 31);
+            this.nombreEncargadoTXT.Name = "nombreEncargadoTXT";
+            this.nombreEncargadoTXT.Size = new System.Drawing.Size(165, 22);
+            this.nombreEncargadoTXT.TabIndex = 18;
+            this.nombreEncargadoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(76, 157);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(49, 16);
+            this.label56.TabIndex = 106;
+            this.label56.Text = "Celular";
+            // 
+            // idEncargadoTXT
+            // 
+            this.idEncargadoTXT.Location = new System.Drawing.Point(131, 72);
+            this.idEncargadoTXT.Name = "idEncargadoTXT";
+            this.idEncargadoTXT.Size = new System.Drawing.Size(165, 22);
+            this.idEncargadoTXT.TabIndex = 19;
+            this.idEncargadoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(64, 114);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(61, 16);
+            this.label57.TabIndex = 104;
+            this.label57.Text = "Telefono";
+            // 
+            // telefonoEncargadoTXT
+            // 
+            this.telefonoEncargadoTXT.Location = new System.Drawing.Point(131, 111);
+            this.telefonoEncargadoTXT.Name = "telefonoEncargadoTXT";
+            this.telefonoEncargadoTXT.Size = new System.Drawing.Size(165, 22);
+            this.telefonoEncargadoTXT.TabIndex = 20;
+            this.telefonoEncargadoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(40, 72);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(85, 16);
+            this.label58.TabIndex = 102;
+            this.label58.Text = "Identificación";
+            // 
+            // celularEncargadoTXT
+            // 
+            this.celularEncargadoTXT.Location = new System.Drawing.Point(131, 154);
+            this.celularEncargadoTXT.Name = "celularEncargadoTXT";
+            this.celularEncargadoTXT.Size = new System.Drawing.Size(165, 22);
+            this.celularEncargadoTXT.TabIndex = 21;
+            this.celularEncargadoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // direccionEncargadoTXT
+            // 
+            this.direccionEncargadoTXT.Location = new System.Drawing.Point(131, 243);
+            this.direccionEncargadoTXT.Name = "direccionEncargadoTXT";
+            this.direccionEncargadoTXT.Size = new System.Drawing.Size(165, 22);
+            this.direccionEncargadoTXT.TabIndex = 23;
+            this.direccionEncargadoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // emailEncargadoTXT
+            // 
+            this.emailEncargadoTXT.Location = new System.Drawing.Point(131, 200);
+            this.emailEncargadoTXT.Name = "emailEncargadoTXT";
+            this.emailEncargadoTXT.Size = new System.Drawing.Size(165, 22);
+            this.emailEncargadoTXT.TabIndex = 22;
+            this.emailEncargadoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // contratoGroup
             // 
+            this.contratoGroup.Controls.Add(this.label67);
+            this.contratoGroup.Controls.Add(this.label66);
             this.contratoGroup.Controls.Add(this.servicioCTXT);
             this.contratoGroup.Controls.Add(this.label52);
             this.contratoGroup.Controls.Add(this.clausulaTXT);
@@ -843,6 +1120,60 @@
             this.contratoGroup.TabStop = false;
             this.contratoGroup.Text = "Datos de contrato";
             this.contratoGroup.Enter += new System.EventHandler(this.contratoGroup_Enter);
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(1024, 120);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(19, 16);
+            this.label67.TabIndex = 125;
+            this.label67.Text = "%";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(742, 117);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(19, 16);
+            this.label66.TabIndex = 124;
+            this.label66.Text = "%";
+            // 
+            // servicioCTXT
+            // 
+            this.servicioCTXT.Location = new System.Drawing.Point(937, 114);
+            this.servicioCTXT.Name = "servicioCTXT";
+            this.servicioCTXT.Size = new System.Drawing.Size(81, 22);
+            this.servicioCTXT.TabIndex = 122;
+            this.servicioCTXT.Text = "10";
+            this.servicioCTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(779, 117);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(143, 16);
+            this.label52.TabIndex = 123;
+            this.label52.Text = "Servicio de consultoría";
+            // 
+            // clausulaTXT
+            // 
+            this.clausulaTXT.Location = new System.Drawing.Point(663, 114);
+            this.clausulaTXT.Name = "clausulaTXT";
+            this.clausulaTXT.Size = new System.Drawing.Size(73, 22);
+            this.clausulaTXT.TabIndex = 120;
+            this.clausulaTXT.Text = "3.5";
+            this.clausulaTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(497, 117);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(160, 16);
+            this.label51.TabIndex = 121;
+            this.label51.Text = "Clausula de cumplimiento";
             // 
             // fechaFinTXT
             // 
@@ -1063,9 +1394,9 @@
             this.arrendatarioGroup.Controls.Add(this.celularArrendatarioTXT);
             this.arrendatarioGroup.Controls.Add(this.direccionArrendatarioTXT);
             this.arrendatarioGroup.Controls.Add(this.emailArrendatarioTXT);
-            this.arrendatarioGroup.Location = new System.Drawing.Point(349, 205);
+            this.arrendatarioGroup.Location = new System.Drawing.Point(349, 237);
             this.arrendatarioGroup.Name = "arrendatarioGroup";
-            this.arrendatarioGroup.Size = new System.Drawing.Size(378, 293);
+            this.arrendatarioGroup.Size = new System.Drawing.Size(326, 293);
             this.arrendatarioGroup.TabIndex = 113;
             this.arrendatarioGroup.TabStop = false;
             this.arrendatarioGroup.Text = "Datos de arrendatario";
@@ -1193,7 +1524,7 @@
             this.propietarioGroup.Controls.Add(this.emailPropietarioTXT);
             this.propietarioGroup.Controls.Add(this.label18);
             this.propietarioGroup.Controls.Add(this.direccionPropietarioTXT);
-            this.propietarioGroup.Location = new System.Drawing.Point(10, 205);
+            this.propietarioGroup.Location = new System.Drawing.Point(10, 237);
             this.propietarioGroup.Name = "propietarioGroup";
             this.propietarioGroup.Size = new System.Drawing.Size(316, 293);
             this.propietarioGroup.TabIndex = 114;
@@ -1312,12 +1643,111 @@
             // 
             this.datosContratoTab.Controls.Add(this.tabPage1);
             this.datosContratoTab.Controls.Add(this.tabPage4);
-            this.datosContratoTab.Controls.Add(this.tabPage2);
+            this.datosContratoTab.Controls.Add(this.Vista_previa);
             this.datosContratoTab.Location = new System.Drawing.Point(8, 42);
             this.datosContratoTab.Name = "datosContratoTab";
             this.datosContratoTab.SelectedIndex = 0;
-            this.datosContratoTab.Size = new System.Drawing.Size(1356, 657);
+            this.datosContratoTab.Size = new System.Drawing.Size(1356, 611);
             this.datosContratoTab.TabIndex = 97;
+            // 
+            // Vista_previa
+            // 
+            this.Vista_previa.BackColor = System.Drawing.SystemColors.Control;
+            this.Vista_previa.Controls.Add(this.tabControl1);
+            this.Vista_previa.Location = new System.Drawing.Point(4, 25);
+            this.Vista_previa.Name = "Vista_previa";
+            this.Vista_previa.Padding = new System.Windows.Forms.Padding(3);
+            this.Vista_previa.Size = new System.Drawing.Size(1348, 582);
+            this.Vista_previa.TabIndex = 4;
+            this.Vista_previa.Text = "Vista previa";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Location = new System.Drawing.Point(6, 18);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1339, 558);
+            this.tabControl1.TabIndex = 121;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.panel1);
+            this.tabPage3.Controls.Add(this.richTextBox1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1331, 529);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Contrato Arrendatario";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Blue;
+            this.panel1.Controls.Add(this.label46);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1354, 41);
+            this.panel1.TabIndex = 1;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.BackColor = System.Drawing.Color.Transparent;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.White;
+            this.label46.Location = new System.Drawing.Point(481, 10);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(304, 20);
+            this.label46.TabIndex = 2;
+            this.label46.Text = "Vista previa de contrato de arrendatario";
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage5.Controls.Add(this.panel2);
+            this.tabPage5.Controls.Add(this.richTextBox2);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1331, 529);
+            this.tabPage5.TabIndex = 1;
+            this.tabPage5.Text = "Contrato propietario";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel2.Controls.Add(this.label50);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1354, 41);
+            this.panel2.TabIndex = 119;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.BackColor = System.Drawing.Color.Transparent;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.Color.White;
+            this.label50.Location = new System.Drawing.Point(481, 10);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(293, 20);
+            this.label50.TabIndex = 2;
+            this.label50.Text = "Vista previa de contrato de propietario";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BackColor = System.Drawing.Color.White;
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.Location = new System.Drawing.Point(0, 44);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.richTextBox2.Size = new System.Drawing.Size(1331, 485);
+            this.richTextBox2.TabIndex = 118;
+            this.richTextBox2.Text = "";
             // 
             // menuStrip1
             // 
@@ -1327,7 +1757,7 @@
             this.formatosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1376, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1376, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -1344,7 +1774,7 @@
             this.toolStripSeparator2,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
             this.archivoToolStripMenuItem.Text = "Archivo";
             this.archivoToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
             // 
@@ -1354,6 +1784,46 @@
             this.nuevoContratoToolStripMenuItem.Size = new System.Drawing.Size(315, 26);
             this.nuevoContratoToolStripMenuItem.Text = "Nuevo contrato / Limpiar campos";
             this.nuevoContratoToolStripMenuItem.Click += new System.EventHandler(this.nuevoContratoToolStripMenuItem_Click_1);
+            // 
+            // GuardarDuplicarToolStripMenuItem
+            // 
+            this.GuardarDuplicarToolStripMenuItem.Name = "GuardarDuplicarToolStripMenuItem";
+            this.GuardarDuplicarToolStripMenuItem.Size = new System.Drawing.Size(315, 26);
+            this.GuardarDuplicarToolStripMenuItem.Text = "Guardar contrato nuevo";
+            this.GuardarDuplicarToolStripMenuItem.Click += new System.EventHandler(this.duplicarComoContratoNuevoToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(312, 6);
+            // 
+            // GuardartoolStripMenuItem
+            // 
+            this.GuardartoolStripMenuItem.Enabled = false;
+            this.GuardartoolStripMenuItem.Name = "GuardartoolStripMenuItem";
+            this.GuardartoolStripMenuItem.Size = new System.Drawing.Size(315, 26);
+            this.GuardartoolStripMenuItem.Text = "Guardar cambios";
+            this.GuardartoolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // generarVistaPreviaToolStripMenuItem
+            // 
+            this.generarVistaPreviaToolStripMenuItem.Name = "generarVistaPreviaToolStripMenuItem";
+            this.generarVistaPreviaToolStripMenuItem.Size = new System.Drawing.Size(315, 26);
+            this.generarVistaPreviaToolStripMenuItem.Text = "Generar vista previa";
+            this.generarVistaPreviaToolStripMenuItem.Click += new System.EventHandler(this.generarVistaPreviaToolStripMenuItem_Click);
+            // 
+            // generarContratosEnWORDToolStripMenuItem
+            // 
+            this.generarContratosEnWORDToolStripMenuItem.Enabled = false;
+            this.generarContratosEnWORDToolStripMenuItem.Name = "generarContratosEnWORDToolStripMenuItem";
+            this.generarContratosEnWORDToolStripMenuItem.Size = new System.Drawing.Size(315, 26);
+            this.generarContratosEnWORDToolStripMenuItem.Text = "Generar contratos en WORD";
+            this.generarContratosEnWORDToolStripMenuItem.Click += new System.EventHandler(this.generarContratosEnWORDToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(312, 6);
             // 
             // salirToolStripMenuItem
             // 
@@ -1370,7 +1840,7 @@
             this.inmuebleSometidoACopropiedadYDestinadoAViviendaDirectoConPropietarioToolStripMenuItem,
             this.inmuebleDestinadoALocalToolStripMenuItem});
             this.formatosToolStripMenuItem.Name = "formatosToolStripMenuItem";
-            this.formatosToolStripMenuItem.Size = new System.Drawing.Size(131, 24);
+            this.formatosToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
             this.formatosToolStripMenuItem.Text = "Cargar formatos";
             this.formatosToolStripMenuItem.Click += new System.EventHandler(this.formatosToolStripMenuItem_Click);
             // 
@@ -1407,436 +1877,159 @@
             this.inmuebleDestinadoALocalToolStripMenuItem.Size = new System.Drawing.Size(641, 26);
             this.inmuebleDestinadoALocalToolStripMenuItem.Text = "inmueble  destinado a Local";
             // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.Color.White;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Location = new System.Drawing.Point(13, 344);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.richTextBox2.Size = new System.Drawing.Size(1307, 267);
-            this.richTextBox2.TabIndex = 118;
-            this.richTextBox2.Text = "";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Green;
-            this.panel3.Controls.Add(this.label50);
-            this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(13, 7);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1287, 37);
-            this.panel3.TabIndex = 119;
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.BackColor = System.Drawing.Color.Transparent;
-            this.label50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.ForeColor = System.Drawing.Color.White;
-            this.label50.Location = new System.Drawing.Point(500, 10);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(240, 16);
-            this.label50.TabIndex = 98;
-            this.label50.Text = "Vista previa de formato de arrendatario";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.BackColor = System.Drawing.Color.Transparent;
-            this.label46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.Color.White;
-            this.label46.Location = new System.Drawing.Point(500, 11);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(232, 16);
-            this.label46.TabIndex = 98;
-            this.label46.Text = "Vista previa de formato de propietario";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Blue;
-            this.panel2.Controls.Add(this.label46);
-            this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(13, 304);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1287, 37);
-            this.panel2.TabIndex = 120;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Controls.Add(this.richTextBox1);
-            this.tabPage2.Controls.Add(this.richTextBox2);
-            this.tabPage2.Controls.Add(this.panel3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1348, 628);
-            this.tabPage2.TabIndex = 4;
-            this.tabPage2.Text = "Vista previa";
-            // 
-            // GuardartoolStripMenuItem
-            // 
-            this.GuardartoolStripMenuItem.Enabled = false;
-            this.GuardartoolStripMenuItem.Name = "GuardartoolStripMenuItem";
-            this.GuardartoolStripMenuItem.Size = new System.Drawing.Size(315, 26);
-            this.GuardartoolStripMenuItem.Text = "Guardar cambios";
-            this.GuardartoolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // generarVistaPreviaToolStripMenuItem
-            // 
-            this.generarVistaPreviaToolStripMenuItem.Name = "generarVistaPreviaToolStripMenuItem";
-            this.generarVistaPreviaToolStripMenuItem.Size = new System.Drawing.Size(315, 26);
-            this.generarVistaPreviaToolStripMenuItem.Text = "Generar vista previa";
-            this.generarVistaPreviaToolStripMenuItem.Click += new System.EventHandler(this.generarVistaPreviaToolStripMenuItem_Click);
-            // 
-            // generarContratosEnWORDToolStripMenuItem
-            // 
-            this.generarContratosEnWORDToolStripMenuItem.Enabled = false;
-            this.generarContratosEnWORDToolStripMenuItem.Name = "generarContratosEnWORDToolStripMenuItem";
-            this.generarContratosEnWORDToolStripMenuItem.Size = new System.Drawing.Size(315, 26);
-            this.generarContratosEnWORDToolStripMenuItem.Text = "Generar contratos en WORD";
-            this.generarContratosEnWORDToolStripMenuItem.Click += new System.EventHandler(this.generarContratosEnWORDToolStripMenuItem_Click);
-            // 
-            // GuardarDuplicarToolStripMenuItem
-            // 
-            this.GuardarDuplicarToolStripMenuItem.Name = "GuardarDuplicarToolStripMenuItem";
-            this.GuardarDuplicarToolStripMenuItem.Size = new System.Drawing.Size(315, 26);
-            this.GuardarDuplicarToolStripMenuItem.Text = "Guardar contrato nuevo";
-            this.GuardarDuplicarToolStripMenuItem.Click += new System.EventHandler(this.duplicarComoContratoNuevoToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(312, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(312, 6);
-            // 
-            // clausulaTXT
-            // 
-            this.clausulaTXT.Location = new System.Drawing.Point(663, 114);
-            this.clausulaTXT.Name = "clausulaTXT";
-            this.clausulaTXT.Size = new System.Drawing.Size(81, 22);
-            this.clausulaTXT.TabIndex = 120;
-            this.clausulaTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(497, 117);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(160, 16);
-            this.label51.TabIndex = 121;
-            this.label51.Text = "Clausula de cumplimiento";
-            // 
-            // servicioCTXT
-            // 
-            this.servicioCTXT.Location = new System.Drawing.Point(917, 114);
-            this.servicioCTXT.Name = "servicioCTXT";
-            this.servicioCTXT.Size = new System.Drawing.Size(81, 22);
-            this.servicioCTXT.TabIndex = 122;
-            this.servicioCTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(759, 117);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(143, 16);
-            this.label52.TabIndex = 123;
-            this.label52.Text = "Servicio de consultoría";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label53);
-            this.groupBox1.Controls.Add(this.label54);
-            this.groupBox1.Controls.Add(this.label55);
-            this.groupBox1.Controls.Add(this.nombreEncargadoTXT);
-            this.groupBox1.Controls.Add(this.label56);
-            this.groupBox1.Controls.Add(this.idEncargadoTXT);
-            this.groupBox1.Controls.Add(this.label57);
-            this.groupBox1.Controls.Add(this.telefonoEncargadoTXT);
-            this.groupBox1.Controls.Add(this.label58);
-            this.groupBox1.Controls.Add(this.celularEncargadoTXT);
-            this.groupBox1.Controls.Add(this.direccionEncargadoTXT);
-            this.groupBox1.Controls.Add(this.emailEncargadoTXT);
-            this.groupBox1.Location = new System.Drawing.Point(748, 205);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(378, 293);
-            this.groupBox1.TabIndex = 114;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos de encargado";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(76, 203);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(41, 16);
-            this.label53.TabIndex = 108;
-            this.label53.Text = "Email";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(9, 34);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(115, 16);
-            this.label54.TabIndex = 100;
-            this.label54.Text = "Nombre completo";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(61, 246);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(64, 16);
-            this.label55.TabIndex = 110;
-            this.label55.Text = "Direccion";
-            // 
-            // nombreEncargadoTXT
-            // 
-            this.nombreEncargadoTXT.Location = new System.Drawing.Point(131, 31);
-            this.nombreEncargadoTXT.Name = "nombreEncargadoTXT";
-            this.nombreEncargadoTXT.Size = new System.Drawing.Size(165, 22);
-            this.nombreEncargadoTXT.TabIndex = 18;
-            this.nombreEncargadoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(76, 157);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(49, 16);
-            this.label56.TabIndex = 106;
-            this.label56.Text = "Celular";
-            // 
-            // idEncargadoTXT
-            // 
-            this.idEncargadoTXT.Location = new System.Drawing.Point(131, 72);
-            this.idEncargadoTXT.Name = "idEncargadoTXT";
-            this.idEncargadoTXT.Size = new System.Drawing.Size(165, 22);
-            this.idEncargadoTXT.TabIndex = 19;
-            this.idEncargadoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(64, 114);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(61, 16);
-            this.label57.TabIndex = 104;
-            this.label57.Text = "Telefono";
-            // 
-            // telefonoEncargadoTXT
-            // 
-            this.telefonoEncargadoTXT.Location = new System.Drawing.Point(131, 111);
-            this.telefonoEncargadoTXT.Name = "telefonoEncargadoTXT";
-            this.telefonoEncargadoTXT.Size = new System.Drawing.Size(165, 22);
-            this.telefonoEncargadoTXT.TabIndex = 20;
-            this.telefonoEncargadoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(40, 72);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(85, 16);
-            this.label58.TabIndex = 102;
-            this.label58.Text = "Identificación";
-            // 
-            // celularEncargadoTXT
-            // 
-            this.celularEncargadoTXT.Location = new System.Drawing.Point(131, 154);
-            this.celularEncargadoTXT.Name = "celularEncargadoTXT";
-            this.celularEncargadoTXT.Size = new System.Drawing.Size(165, 22);
-            this.celularEncargadoTXT.TabIndex = 21;
-            this.celularEncargadoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // direccionEncargadoTXT
-            // 
-            this.direccionEncargadoTXT.Location = new System.Drawing.Point(131, 243);
-            this.direccionEncargadoTXT.Name = "direccionEncargadoTXT";
-            this.direccionEncargadoTXT.Size = new System.Drawing.Size(165, 22);
-            this.direccionEncargadoTXT.TabIndex = 23;
-            this.direccionEncargadoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // emailEncargadoTXT
-            // 
-            this.emailEncargadoTXT.Location = new System.Drawing.Point(131, 200);
-            this.emailEncargadoTXT.Name = "emailEncargadoTXT";
-            this.emailEncargadoTXT.Size = new System.Drawing.Size(165, 22);
-            this.emailEncargadoTXT.TabIndex = 22;
-            this.emailEncargadoTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label59);
-            this.groupBox2.Controls.Add(this.label60);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.label61);
-            this.groupBox2.Controls.Add(this.label62);
-            this.groupBox2.Controls.Add(this.label63);
-            this.groupBox2.Controls.Add(this.label64);
-            this.groupBox2.Location = new System.Drawing.Point(10, 430);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(652, 176);
-            this.groupBox2.TabIndex = 102;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Coarrendatario 5";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(445, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 22);
-            this.textBox1.TabIndex = 36;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(353, 35);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(85, 16);
-            this.label59.TabIndex = 98;
-            this.label59.Text = "Identificación";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(22, 41);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(115, 16);
-            this.label60.TabIndex = 97;
-            this.label60.Text = "Nombre completo";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(445, 120);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(190, 22);
-            this.textBox2.TabIndex = 40;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(143, 38);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(190, 22);
-            this.textBox3.TabIndex = 35;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(143, 126);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(190, 22);
-            this.textBox4.TabIndex = 39;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(444, 75);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(190, 22);
-            this.textBox5.TabIndex = 38;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(142, 81);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(190, 22);
-            this.textBox6.TabIndex = 37;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(375, 126);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(64, 16);
-            this.label61.TabIndex = 94;
-            this.label61.Text = "Direccion";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(95, 129);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(41, 16);
-            this.label62.TabIndex = 78;
-            this.label62.Text = "Email";
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(389, 81);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(49, 16);
-            this.label63.TabIndex = 76;
-            this.label63.Text = "Celular";
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(75, 84);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(61, 16);
-            this.label64.TabIndex = 74;
-            this.label64.Text = "Telefono";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox3.Location = new System.Drawing.Point(10, 513);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(1116, 109);
-            this.richTextBox3.TabIndex = 121;
-            this.richTextBox3.Text = resources.GetString("richTextBox3.Text");
-            this.richTextBox3.TextChanged += new System.EventHandler(this.richTextBox3_TextChanged);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label65);
-            this.groupBox3.Controls.Add(this.listaContratosBox);
-            this.groupBox3.Location = new System.Drawing.Point(1145, 205);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(183, 293);
-            this.groupBox3.TabIndex = 122;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Datos";
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(15, 40);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(153, 16);
-            this.label65.TabIndex = 111;
-            this.label65.Text = "Traer datos del contrato:";
-            this.label65.Click += new System.EventHandler(this.label65_Click);
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.Location = new System.Drawing.Point(23, 106);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(56, 16);
+            this.label68.TabIndex = 121;
+            this.label68.Text = "Guardar";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(113, 106);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(57, 16);
+            this.label20.TabIndex = 127;
+            this.label20.Text = "Duplicar";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.Location = new System.Drawing.Point(196, 106);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(65, 16);
+            this.label69.TabIndex = 128;
+            this.label69.Text = "Actualizar";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.Location = new System.Drawing.Point(13, 208);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(78, 16);
+            this.label70.TabIndex = 129;
+            this.label70.Text = "Vista previa";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label71.Location = new System.Drawing.Point(113, 207);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(57, 16);
+            this.label71.TabIndex = 130;
+            this.label71.Text = "Exportar";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label72);
+            this.groupBox8.Controls.Add(this.button6);
+            this.groupBox8.Controls.Add(this.button4);
+            this.groupBox8.Controls.Add(this.label71);
+            this.groupBox8.Controls.Add(this.button5);
+            this.groupBox8.Controls.Add(this.label70);
+            this.groupBox8.Controls.Add(this.button3);
+            this.groupBox8.Controls.Add(this.label69);
+            this.groupBox8.Controls.Add(this.button1);
+            this.groupBox8.Controls.Add(this.label20);
+            this.groupBox8.Controls.Add(this.button2);
+            this.groupBox8.Controls.Add(this.label68);
+            this.groupBox8.Location = new System.Drawing.Point(1048, 289);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(280, 241);
+            this.groupBox8.TabIndex = 123;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Opciones";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label72.Location = new System.Drawing.Point(211, 208);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(34, 16);
+            this.label72.TabIndex = 132;
+            this.label72.Text = "Salir";
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::Exporter.Properties.Resources.salir_icon3;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.Location = new System.Drawing.Point(194, 134);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(71, 66);
+            this.button6.TabIndex = 131;
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::Exporter.Properties.Resources.guardar_icon;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Location = new System.Drawing.Point(16, 33);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(71, 66);
+            this.button4.TabIndex = 125;
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::Exporter.Properties.Resources.duplicar_icon;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Location = new System.Drawing.Point(105, 34);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(71, 66);
+            this.button5.TabIndex = 126;
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::Exporter.Properties.Resources.update_icon;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Location = new System.Drawing.Point(194, 36);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(71, 66);
+            this.button3.TabIndex = 124;
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::Exporter.Properties.Resources.vista_previa_icon;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(16, 134);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 66);
+            this.button1.TabIndex = 121;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_7);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::Exporter.Properties.Resources.generar_word_icon2;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(105, 134);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(71, 66);
+            this.button2.TabIndex = 122;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1376, 713);
+            this.ClientSize = new System.Drawing.Size(1376, 659);
             this.Controls.Add(this.datosContratoTab);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -1848,6 +2041,8 @@
             this.Text = "PHT Documents";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabPage4.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -1857,7 +2052,10 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.contratoGroup.ResumeLayout(false);
             this.contratoGroup.PerformLayout();
             this.arrendatarioGroup.ResumeLayout(false);
@@ -1865,27 +2063,24 @@
             this.propietarioGroup.ResumeLayout(false);
             this.propietarioGroup.PerformLayout();
             this.datosContratoTab.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.Vista_previa.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
@@ -2002,14 +2197,9 @@
         private System.Windows.Forms.DateTimePicker fechaIniTXT;
         private System.Windows.Forms.DateTimePicker fechaFinTXT;
         private System.Windows.Forms.ComboBox listaContratosBox;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ToolStripMenuItem nuevoContratoToolStripMenuItem;
         private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage Vista_previa;
         private System.Windows.Forms.ToolStripMenuItem GuardartoolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generarVistaPreviaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generarContratosEnWORDToolStripMenuItem;
@@ -2046,9 +2236,31 @@
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Button button6;
     }
 }
 

@@ -96,6 +96,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -111,6 +112,44 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\vista_previa_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generar_word_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generar_word_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generar_word_icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duplicar_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir_icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir_icon11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir_icon12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir_icon.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

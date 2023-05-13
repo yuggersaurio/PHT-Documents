@@ -303,14 +303,6 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>520, 17</value>
   </metadata>
-  <data name="richTextBox3.Text" xml:space="preserve">
-    <value>Instrucciones básicas:
-
--Para generar un nuevo contrato complete los campos correspondientes y de click en Archivo – Guardar nuevo contrato
--Para cargar un formato, seleccione en el menú principal Cargar formatos y elija la opción deseada.
--Para cargar información de un contrato existente seleccione en la lista “Cargar datos de contrato” y busque o digite el contrato requerido.
--Para guardar cambios de un contrato existente, seleccione en el menú principal Guardar cambios</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
