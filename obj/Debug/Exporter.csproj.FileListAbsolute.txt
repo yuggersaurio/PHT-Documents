@@ -40,3 +40,4 @@ C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\Newtonsoft.Json.dll
 C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\RestSharp.dll
 C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\Newtonsoft.Json.xml
 C:\Users\sistemas\Proyectos\PHT-Documents\bin\Debug\RestSharp.xml
+C:\Users\sistemas\Proyectos\PHT-Documents\obj\Debug\Exporter.Form2.resources

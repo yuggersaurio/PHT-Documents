@@ -63,6 +63,36 @@ namespace Exporter.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1icon {
+            get {
+                object obj = ResourceManager.GetObject("1icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2icon {
+            get {
+                object obj = ResourceManager.GetObject("2icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap coarrendatariosIcon {
+            get {
+                object obj = ResourceManager.GetObject("coarrendatariosIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap duplicar_icon {
             get {
                 object obj = ResourceManager.GetObject("duplicar_icon", resourceCulture);
@@ -106,6 +136,26 @@ namespace Exporter.Properties {
         internal static System.Drawing.Bitmap guardar_icon {
             get {
                 object obj = ResourceManager.GetObject("guardar_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loader {
+            get {
+                object obj = ResourceManager.GetObject("loader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoapp_01 {
+            get {
+                object obj = ResourceManager.GetObject("logoapp-01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
