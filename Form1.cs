@@ -10,11 +10,16 @@ using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Threading;
+using System.IO;
 
 namespace Exporter
 {
+    
+    
+    
     public partial class Form1 : Form
     {
+        
 
         DBApi dBApi = new DBApi();
         public Form1()
@@ -27,14 +32,42 @@ namespace Exporter
         {
 
 
+            //VERIFICO SI DIRECTORIO EXISTE
+            var rutaCarpeta = @"\\servidor1\Fotos\FOTOS_FIRMA_DE_CONTRATOS\CTO_" + contratoTXT.Text + @"\" + @"DOCUMENTOS\CONTRATOS PRELIMINARES";
+
+            if (!Directory.Exists(rutaCarpeta))
+            {
+                Console.WriteLine("Creando el directorio: {0}", rutaCarpeta);
+                DirectoryInfo di = Directory.CreateDirectory(rutaCarpeta);
+            }
+
+            //--
+
+
             //ESCRIBO ARCHIVO EN WORD ARRENDATARIO
-            var rutaArchivo = @"\\servidor1\Fotos\FOTOS_FIRMA_DE_CONTRATOS\CTO_" + contratoTXT.Text + @"\" + @"DOCUMENTOS\" + contratoTXT.Text + " ARRENDATARIO.rtf";
-            System.IO.File.WriteAllText(rutaArchivo, richTextBox1.Rtf);
+            var rutaArchivo = @"\\servidor1\Fotos\FOTOS_FIRMA_DE_CONTRATOS\CTO_" + contratoTXT.Text + @"\" + @"DOCUMENTOS\CONTRATOS PRELIMINARES\" + contratoTXT.Text + " ARRENDATARIO.rtf";
+
+            try
+            {
+                System.IO.File.WriteAllText(rutaArchivo, richTextBox1.Rtf);
+            }
+            catch (System.IO.IOException IOEx)
+            {
+                MessageBox.Show("El contrato de ARRENDATARIO que esta tratando de generar está en uso, cierrelo y presione exportar nuevamente", "Advertencia");
+
+            }
             //------------------------------------
 
             //ESCRIBO ARCHIVO EN WORD PROPIETARIO
-            var rutaArchivo2 = @"\\servidor1\Fotos\FOTOS_FIRMA_DE_CONTRATOS\CTO_" + contratoTXT.Text + @"\" + @"DOCUMENTOS\" + contratoTXT.Text + " PROPIETARIO.rtf";
-            System.IO.File.WriteAllText(rutaArchivo2, richTextBox2.Rtf);
+            var rutaArchivo2 = @"\\servidor1\Fotos\FOTOS_FIRMA_DE_CONTRATOS\CTO_" + contratoTXT.Text + @"\" + @"DOCUMENTOS\CONTRATOS PRELIMINARES\" + contratoTXT.Text + " PROPIETARIO.rtf";
+            try
+            {
+                System.IO.File.WriteAllText(rutaArchivo2, richTextBox2.Rtf);
+            }
+            catch (System.IO.IOException IOEx)
+            {
+                MessageBox.Show("El contrato de PROPIETARIO que esta tratando de generar está en uso, cierrelo y presione exportar nuevamente", "Advertencia");
+            }
             //------------------------------------
 
             //ABRO AUTOMATICAMENTE ARCHIVOS GENERADO
@@ -44,7 +77,16 @@ namespace Exporter
 
 
         }
+        public void calcularFechasContrato()
+        {
+            DateTime now = DateTime.Now;
+            var primerDiaMes = new DateTime(now.Year, now.Month, 1);
+            primerDiaMes = primerDiaMes.AddMonths(1);
+            var ultimoDiaMes = primerDiaMes.AddMonths(13).AddSeconds(-1);
+            fechaIniTXT.Value = primerDiaMes;
+            fechaFinTXT.Value = ultimoDiaMes;
 
+        }
         public void vistaPrevia(){
 
             //REALIZO REMPLAZO DE VARIABLES EN VISTA PREVIA
@@ -543,6 +585,7 @@ cargarFormato(string tipoFormato)
                 + "&celularCoarrendatario4TXTdb=" + celularCoarrendatario4TXT.Text
                 + "&direccionCoarrendatario4TXTdb=" + direccionCoarrendatario4TXT.Text
                 + "&emailCoarrendatario4TXTdb=" + emailCoarrendatario4TXT.Text
+                + "&modificacionTXTdb=" + "Ultima modificación por " + usuarioTXT.Text + " " + DateTime.Now
 
 
                 );
@@ -562,6 +605,8 @@ cargarFormato(string tipoFormato)
             //-----
 
             listarContratos(); //---LISTAMOS CONTRATOS EN COMBOBOX
+
+            modificacionTXT.Text = "Ultima modificación por " + usuarioTXT.Text + " " + DateTime.Now;
 
         }
         public void traerInfoApi(string Contrato)
@@ -641,7 +686,8 @@ cargarFormato(string tipoFormato)
             celularCoarrendatario4TXT.Text = respuesta[0].celularCoarrendatario4TXTdb.ToString();
             emailCoarrendatario4TXT.Text = respuesta[0].emailCoarrendatario4TXTdb.ToString();
             direccionCoarrendatario4TXT.Text = respuesta[0].direccionCoarrendatario4TXTdb.ToString();
-         
+            modificacionTXT.Text = respuesta[0].modificacionTXTdb.ToString();
+
             if (respuesta[0].idCoarrendatario1TXTdb.ToString() != "") { checkCoarrendatario1.Checked = true; grupoCoarrendatario1.Enabled = true; }
             if (respuesta[0].idCoarrendatario2TXTdb.ToString() != "") { checkCoarrendatario2.Checked = true; grupoCoarrendatario2.Enabled = true; }
             if (respuesta[0].idCoarrendatario3TXTdb.ToString() != "") { checkCoarrendatario3.Checked = true; grupoCoarrendatario3.Enabled = true; }
@@ -767,11 +813,33 @@ cargarFormato(string tipoFormato)
             //------------------------------------------
 
         }
+    
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            int MyPropertyInteger;
+            int.TryParse(this.MyProperty, out MyPropertyInteger);
+            switch (MyPropertyInteger) { 
+                case 1402:
+            usuarioTXT.Text = "Auxadministracion";
+                break;
+                case 1013:
+                    usuarioTXT.Text = "Servicio al cliente" ;
+                    break;
+                case 9999:
+                    usuarioTXT.Text = "Sistemas";
+                    break;
+
+
+
+
+            }
             listarContratos();
+            calcularFechasContrato();
         }
+        public string MyProperty { get; set; }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -921,7 +989,7 @@ cargarFormato(string tipoFormato)
         private  void cONTRATODEARRENDAMIENTODEUNBIENINMUEBLESOMETIDOACOPROPIEDADYDESTINADOAVIVIENDAURBANAPRUEBAToolStripMenuItem_Click(object sender, EventArgs e)
         {
              cargarFormato("formato1");
-            informacionTXT.Text = "Formatos cargados actualmente: Inmueble sometido a copropiedad y destinado a vivienda urbana, arrendatario y propietario: ";
+            informacionTXT.Text = "Formatos cargados: Inmueble sometido a copropiedad y destinado a vivienda urbana ";
             informacionTXT.ForeColor = Color.Green;
             destinoTXT.Text = "Vivienda";
         }
@@ -976,8 +1044,7 @@ cargarFormato(string tipoFormato)
 
         private void fechaIniTXT_ValueChanged(object sender, EventArgs e)
         {
-            fechaFinTXT.Value = fechaIniTXT.Value;
-            fechaFinTXT.Value = DateTime.Now.AddYears(1);
+           
         }
 
         private void fechaFinTXT_ValueChanged(object sender, EventArgs e)
@@ -1398,6 +1465,7 @@ cargarFormato(string tipoFormato)
         private void btnExportar_Click(object sender, EventArgs e)
         {
             generarWord();
+            
         }
 
         private void btnDuplicar_Click(object sender, EventArgs e)
@@ -1439,7 +1507,7 @@ cargarFormato(string tipoFormato)
         private void inmuebleDestinadoAViviendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cargarFormato("formato2");
-            informacionTXT.Text = "Formatos cargados actualmente: Inmueble  destinado a Vivienda urbana, arrendatario y propietario: ";
+            informacionTXT.Text = "Formatos cargadoS: Inmueble  destinado a Vivienda urbana: ";
             informacionTXT.ForeColor = Color.Green;
             destinoTXT.Text = "Vivienda";
             administracionTXT.Text = "0";
@@ -1448,7 +1516,7 @@ cargarFormato(string tipoFormato)
         private void inmuebleSometidoACopropiedadYDestinadoALocalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cargarFormato("formato3");
-            informacionTXT.Text = "Formatos cargados actualmente: Inmueble sometido a copropiedad y destinado a local, arrendatario y propietario: ";
+            informacionTXT.Text = "Formatos cargados: Inmueble sometido a copropiedad y destinado a local: ";
             informacionTXT.ForeColor = Color.Green;
             destinoTXT.Text = "Local";
         }
@@ -1456,7 +1524,7 @@ cargarFormato(string tipoFormato)
         private void inmuebleDestinadoALocalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cargarFormato("formato4");
-            informacionTXT.Text = "Formatos cargados actualmente: Inmueble destinado local, arrendatario y propietario: ";
+            informacionTXT.Text = "Formatos cargados: Inmueble destinado local: ";
             informacionTXT.ForeColor = Color.Green;
             destinoTXT.Text = "Local";
             administracionTXT.Text = "0";
@@ -1605,6 +1673,38 @@ cargarFormato(string tipoFormato)
         private void groupBox8_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void fechaIniTXT_MouseUp(object sender, MouseEventArgs e)
+        {
+     
+        }
+
+        private void fechaIniTXT_MouseLeave(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button1_Click_10(object sender, EventArgs e)
+        {
+        
+            
+        }
+
+        private void button1_Click_11(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click_12(object sender, EventArgs e)
+        {
+      
         }
     }
 }
