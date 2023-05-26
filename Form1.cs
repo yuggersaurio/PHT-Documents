@@ -82,7 +82,7 @@ namespace Exporter
             DateTime now = DateTime.Now;
             var primerDiaMes = new DateTime(now.Year, now.Month, 1);
             primerDiaMes = primerDiaMes.AddMonths(1);
-            var ultimoDiaMes = primerDiaMes.AddMonths(13).AddSeconds(-1);
+            var ultimoDiaMes = primerDiaMes.AddMonths(12).AddSeconds(-1);
             fechaIniTXT.Value = primerDiaMes;
             fechaFinTXT.Value = ultimoDiaMes;
 
@@ -126,6 +126,9 @@ namespace Exporter
             richTextBox2.Rtf = richTextBox2.Rtf.Replace("**inmuebleTXT**", inmuebleTXT.Text);
             //--
 
+            //--LLENAMOS QUIEN EXPORTO LOS ARCHIVOS
+            richTextBox2.Rtf = richTextBox2.Rtf.Replace("**usuarioTXT**", usuarioTXT.Text + " - "+ DateTime.Now);
+            //--
 
 
 
@@ -201,7 +204,7 @@ namespace Exporter
         {
             int numeroInteger;
             int cuantiaInteger;
-            string dePesos = " DE PESOS";
+            string dePesos = " DE PESOS M/CTE ";
             int numeroSubstraido;
 
             
@@ -231,11 +234,11 @@ namespace Exporter
 
             if ((numeroSubstraido >= 1) && (numero.Length >= 7))
             {
-                dePesos = " PESOS";
+                dePesos = " PESOS M/CTE ";
             }
             if (numeroInteger < 1000000)
             {
-                dePesos = " PESOS";
+                dePesos = " PESOS M/CTE ";
             }
 
             //---
@@ -277,7 +280,7 @@ namespace Exporter
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**lineaCoarrendatario"+ numeroCoarrendatario + "TXT**", "_____________________________");
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**tituloCoarrendatario" + numeroCoarrendatario + "TXT**", "COARRENDATARIO");
                 
-                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**tituloDireccionCoarrendatario" + numeroCoarrendatario + "TXT**", "Direccion: ");
+                richTextBox1.Rtf = richTextBox1.Rtf.Replace("**tituloDireccionCoarrendatario" + numeroCoarrendatario + "TXT**", "Dirección: ");
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**tituloTelefonoCoarrendatario" + numeroCoarrendatario + "TXT**", "Teléfono: ");
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**tituloCelularCoarrendatario" + numeroCoarrendatario + "TXT**", "Celular: ");
                 richTextBox1.Rtf = richTextBox1.Rtf.Replace("**tituloEmailCoarrendatario" + numeroCoarrendatario + "TXT**", "Email: ");
@@ -376,16 +379,27 @@ cargarFormato(string tipoFormato)
         {
                       
             string[] words = valorPorcentaje.Split('.');
+            int validarDecimalServicio;
+            int.TryParse(servicioCTXT.Text, out validarDecimalServicio);
+
             int porcentajeInteger;
             int i = 0;
             string porcentajeLetras = "";
+
+
+            if (clausulaTXT.Text.Contains("."))
+            {
+                Console.WriteLine("DECIMAL");
+
+            }
+
 
             foreach (var word in words)
             {
                 int.TryParse(word, out porcentajeInteger);
 
 
-                if (i == 0) { porcentajeLetras += porcentajeInteger.ToWords().Humanize(LetterCasing.AllCaps) + " PUNTO "; }
+                if (i == 0 && valorPorcentaje.Contains(".")) { porcentajeLetras += porcentajeInteger.ToWords().Humanize(LetterCasing.AllCaps) + " PUNTO "; }
                 else
                 { porcentajeLetras += porcentajeInteger.ToWords().Humanize(LetterCasing.AllCaps); };
                 i++;
@@ -395,11 +409,11 @@ cargarFormato(string tipoFormato)
             switch (tipoPorcentaje)
             {
                 case "clausula":
-                    richTextBox2.Rtf = richTextBox2.Rtf.Replace("**clausulaTXT**", porcentajeLetras + " ( " + valorPorcentaje + " % )");
+                    richTextBox2.Rtf = richTextBox2.Rtf.Replace("**clausulaTXT**", porcentajeLetras + " PORCIENTO ( " + valorPorcentaje + " % )");
                     Console.WriteLine(porcentajeLetras);
                     break;
                 case "servicio":
-                    richTextBox2.Rtf = richTextBox2.Rtf.Replace("**servicioCTXT**", porcentajeLetras + " ( " + valorPorcentaje + " % )");
+                    richTextBox2.Rtf = richTextBox2.Rtf.Replace("**servicioCTXT**", porcentajeLetras + " PORCIENTO ( " + valorPorcentaje + " % )");
                     Console.WriteLine(porcentajeLetras);
                     break;
             }                    
@@ -600,6 +614,8 @@ cargarFormato(string tipoFormato)
             btnActualizarTXT.Enabled = true;
             GuardarDuplicarToolStripMenuItem.Text = "Duplicar cómo contrato nuevo";
             GuardartoolStripMenuItem.Enabled = true;
+            btnVerCarpeta.Enabled = true;
+            btnVerCarpetaTXT.Enabled = true;
 
 
             //-----
@@ -697,6 +713,158 @@ cargarFormato(string tipoFormato)
 
 
         }
+
+        public void traerInfoApi2(string Contrato)
+        {
+
+            string[] arregloTiposConsulta = new string[8];
+            string apiURL = "https://portalhouses.com/administrador/ApiDocuments2/post.php?tipo=mostrar&contratoConsulta=";
+            arregloTiposConsulta[0] =  apiURL + Contrato + "&tipoTerceroTXTdb=arrendatario";
+
+
+
+
+            dynamic respuesta = dBApi.Get(arregloTiposConsulta[0]);
+
+
+
+            string[] arrTercero = respuesta[0].arrendatarioTXTdb.ToString().Split(';');
+            nombreArrendatarioTXT.Text = arrTercero[0];
+            idArrendatarioTXT.Text = arrTercero[1];
+            tipoIdArrendatarioTXT.Text = arrTercero[2];
+            ciudadIdArrendatarioTXT.Text = arrTercero[3];
+            telefonoArrendatarioTXT.Text = arrTercero[4];
+            celularArrendatarioTXT.Text = arrTercero[5];
+            emailArrendatarioTXT.Text = arrTercero[6];
+            direccionArrendatarioTXT.Text = arrTercero[7];
+            empresaArrendatarioTXT.Text = arrTercero[8];
+            telEmpresaArrendatarioTXT.Text = arrTercero[9];
+            direccionEmpresaArrendatarioTXT.Text = arrTercero[10];
+            cargoEmpresaArrendatarioTXT.Text = arrTercero[11];
+            cuentaArrendatarioTXT.Text = arrTercero[12];
+            tipoCuentaArrendatarioTXT.Text = arrTercero[13];
+            bancoArrendatarioTXT.Text = arrTercero[14];
+
+            arrTercero = respuesta[0].propietarioTXTdb.ToString().Split(';');
+            nombrePropietarioTXT.Text = arrTercero[0];
+            idPropietarioTXT.Text = arrTercero[1];
+            tipoIdPropietarioTXT.Text = arrTercero[2];
+            ciudadIdPropietarioTXT.Text = arrTercero[3];
+            telefonoPropietarioTXT.Text = arrTercero[4];
+            celularPropietarioTXT.Text = arrTercero[5];
+            emailPropietarioTXT.Text = arrTercero[6];
+            direccionPropietarioTXT.Text = arrTercero[7];
+            empresaPropietarioTXT.Text = arrTercero[8];
+            telEmpresaPropietarioTXT.Text = arrTercero[9];
+            direccionEmpresaPropietarioTXT.Text = arrTercero[10];
+            cargoEmpresaPropietarioTXT.Text = arrTercero[11];
+            cuentaPropietarioTXT.Text = arrTercero[12];
+            tipoCuentaPropietarioTXT.Text = arrTercero[13];
+            bancoPropietarioTXT.Text = arrTercero[14];
+
+            arrTercero = respuesta[0].encargadoTXTdb.ToString().Split(';');
+            nombreEncargadoTXT.Text = arrTercero[0];
+            idEncargadoTXT.Text = arrTercero[1];
+            tipoIdEncargadoTXT.Text = arrTercero[2];
+            ciudadIdEncargadoTXT.Text = arrTercero[3];
+            telefonoEncargadoTXT.Text = arrTercero[4];
+            celularEncargadoTXT.Text = arrTercero[5];
+            emailEncargadoTXT.Text = arrTercero[6];
+            direccionEncargadoTXT.Text = arrTercero[7];
+            empresaEncargadoTXT.Text = arrTercero[8];
+            telEmpresaEncargadoTXT.Text = arrTercero[9];
+            direccionEmpresaEncargadoTXT.Text = arrTercero[10];
+            cargoEmpresaEncargadoTXT.Text = arrTercero[11];
+            cuentaEncargadoTXT.Text = arrTercero[12];
+            tipoCuentaEncargadoTXT.Text = arrTercero[13];
+            bancoEncargadoTXT.Text = arrTercero[14];
+
+
+            arrTercero = respuesta[0].coarrendatario1TXTdb.ToString().Split(';');
+            nombreCoarrendatario1TXT.Text = arrTercero[0];
+            idCoarrendatario1TXT.Text = arrTercero[1];
+            tipoIdCoarrendatario1TXT.Text = arrTercero[2];
+            ciudadIdCoarrendatario1TXT.Text = arrTercero[3];
+            telefonoCoarrendatario1TXT.Text = arrTercero[4];
+            celularCoarrendatario1TXT.Text = arrTercero[5];
+            emailCoarrendatario1TXT.Text = arrTercero[6];
+            direccionCoarrendatario1TXT.Text = arrTercero[7];
+            empresaCoarrendatario1TXT.Text = arrTercero[8];
+            telEmpresaCoarrendatario1TXT.Text = arrTercero[9];
+            cargoEmpresaCoarrendatario1TXT.Text = arrTercero[10];
+            direccionEmpresaCoarrendatario1TXT.Text = arrTercero[11];
+
+            arrTercero = respuesta[0].coarrendatario2TXTdb.ToString().Split(';');
+            nombreCoarrendatario2TXT.Text = arrTercero[0];
+            idCoarrendatario2TXT.Text = arrTercero[1];
+            tipoIdCoarrendatario2TXT.Text = arrTercero[2];
+            ciudadIdCoarrendatario2TXT.Text = arrTercero[3];
+            telefonoCoarrendatario2TXT.Text = arrTercero[4];
+            celularCoarrendatario2TXT.Text = arrTercero[5];
+            emailCoarrendatario2TXT.Text = arrTercero[6];
+            direccionCoarrendatario2TXT.Text = arrTercero[7];
+            empresaCoarrendatario2TXT.Text = arrTercero[8];
+            telEmpresaCoarrendatario2TXT.Text = arrTercero[9];
+            direccionEmpresaCoarrendatario2TXT.Text = arrTercero[10];
+            cargoEmpresaCoarrendatario2TXT.Text = arrTercero[11];
+
+            arrTercero = respuesta[0].coarrendatario3TXTdb.ToString().Split(';');
+            nombreCoarrendatario3TXT.Text = arrTercero[0];
+            idCoarrendatario3TXT.Text = arrTercero[1];
+            tipoIdCoarrendatario3TXT.Text = arrTercero[2];
+            ciudadIdCoarrendatario3TXT.Text = arrTercero[3];
+            telefonoCoarrendatario3TXT.Text = arrTercero[4];
+            celularCoarrendatario3TXT.Text = arrTercero[5];
+            emailCoarrendatario3TXT.Text = arrTercero[6];
+            direccionCoarrendatario3TXT.Text = arrTercero[7];
+            empresaCoarrendatario3TXT.Text = arrTercero[8];
+            telEmpresaCoarrendatario3TXT.Text = arrTercero[9];
+            direccionEmpresaCoarrendatario3TXT.Text = arrTercero[10];
+            cargoEmpresaCoarrendatario3TXT.Text = arrTercero[11];
+
+            arrTercero = respuesta[0].coarrendatario4TXTdb.ToString().Split(';');
+            nombreCoarrendatario4TXT.Text = arrTercero[0];
+            idCoarrendatario4TXT.Text = arrTercero[1];
+            tipoIdCoarrendatario4TXT.Text = arrTercero[2];
+            ciudadIdCoarrendatario4TXT.Text = arrTercero[3];
+            telefonoCoarrendatario4TXT.Text = arrTercero[4];
+            celularCoarrendatario4TXT.Text = arrTercero[5];
+            emailCoarrendatario4TXT.Text = arrTercero[6];
+            direccionCoarrendatario4TXT.Text = arrTercero[7];
+            empresaCoarrendatario4TXT.Text = arrTercero[8];
+            telEmpresaCoarrendatario4TXT.Text = arrTercero[9];
+            direccionEmpresaCoarrendatario4TXT.Text = arrTercero[10];
+            cargoEmpresaCoarrendatario4TXT.Text = arrTercero[11];
+
+            arrTercero = respuesta[0].coarrendatario5TXTdb.ToString().Split(';');
+            nombreCoarrendatario5TXT.Text = arrTercero[0];
+            idCoarrendatario5TXT.Text = arrTercero[1];
+            tipoIdCoarrendatario5TXT.Text = arrTercero[2];
+            ciudadIdCoarrendatario5TXT.Text = arrTercero[3];
+            telefonoCoarrendatario5TXT.Text = arrTercero[4];
+            celularCoarrendatario5TXT.Text = arrTercero[5];
+            emailCoarrendatario5TXT.Text = arrTercero[6];
+            direccionCoarrendatario5TXT.Text = arrTercero[7];
+            empresaCoarrendatario5TXT.Text = arrTercero[8];
+            telEmpresaCoarrendatario5TXT.Text = arrTercero[9];
+            direccionEmpresaCoarrendatario5TXT.Text = arrTercero[10];
+            cargoEmpresaCoarrendatario5TXT.Text = arrTercero[11];
+
+            if (idCoarrendatario1TXT.Text != "") { checkCoarrendatario1.Checked = true; grupoCoarrendatario1.Enabled = true; }
+            if (idCoarrendatario2TXT.Text != "") { checkCoarrendatario2.Checked = true; grupoCoarrendatario2.Enabled = true; }
+            if (idCoarrendatario3TXT.Text != "") { checkCoarrendatario3.Checked = true; grupoCoarrendatario3.Enabled = true; }
+            if (idCoarrendatario4TXT.Text != "") { checkCoarrendatario4.Checked = true; grupoCoarrendatario4.Enabled = true; }
+            if (idCoarrendatario5TXT.Text != "") { checkCoarrendatario5.Checked = true; grupoCoarrendatario5.Enabled = true; }
+
+        }
+
+        public void verCarpeta()
+        {
+
+            var rutaCarpeta = @"\\servidor1\Fotos\FOTOS_FIRMA_DE_CONTRATOS\CTO_" + contratoTXT.Text;
+            Process.Start("explorer.exe", rutaCarpeta);
+        }
+
         public void terceroFn(string[] arr , string tipoTercero) //FUNCION QUE FORMATEA ID DE TERCEROS E IMPRIME RESULTADOS EN FORMATO
         {
             //FORMATEO TERCEROS ------------------------------------
@@ -716,7 +884,7 @@ cargarFormato(string tipoFormato)
                 switch (i)
                 {
                     case 0:
-                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idArrendatarioTXT**", tipoIdArrendatarioTXT.Text + ": " + terceroFormateado);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idArrendatarioTXT**", tipoIdArrendatarioTXT.Text + ": " + terceroFormateado + " DE CALI");
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreArrendatarioTXT**", nombreArrendatarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoArrendatarioTXT**", telefonoArrendatarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularArrendatarioTXT**", celularArrendatarioTXT.Text);
@@ -725,14 +893,14 @@ cargarFormato(string tipoFormato)
 
                         break;
                     case 1:
-                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idPropietarioTXT**", tipoIdPropietarioTXT.Text + ": " + terceroFormateado);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idPropietarioTXT**", tipoIdPropietarioTXT.Text + ": " + terceroFormateado + " DE CALI");
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombrePropietarioTXT**", nombrePropietarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoPropietarioTXT**", telefonoPropietarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularPropietarioTXT**", celularPropietarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailPropietarioTXT**", emailPropietarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionPropietarioTXT**", direccionPropietarioTXT.Text);
 
-                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**idPropietarioTXT**", tipoIdPropietarioTXT.Text + ": " + terceroFormateado);
+                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**idPropietarioTXT**", tipoIdPropietarioTXT.Text + ": " + terceroFormateado + " DE CALI");
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**nombrePropietarioTXT**", nombrePropietarioTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**telefonoPropietarioTXT**", telefonoPropietarioTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**celularPropietarioTXT**", celularPropietarioTXT.Text);
@@ -745,7 +913,7 @@ cargarFormato(string tipoFormato)
                         if (checkCoarrendatario1.Checked) { checkCoarrendatarios("check", "1");} else { checkCoarrendatarios("uncheck", "1"); }
                             
 
-                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario1TXT**", tipoIdCoarrendatario1TXT.Text + ": " + terceroFormateado);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario1TXT**", tipoIdCoarrendatario1TXT.Text + ": " + terceroFormateado + " DE CALI");
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario1TXT**", nombreCoarrendatario1TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoCoarrendatario1TXT**", telefonoCoarrendatario1TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularCoarrendatario1TXT**", celularCoarrendatario1TXT.Text);
@@ -755,7 +923,7 @@ cargarFormato(string tipoFormato)
                     case 3:
                         if (checkCoarrendatario2.Checked) { checkCoarrendatarios("check", "2"); } else { checkCoarrendatarios("uncheck", "2"); }
 
-                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario2TXT**", tipoIdCoarrendatario2TXT.Text + ": " + terceroFormateado);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario2TXT**", tipoIdCoarrendatario2TXT.Text + ": " + terceroFormateado + " DE CALI");
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario2TXT**", nombreCoarrendatario2TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoCoarrendatario2TXT**", telefonoCoarrendatario2TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularCoarrendatario2TXT**", celularCoarrendatario2TXT.Text);
@@ -764,7 +932,7 @@ cargarFormato(string tipoFormato)
                         break;
                     case 4:
                         if (checkCoarrendatario3.Checked) { checkCoarrendatarios("check", "3"); } else { checkCoarrendatarios("uncheck", "3"); }
-                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario3TXT**", tipoIdCoarrendatario3TXT.Text + ": " + terceroFormateado);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario3TXT**", tipoIdCoarrendatario3TXT.Text + ": " + terceroFormateado + " DE CALI");
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario3TXT**", nombreCoarrendatario3TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoCoarrendatario3TXT**", telefonoCoarrendatario3TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularCoarrendatario3TXT**", celularCoarrendatario3TXT.Text);
@@ -774,7 +942,7 @@ cargarFormato(string tipoFormato)
                         break;
                     case 5:
                         if (checkCoarrendatario4.Checked) { checkCoarrendatarios("check", "4"); } else { checkCoarrendatarios("uncheck", "4"); }
-                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario4TXT**", tipoIdCoarrendatario4TXT.Text + ": " + terceroFormateado);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario4TXT**", tipoIdCoarrendatario4TXT.Text + ": " + terceroFormateado + " DE CALI");
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario4TXT**", nombreCoarrendatario4TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoCoarrendatario4TXT**", telefonoCoarrendatario4TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularCoarrendatario4TXT**", celularCoarrendatario4TXT.Text);
@@ -784,7 +952,7 @@ cargarFormato(string tipoFormato)
                         break;
                     case 6:
                         if (checkCoarrendatario4.Checked) { checkCoarrendatarios("check", "4"); } else { checkCoarrendatarios("uncheck", "4"); }
-                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**idEncargadoTXT**", tipoIdEncargadoTXT.Text + ": " + terceroFormateado);
+                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**idEncargadoTXT**", tipoIdEncargadoTXT.Text + ": " + terceroFormateado + " DE CALI");
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**nombreEncargadoTXT**", nombreEncargadoTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**telefonoEncargadoTXT**", telefonoEncargadoTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**celularEncargadoTXT**", celularEncargadoTXT.Text);
@@ -794,7 +962,7 @@ cargarFormato(string tipoFormato)
                         break;
                     case 7:
                         if (checkCoarrendatario5.Checked) { checkCoarrendatarios("check", "5"); } else { checkCoarrendatarios("uncheck", "5"); }
-                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**idEncargadoTXT**", tipoIdCoarrendatario5TXT.Text + ": " + terceroFormateado);
+                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**idEncargadoTXT**", tipoIdCoarrendatario5TXT.Text + ": " + terceroFormateado + " DE CALI");
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**nombreEncargadoTXT**", nombreEncargadoTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**telefonoEncargadoTXT**", telefonoEncargadoTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**celularEncargadoTXT**", celularEncargadoTXT.Text);
@@ -821,15 +989,18 @@ cargarFormato(string tipoFormato)
         {
             int MyPropertyInteger;
             int.TryParse(this.MyProperty, out MyPropertyInteger);
-            switch (MyPropertyInteger) { 
-                case 1402:
-            usuarioTXT.Text = "Auxadministracion";
+            switch (MyProperty) { 
+                case "mathias24":
+                    usuarioTXT.Text = "Auxadministracion";
                 break;
-                case 1013:
-                    usuarioTXT.Text = "Servicio al cliente" ;
-                    break;
-                case 9999:
+                case "2424":
+                    usuarioTXT.Text = "Servicio C." ;
+                break;
+                case "9999":
                     usuarioTXT.Text = "Sistemas";
+                break;
+                case "eliza52":
+                    usuarioTXT.Text = "Administracion";
                     break;
 
 
@@ -965,7 +1136,10 @@ cargarFormato(string tipoFormato)
                 e.Handled = true;
             }
 
-
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.') || (e.KeyChar == ','))
+            {
+                e.Handled = true;
+            }
 
         }
 
@@ -989,7 +1163,7 @@ cargarFormato(string tipoFormato)
         private  void cONTRATODEARRENDAMIENTODEUNBIENINMUEBLESOMETIDOACOPROPIEDADYDESTINADOAVIVIENDAURBANAPRUEBAToolStripMenuItem_Click(object sender, EventArgs e)
         {
              cargarFormato("formato1");
-            informacionTXT.Text = "Formatos cargados: Inmueble sometido a copropiedad y destinado a vivienda urbana ";
+            informacionTXT.Text = "Formato actual: Inmueble sometido a copropiedad y destinado a vivienda urbana ";
             informacionTXT.ForeColor = Color.Green;
             destinoTXT.Text = "Vivienda";
         }
@@ -1078,6 +1252,11 @@ cargarFormato(string tipoFormato)
             {
                 e.Handled = true;
             }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.') || (e.KeyChar == ','))
+            {
+                e.Handled = true;
+            }
+
         }
 
         private void idArrendatarioTXT_TextChanged(object sender, EventArgs e)
@@ -1091,6 +1270,12 @@ cargarFormato(string tipoFormato)
             {
                 e.Handled = true;
             }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.') || (e.KeyChar == ','))
+            {
+                e.Handled = true;
+            }
+
+
         }
 
         private void administracionTXT_TextChanged(object sender, EventArgs e)
@@ -1104,11 +1289,21 @@ cargarFormato(string tipoFormato)
             {
                 e.Handled = true;
             }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.') || (e.KeyChar == ','))
+            {
+                e.Handled = true;
+            }
+
+
         }
 
         private void idCoarrendatario1TXT_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.') || (e.KeyChar == ','))
             {
                 e.Handled = true;
             }
@@ -1120,6 +1315,10 @@ cargarFormato(string tipoFormato)
             {
                 e.Handled = true;
             }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.') || (e.KeyChar == ','))
+            {
+                e.Handled = true;
+            }
         }
 
         private void idCoarrendatario3TXT_KeyPress(object sender, KeyPressEventArgs e)
@@ -1128,11 +1327,19 @@ cargarFormato(string tipoFormato)
             {
                 e.Handled = true;
             }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.') || (e.KeyChar == ','))
+            {
+                e.Handled = true;
+            }
         }
 
         private void idCoarrendatario4TXT_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.') || (e.KeyChar == ','))
             {
                 e.Handled = true;
             }
@@ -1304,7 +1511,8 @@ cargarFormato(string tipoFormato)
             btnActualizar.Enabled = true;
             btnActualizarTXT.Enabled = true;
             GuardartoolStripMenuItem.Enabled = true;
-
+            btnVerCarpeta.Enabled = true;
+            btnVerCarpetaTXT.Enabled = true;
 
         }
 
@@ -1336,6 +1544,8 @@ cargarFormato(string tipoFormato)
             informacionTXT.ForeColor = Color.Red;
             richTextBox1.Text = "";
             richTextBox2.Text = "";
+            btnVerCarpeta.Enabled = false;
+            btnVerCarpetaTXT.Enabled = false;
             grupoCoarrendatario1.Enabled = false;
             grupoCoarrendatario2.Enabled = false;
             grupoCoarrendatario3.Enabled = false;
@@ -1346,6 +1556,8 @@ cargarFormato(string tipoFormato)
             checkCoarrendatario3.Checked = false;
             checkCoarrendatario4.Checked = false;
             checkCoarrendatario5.Checked = false;
+            clausulaTXT.Text = "3.5";
+            servicioCTXT.Text = "10";
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -1507,7 +1719,7 @@ cargarFormato(string tipoFormato)
         private void inmuebleDestinadoAViviendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cargarFormato("formato2");
-            informacionTXT.Text = "Formatos cargadoS: Inmueble  destinado a Vivienda urbana: ";
+            informacionTXT.Text = "Formato actual: Inmueble  destinado a Vivienda urbana: ";
             informacionTXT.ForeColor = Color.Green;
             destinoTXT.Text = "Vivienda";
             administracionTXT.Text = "0";
@@ -1516,7 +1728,7 @@ cargarFormato(string tipoFormato)
         private void inmuebleSometidoACopropiedadYDestinadoALocalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cargarFormato("formato3");
-            informacionTXT.Text = "Formatos cargados: Inmueble sometido a copropiedad y destinado a local: ";
+            informacionTXT.Text = "Formato actual: Inmueble sometido a copropiedad y destinado a local: ";
             informacionTXT.ForeColor = Color.Green;
             destinoTXT.Text = "Local";
         }
@@ -1524,7 +1736,7 @@ cargarFormato(string tipoFormato)
         private void inmuebleDestinadoALocalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cargarFormato("formato4");
-            informacionTXT.Text = "Formatos cargados: Inmueble destinado local: ";
+            informacionTXT.Text = "Formato actual: Inmueble destinado local: ";
             informacionTXT.ForeColor = Color.Green;
             destinoTXT.Text = "Local";
             administracionTXT.Text = "0";
@@ -1705,6 +1917,226 @@ cargarFormato(string tipoFormato)
         private void button1_Click_12(object sender, EventArgs e)
         {
       
+        }
+
+        private void button1_Click_13(object sender, EventArgs e)
+        {
+
+
+
+
+        }
+
+        private void button1_Click_14(object sender, EventArgs e)
+        {
+            verCarpeta();
+        }
+
+        private void telefonoCoarrendatario5TXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void telefonoCoarrendatario5TXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void telefonoEncargadoTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void telefonoEncargadoTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void celularEncargadoTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void logoApp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void telefonoArrendatarioTXT_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void idEncargadoTXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.') || (e.KeyChar == ','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void idEncargadoTXT_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void idCoarrendatario5TXT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.') || (e.KeyChar == ','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void button1_Click_15(object sender, EventArgs e)
+        {
+            generarWord();
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            generarWord();
+        }
+
+        private void button1_Click_16(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click_17(object sender, EventArgs e)
+        {
+     
+
+        }
+
+        private void nombreArrendatarioTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label89_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox36_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox30_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox39_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox34_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox40_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox12_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox20_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox16_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox24_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void button2_Click_3(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click_18(object sender, EventArgs e)
+        {
+            traerInfoApi2("9999");
         }
     }
 }

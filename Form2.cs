@@ -27,7 +27,7 @@ namespace Exporter
         {
 
             string contraseña = contraseñaTXT.Text;
-            if (contraseña == "1402" || contraseña == "1013" || contraseña == "9999")
+            if (contraseña == "eliza52" || contraseña == "2424" || contraseña == "9999" || contraseña == "mathias24")
             {
                 Form1 frm1 = new Form1();
                 frm1.MyProperty = contraseña;
@@ -53,10 +53,24 @@ namespace Exporter
 
         private void contraseñaTXT_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
+
             if (e.KeyChar == (char)Keys.Return)
             {
                 login();
             }
+            
+
+
+
+
+
+
+        }
+
+        private void contraseñaTXT_KeyDown(object sender, KeyEventArgs e)
+        {
+           
         }
     }
 }

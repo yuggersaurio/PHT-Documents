@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.contraseñaTXT = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.contraseñaTXT = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.logoApp = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoApp)).BeginInit();
@@ -49,14 +49,15 @@
             this.groupBox1.TabIndex = 134;
             this.groupBox1.TabStop = false;
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Digite su clave de acceso";
+            this.button1.Location = new System.Drawing.Point(28, 78);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(189, 40);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Ingresar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // contraseñaTXT
             // 
@@ -68,17 +69,17 @@
             this.contraseñaTXT.TabIndex = 1;
             this.contraseñaTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.contraseñaTXT.TextChanged += new System.EventHandler(this.contraseñaTXT_TextChanged);
+            this.contraseñaTXT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.contraseñaTXT_KeyDown);
             this.contraseñaTXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.contraseñaTXT_KeyPress);
             // 
-            // button1
+            // label1
             // 
-            this.button1.Location = new System.Drawing.Point(28, 78);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 40);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Digite su clave de acceso";
             // 
             // logoApp
             // 
