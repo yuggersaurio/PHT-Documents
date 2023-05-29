@@ -40,6 +40,7 @@
             this.checkCoarrendatario2 = new System.Windows.Forms.CheckBox();
             this.checkCoarrendatario1 = new System.Windows.Forms.CheckBox();
             this.grupoCoarrendatario5 = new System.Windows.Forms.GroupBox();
+            this.ciudadIdCoarrendatario5TXT = new System.Windows.Forms.TextBox();
             this.direccionEmpresaCoarrendatario5TXT = new System.Windows.Forms.TextBox();
             this.label85 = new System.Windows.Forms.Label();
             this.telEmpresaCoarrendatario5TXT = new System.Windows.Forms.TextBox();
@@ -62,6 +63,7 @@
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.grupoCoarrendatario4 = new System.Windows.Forms.GroupBox();
+            this.ciudadIdCoarrendatario4TXT = new System.Windows.Forms.TextBox();
             this.direccionEmpresaCoarrendatario4TXT = new System.Windows.Forms.TextBox();
             this.label81 = new System.Windows.Forms.Label();
             this.telEmpresaCoarrendatario4TXT = new System.Windows.Forms.TextBox();
@@ -84,6 +86,7 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.grupoCoarrendatario3 = new System.Windows.Forms.GroupBox();
+            this.ciudadIdCoarrendatario3TXT = new System.Windows.Forms.TextBox();
             this.direccionEmpresaCoarrendatario3TXT = new System.Windows.Forms.TextBox();
             this.label77 = new System.Windows.Forms.Label();
             this.telEmpresaCoarrendatario3TXT = new System.Windows.Forms.TextBox();
@@ -92,6 +95,7 @@
             this.label79 = new System.Windows.Forms.Label();
             this.empresaCoarrendatario3TXT = new System.Windows.Forms.TextBox();
             this.label80 = new System.Windows.Forms.Label();
+            this.tipoIdCoarrendatario3TXT = new System.Windows.Forms.ComboBox();
             this.idCoarrendatario3TXT = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -105,6 +109,7 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.grupoCoarrendatario2 = new System.Windows.Forms.GroupBox();
+            this.ciudadIdCoarrendatario2TXT = new System.Windows.Forms.TextBox();
             this.direccionEmpresaCoarrendatario2TXT = new System.Windows.Forms.TextBox();
             this.label73 = new System.Windows.Forms.Label();
             this.telEmpresaCoarrendatario2TXT = new System.Windows.Forms.TextBox();
@@ -127,6 +132,7 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.grupoCoarrendatario1 = new System.Windows.Forms.GroupBox();
+            this.ciudadIdCoarrendatario1TXT = new System.Windows.Forms.TextBox();
             this.direccionEmpresaCoarrendatario1TXT = new System.Windows.Forms.TextBox();
             this.label71 = new System.Windows.Forms.Label();
             this.telEmpresaCoarrendatario1TXT = new System.Windows.Forms.TextBox();
@@ -149,10 +155,14 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.logoApp = new System.Windows.Forms.PictureBox();
             this.loadingIMG = new System.Windows.Forms.PictureBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnExportarInfoTXT = new System.Windows.Forms.Label();
+            this.btnExportarInfo = new System.Windows.Forms.Button();
             this.label107 = new System.Windows.Forms.Label();
             this.btnVerCarpetaTXT = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -198,6 +208,11 @@
             this.direccionEncargadoTXT = new System.Windows.Forms.TextBox();
             this.emailEncargadoTXT = new System.Windows.Forms.TextBox();
             this.contratoGroup = new System.Windows.Forms.GroupBox();
+            this.aseguradoraTXT = new System.Windows.Forms.ComboBox();
+            this.label111 = new System.Windows.Forms.Label();
+            this.numeroSolicitudTXT = new System.Windows.Forms.TextBox();
+            this.label109 = new System.Windows.Forms.Label();
+            this.label110 = new System.Windows.Forms.Label();
             this.inmuebleTXT = new System.Windows.Forms.TextBox();
             this.label68 = new System.Windows.Forms.Label();
             this.barrioTXT = new System.Windows.Forms.TextBox();
@@ -296,6 +311,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label50 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label108 = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoContratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -314,12 +333,7 @@
             this.inmuebleSometidoACopropiedadYDestinadoAViviendaDirectoConPropietarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioTXT = new System.Windows.Forms.Label();
             this.modificacionTXT = new System.Windows.Forms.Label();
-            this.ciudadIdCoarrendatario1TXT = new System.Windows.Forms.TextBox();
-            this.tipoIdCoarrendatario3TXT = new System.Windows.Forms.ComboBox();
-            this.ciudadIdCoarrendatario3TXT = new System.Windows.Forms.TextBox();
-            this.ciudadIdCoarrendatario5TXT = new System.Windows.Forms.TextBox();
-            this.ciudadIdCoarrendatario2TXT = new System.Windows.Forms.TextBox();
-            this.ciudadIdCoarrendatario4TXT = new System.Windows.Forms.TextBox();
+            this.reajusteTXT = new System.Windows.Forms.ComboBox();
             this.tabPage4.SuspendLayout();
             this.grupoCoarrendatario5.SuspendLayout();
             this.grupoCoarrendatario4.SuspendLayout();
@@ -342,6 +356,8 @@
             this.panel1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -492,6 +508,16 @@
             this.grupoCoarrendatario5.TabStop = false;
             this.grupoCoarrendatario5.Text = "Coarrendatario 5";
             // 
+            // ciudadIdCoarrendatario5TXT
+            // 
+            this.ciudadIdCoarrendatario5TXT.Location = new System.Drawing.Point(585, 20);
+            this.ciudadIdCoarrendatario5TXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ciudadIdCoarrendatario5TXT.Name = "ciudadIdCoarrendatario5TXT";
+            this.ciudadIdCoarrendatario5TXT.Size = new System.Drawing.Size(52, 22);
+            this.ciudadIdCoarrendatario5TXT.TabIndex = 133;
+            this.ciudadIdCoarrendatario5TXT.Text = "CALI";
+            this.ciudadIdCoarrendatario5TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // direccionEmpresaCoarrendatario5TXT
             // 
             this.direccionEmpresaCoarrendatario5TXT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
@@ -586,6 +612,7 @@
             this.tipoIdCoarrendatario5TXT.Name = "tipoIdCoarrendatario5TXT";
             this.tipoIdCoarrendatario5TXT.Size = new System.Drawing.Size(44, 23);
             this.tipoIdCoarrendatario5TXT.TabIndex = 117;
+            this.tipoIdCoarrendatario5TXT.Text = "C.C";
             // 
             // idCoarrendatario5TXT
             // 
@@ -732,6 +759,16 @@
             this.grupoCoarrendatario4.TabStop = false;
             this.grupoCoarrendatario4.Text = "Coarrendatario 4";
             // 
+            // ciudadIdCoarrendatario4TXT
+            // 
+            this.ciudadIdCoarrendatario4TXT.Location = new System.Drawing.Point(586, 29);
+            this.ciudadIdCoarrendatario4TXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ciudadIdCoarrendatario4TXT.Name = "ciudadIdCoarrendatario4TXT";
+            this.ciudadIdCoarrendatario4TXT.Size = new System.Drawing.Size(52, 22);
+            this.ciudadIdCoarrendatario4TXT.TabIndex = 134;
+            this.ciudadIdCoarrendatario4TXT.Text = "CALI";
+            this.ciudadIdCoarrendatario4TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // direccionEmpresaCoarrendatario4TXT
             // 
             this.direccionEmpresaCoarrendatario4TXT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
@@ -826,6 +863,7 @@
             this.tipoIdCoarrendatario4TXT.Name = "tipoIdCoarrendatario4TXT";
             this.tipoIdCoarrendatario4TXT.Size = new System.Drawing.Size(45, 23);
             this.tipoIdCoarrendatario4TXT.TabIndex = 118;
+            this.tipoIdCoarrendatario4TXT.Text = "C.C";
             // 
             // idCoarrendatario4TXT
             // 
@@ -974,6 +1012,16 @@
             this.grupoCoarrendatario3.TabStop = false;
             this.grupoCoarrendatario3.Text = "Coarrendatario 3";
             // 
+            // ciudadIdCoarrendatario3TXT
+            // 
+            this.ciudadIdCoarrendatario3TXT.Location = new System.Drawing.Point(584, 31);
+            this.ciudadIdCoarrendatario3TXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ciudadIdCoarrendatario3TXT.Name = "ciudadIdCoarrendatario3TXT";
+            this.ciudadIdCoarrendatario3TXT.Size = new System.Drawing.Size(52, 22);
+            this.ciudadIdCoarrendatario3TXT.TabIndex = 132;
+            this.ciudadIdCoarrendatario3TXT.Text = "CALI";
+            this.ciudadIdCoarrendatario3TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // direccionEmpresaCoarrendatario3TXT
             // 
             this.direccionEmpresaCoarrendatario3TXT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
@@ -1054,6 +1102,21 @@
             this.label80.Size = new System.Drawing.Size(62, 16);
             this.label80.TabIndex = 125;
             this.label80.Text = "Empresa";
+            // 
+            // tipoIdCoarrendatario3TXT
+            // 
+            this.tipoIdCoarrendatario3TXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tipoIdCoarrendatario3TXT.FormattingEnabled = true;
+            this.tipoIdCoarrendatario3TXT.Items.AddRange(new object[] {
+            "C.C.",
+            "N.I.T.",
+            "T.E."});
+            this.tipoIdCoarrendatario3TXT.Location = new System.Drawing.Point(534, 30);
+            this.tipoIdCoarrendatario3TXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tipoIdCoarrendatario3TXT.Name = "tipoIdCoarrendatario3TXT";
+            this.tipoIdCoarrendatario3TXT.Size = new System.Drawing.Size(44, 23);
+            this.tipoIdCoarrendatario3TXT.TabIndex = 117;
+            this.tipoIdCoarrendatario3TXT.Text = "C.C";
             // 
             // idCoarrendatario3TXT
             // 
@@ -1204,6 +1267,16 @@
             this.grupoCoarrendatario2.Text = "Coarrendatario 2";
             this.grupoCoarrendatario2.Enter += new System.EventHandler(this.grupoCoarrendatario2_Enter);
             // 
+            // ciudadIdCoarrendatario2TXT
+            // 
+            this.ciudadIdCoarrendatario2TXT.Location = new System.Drawing.Point(587, 26);
+            this.ciudadIdCoarrendatario2TXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ciudadIdCoarrendatario2TXT.Name = "ciudadIdCoarrendatario2TXT";
+            this.ciudadIdCoarrendatario2TXT.Size = new System.Drawing.Size(52, 22);
+            this.ciudadIdCoarrendatario2TXT.TabIndex = 133;
+            this.ciudadIdCoarrendatario2TXT.Text = "CALI";
+            this.ciudadIdCoarrendatario2TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // direccionEmpresaCoarrendatario2TXT
             // 
             this.direccionEmpresaCoarrendatario2TXT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
@@ -1298,6 +1371,7 @@
             this.tipoIdCoarrendatario2TXT.Name = "tipoIdCoarrendatario2TXT";
             this.tipoIdCoarrendatario2TXT.Size = new System.Drawing.Size(45, 23);
             this.tipoIdCoarrendatario2TXT.TabIndex = 117;
+            this.tipoIdCoarrendatario2TXT.Text = "C.C";
             // 
             // idCoarrendatario2TXT
             // 
@@ -1446,6 +1520,16 @@
             this.grupoCoarrendatario1.TabStop = false;
             this.grupoCoarrendatario1.Text = "Coarrendatario 1";
             // 
+            // ciudadIdCoarrendatario1TXT
+            // 
+            this.ciudadIdCoarrendatario1TXT.Location = new System.Drawing.Point(584, 28);
+            this.ciudadIdCoarrendatario1TXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ciudadIdCoarrendatario1TXT.Name = "ciudadIdCoarrendatario1TXT";
+            this.ciudadIdCoarrendatario1TXT.Size = new System.Drawing.Size(52, 22);
+            this.ciudadIdCoarrendatario1TXT.TabIndex = 124;
+            this.ciudadIdCoarrendatario1TXT.Text = "CALI";
+            this.ciudadIdCoarrendatario1TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // direccionEmpresaCoarrendatario1TXT
             // 
             this.direccionEmpresaCoarrendatario1TXT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
@@ -1540,6 +1624,7 @@
             this.tipoIdCoarrendatario1TXT.Name = "tipoIdCoarrendatario1TXT";
             this.tipoIdCoarrendatario1TXT.Size = new System.Drawing.Size(45, 23);
             this.tipoIdCoarrendatario1TXT.TabIndex = 115;
+            this.tipoIdCoarrendatario1TXT.Text = "C.C";
             // 
             // label12
             // 
@@ -1657,6 +1742,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.button4);
+            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.logoApp);
             this.tabPage1.Controls.Add(this.loadingIMG);
@@ -1675,14 +1762,37 @@
             this.tabPage1.Text = "Contrato";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1224, 677);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(82, 36);
+            this.button4.TabIndex = 135;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1151, 676);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(67, 37);
+            this.button3.TabIndex = 134;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1096, 599);
+            this.button1.Location = new System.Drawing.Point(1058, 677);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 96);
+            this.button1.Size = new System.Drawing.Size(81, 36);
             this.button1.TabIndex = 133;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_18);
             // 
             // logoApp
@@ -1710,6 +1820,8 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.btnExportarInfoTXT);
+            this.groupBox8.Controls.Add(this.btnExportarInfo);
             this.groupBox8.Controls.Add(this.label107);
             this.groupBox8.Controls.Add(this.btnVerCarpetaTXT);
             this.groupBox8.Controls.Add(this.button2);
@@ -1727,17 +1839,41 @@
             this.groupBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox8.Size = new System.Drawing.Size(280, 223);
+            this.groupBox8.Size = new System.Drawing.Size(280, 324);
             this.groupBox8.TabIndex = 123;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Opciones";
             this.groupBox8.Enter += new System.EventHandler(this.groupBox8_Enter);
             // 
+            // btnExportarInfoTXT
+            // 
+            this.btnExportarInfoTXT.AutoSize = true;
+            this.btnExportarInfoTXT.Enabled = false;
+            this.btnExportarInfoTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarInfoTXT.Location = new System.Drawing.Point(100, 204);
+            this.btnExportarInfoTXT.Name = "btnExportarInfoTXT";
+            this.btnExportarInfoTXT.Size = new System.Drawing.Size(76, 15);
+            this.btnExportarInfoTXT.TabIndex = 137;
+            this.btnExportarInfoTXT.Text = "Exportar Info";
+            // 
+            // btnExportarInfo
+            // 
+            this.btnExportarInfo.BackgroundImage = global::Exporter.Properties.Resources.info_basica_icon3;
+            this.btnExportarInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExportarInfo.Enabled = false;
+            this.btnExportarInfo.Location = new System.Drawing.Point(101, 135);
+            this.btnExportarInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExportarInfo.Name = "btnExportarInfo";
+            this.btnExportarInfo.Size = new System.Drawing.Size(71, 66);
+            this.btnExportarInfo.TabIndex = 136;
+            this.btnExportarInfo.UseVisualStyleBackColor = true;
+            this.btnExportarInfo.Click += new System.EventHandler(this.button5_Click_1);
+            // 
             // label107
             // 
             this.label107.AutoSize = true;
             this.label107.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label107.Location = new System.Drawing.Point(209, 203);
+            this.label107.Location = new System.Drawing.Point(28, 299);
             this.label107.Name = "label107";
             this.label107.Size = new System.Drawing.Size(32, 15);
             this.label107.TabIndex = 135;
@@ -1748,7 +1884,7 @@
             this.btnVerCarpetaTXT.AutoSize = true;
             this.btnVerCarpetaTXT.Enabled = false;
             this.btnVerCarpetaTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerCarpetaTXT.Location = new System.Drawing.Point(101, 203);
+            this.btnVerCarpetaTXT.Location = new System.Drawing.Point(192, 203);
             this.btnVerCarpetaTXT.Name = "btnVerCarpetaTXT";
             this.btnVerCarpetaTXT.Size = new System.Drawing.Size(69, 15);
             this.btnVerCarpetaTXT.TabIndex = 132;
@@ -1758,7 +1894,7 @@
             // 
             this.button2.BackgroundImage = global::Exporter.Properties.Resources.salir_icon3;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(192, 135);
+            this.button2.Location = new System.Drawing.Point(11, 231);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(71, 66);
@@ -1771,7 +1907,7 @@
             this.btnVerCarpeta.BackgroundImage = global::Exporter.Properties.Resources.openfolder_icon1;
             this.btnVerCarpeta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVerCarpeta.Enabled = false;
-            this.btnVerCarpeta.Location = new System.Drawing.Point(101, 134);
+            this.btnVerCarpeta.Location = new System.Drawing.Point(192, 134);
             this.btnVerCarpeta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVerCarpeta.Name = "btnVerCarpeta";
             this.btnVerCarpeta.Size = new System.Drawing.Size(71, 66);
@@ -1784,11 +1920,11 @@
             this.btnExportarTXT.AutoSize = true;
             this.btnExportarTXT.Enabled = false;
             this.btnExportarTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportarTXT.Location = new System.Drawing.Point(13, 203);
+            this.btnExportarTXT.Location = new System.Drawing.Point(8, 203);
             this.btnExportarTXT.Name = "btnExportarTXT";
-            this.btnExportarTXT.Size = new System.Drawing.Size(53, 15);
+            this.btnExportarTXT.Size = new System.Drawing.Size(83, 15);
             this.btnExportarTXT.TabIndex = 130;
-            this.btnExportarTXT.Text = "Exportar";
+            this.btnExportarTXT.Text = "Exportar Ctos.";
             // 
             // btnDuplicar
             // 
@@ -1907,7 +2043,7 @@
             // 
             this.listaContratosBox.ForeColor = System.Drawing.Color.Navy;
             this.listaContratosBox.FormattingEnabled = true;
-            this.listaContratosBox.Location = new System.Drawing.Point(123, 14);
+            this.listaContratosBox.Location = new System.Drawing.Point(125, 14);
             this.listaContratosBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listaContratosBox.Name = "listaContratosBox";
             this.listaContratosBox.Size = new System.Drawing.Size(143, 24);
@@ -2116,6 +2252,7 @@
             this.tipoIdEncargadoTXT.Name = "tipoIdEncargadoTXT";
             this.tipoIdEncargadoTXT.Size = new System.Drawing.Size(63, 23);
             this.tipoIdEncargadoTXT.TabIndex = 28;
+            this.tipoIdEncargadoTXT.Text = "C.C";
             // 
             // label53
             // 
@@ -2232,6 +2369,12 @@
             // 
             // contratoGroup
             // 
+            this.contratoGroup.Controls.Add(this.reajusteTXT);
+            this.contratoGroup.Controls.Add(this.aseguradoraTXT);
+            this.contratoGroup.Controls.Add(this.label111);
+            this.contratoGroup.Controls.Add(this.numeroSolicitudTXT);
+            this.contratoGroup.Controls.Add(this.label109);
+            this.contratoGroup.Controls.Add(this.label110);
             this.contratoGroup.Controls.Add(this.inmuebleTXT);
             this.contratoGroup.Controls.Add(this.label68);
             this.contratoGroup.Controls.Add(this.barrioTXT);
@@ -2267,15 +2410,67 @@
             this.contratoGroup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.contratoGroup.Name = "contratoGroup";
             this.contratoGroup.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.contratoGroup.Size = new System.Drawing.Size(1021, 230);
+            this.contratoGroup.Size = new System.Drawing.Size(1021, 236);
             this.contratoGroup.TabIndex = 115;
             this.contratoGroup.TabStop = false;
             this.contratoGroup.Text = "Datos de contrato";
             this.contratoGroup.Enter += new System.EventHandler(this.contratoGroup_Enter);
             // 
+            // aseguradoraTXT
+            // 
+            this.aseguradoraTXT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
+            this.aseguradoraTXT.FormattingEnabled = true;
+            this.aseguradoraTXT.Items.AddRange(new object[] {
+            "El Libertador",
+            "Inmobiliaria",
+            "Otro"});
+            this.aseguradoraTXT.Location = new System.Drawing.Point(124, 200);
+            this.aseguradoraTXT.Name = "aseguradoraTXT";
+            this.aseguradoraTXT.Size = new System.Drawing.Size(134, 24);
+            this.aseguradoraTXT.TabIndex = 307;
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Location = new System.Drawing.Point(584, 203);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(61, 16);
+            this.label111.TabIndex = 306;
+            this.label111.Text = "Reajuste";
+            // 
+            // numeroSolicitudTXT
+            // 
+            this.numeroSolicitudTXT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
+            this.numeroSolicitudTXT.Location = new System.Drawing.Point(395, 200);
+            this.numeroSolicitudTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numeroSolicitudTXT.Name = "numeroSolicitudTXT";
+            this.numeroSolicitudTXT.Size = new System.Drawing.Size(165, 22);
+            this.numeroSolicitudTXT.TabIndex = 302;
+            this.numeroSolicitudTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.Location = new System.Drawing.Point(278, 203);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(107, 16);
+            this.label109.TabIndex = 304;
+            this.label109.Text = "Número solicitud";
+            this.label109.Click += new System.EventHandler(this.label109_Click);
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Location = new System.Drawing.Point(27, 203);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(86, 16);
+            this.label110.TabIndex = 303;
+            this.label110.Text = "Aseguradora";
+            this.label110.Click += new System.EventHandler(this.label110_Click);
+            // 
             // inmuebleTXT
             // 
-            this.inmuebleTXT.Location = new System.Drawing.Point(683, 171);
+            this.inmuebleTXT.Location = new System.Drawing.Point(683, 155);
             this.inmuebleTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inmuebleTXT.Name = "inmuebleTXT";
             this.inmuebleTXT.Size = new System.Drawing.Size(137, 22);
@@ -2285,7 +2480,7 @@
             // label68
             // 
             this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(584, 174);
+            this.label68.Location = new System.Drawing.Point(584, 158);
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(93, 16);
             this.label68.TabIndex = 129;
@@ -2293,7 +2488,7 @@
             // 
             // barrioTXT
             // 
-            this.barrioTXT.Location = new System.Drawing.Point(755, 34);
+            this.barrioTXT.Location = new System.Drawing.Point(755, 30);
             this.barrioTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barrioTXT.Name = "barrioTXT";
             this.barrioTXT.Size = new System.Drawing.Size(233, 22);
@@ -2303,7 +2498,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(703, 38);
+            this.label20.Location = new System.Drawing.Point(703, 34);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(43, 16);
             this.label20.TabIndex = 127;
@@ -2312,7 +2507,7 @@
             // label67
             // 
             this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(989, 128);
+            this.label67.Location = new System.Drawing.Point(989, 116);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(19, 16);
             this.label67.TabIndex = 125;
@@ -2321,7 +2516,7 @@
             // label66
             // 
             this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(715, 128);
+            this.label66.Location = new System.Drawing.Point(715, 116);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(19, 16);
             this.label66.TabIndex = 124;
@@ -2329,7 +2524,7 @@
             // 
             // servicioCTXT
             // 
-            this.servicioCTXT.Location = new System.Drawing.Point(905, 126);
+            this.servicioCTXT.Location = new System.Drawing.Point(905, 114);
             this.servicioCTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.servicioCTXT.Name = "servicioCTXT";
             this.servicioCTXT.Size = new System.Drawing.Size(81, 22);
@@ -2341,7 +2536,7 @@
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(751, 128);
+            this.label52.Location = new System.Drawing.Point(751, 116);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(143, 16);
             this.label52.TabIndex = 123;
@@ -2349,7 +2544,7 @@
             // 
             // clausulaTXT
             // 
-            this.clausulaTXT.Location = new System.Drawing.Point(637, 126);
+            this.clausulaTXT.Location = new System.Drawing.Point(637, 114);
             this.clausulaTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clausulaTXT.Name = "clausulaTXT";
             this.clausulaTXT.Size = new System.Drawing.Size(73, 22);
@@ -2360,7 +2555,7 @@
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(471, 128);
+            this.label51.Location = new System.Drawing.Point(471, 116);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(160, 16);
             this.label51.TabIndex = 121;
@@ -2369,7 +2564,7 @@
             // fechaFinTXT
             // 
             this.fechaFinTXT.CustomFormat = "dd \'de\' MMMM \'del\' yyyy";
-            this.fechaFinTXT.Location = new System.Drawing.Point(724, 78);
+            this.fechaFinTXT.Location = new System.Drawing.Point(724, 70);
             this.fechaFinTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fechaFinTXT.Name = "fechaFinTXT";
             this.fechaFinTXT.Size = new System.Drawing.Size(264, 22);
@@ -2379,7 +2574,7 @@
             // fechaIniTXT
             // 
             this.fechaIniTXT.CustomFormat = "";
-            this.fechaIniTXT.Location = new System.Drawing.Point(352, 78);
+            this.fechaIniTXT.Location = new System.Drawing.Point(352, 70);
             this.fechaIniTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fechaIniTXT.Name = "fechaIniTXT";
             this.fechaIniTXT.Size = new System.Drawing.Size(264, 22);
@@ -2392,7 +2587,7 @@
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(195, 128);
+            this.label49.Location = new System.Drawing.Point(195, 116);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(48, 16);
             this.label49.TabIndex = 117;
@@ -2405,7 +2600,7 @@
             "6",
             "12",
             "24"});
-            this.vigenciaTXT.Location = new System.Drawing.Point(123, 126);
+            this.vigenciaTXT.Location = new System.Drawing.Point(123, 114);
             this.vigenciaTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.vigenciaTXT.Name = "vigenciaTXT";
             this.vigenciaTXT.Size = new System.Drawing.Size(64, 24);
@@ -2422,7 +2617,7 @@
             "Cinco (5) Copias",
             "Seis (6) Copias",
             "Siete (7) Copias"});
-            this.copiasTXT.Location = new System.Drawing.Point(311, 126);
+            this.copiasTXT.Location = new System.Drawing.Point(311, 114);
             this.copiasTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.copiasTXT.Name = "copiasTXT";
             this.copiasTXT.Size = new System.Drawing.Size(149, 24);
@@ -2431,7 +2626,7 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(255, 128);
+            this.label48.Location = new System.Drawing.Point(255, 116);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(50, 16);
             this.label48.TabIndex = 116;
@@ -2440,7 +2635,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(57, 128);
+            this.label47.Location = new System.Drawing.Point(57, 116);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(60, 16);
             this.label47.TabIndex = 114;
@@ -2448,7 +2643,7 @@
             // 
             // administracionTXT
             // 
-            this.administracionTXT.Location = new System.Drawing.Point(395, 171);
+            this.administracionTXT.Location = new System.Drawing.Point(395, 155);
             this.administracionTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.administracionTXT.Name = "administracionTXT";
             this.administracionTXT.Size = new System.Drawing.Size(165, 22);
@@ -2460,7 +2655,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(297, 174);
+            this.label45.Location = new System.Drawing.Point(297, 158);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(95, 16);
             this.label45.TabIndex = 112;
@@ -2468,7 +2663,7 @@
             // 
             // direccionTXT
             // 
-            this.direccionTXT.Location = new System.Drawing.Point(281, 34);
+            this.direccionTXT.Location = new System.Drawing.Point(281, 30);
             this.direccionTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.direccionTXT.Name = "direccionTXT";
             this.direccionTXT.Size = new System.Drawing.Size(404, 22);
@@ -2477,7 +2672,7 @@
             // 
             // ciudadTXT
             // 
-            this.ciudadTXT.Location = new System.Drawing.Point(123, 78);
+            this.ciudadTXT.Location = new System.Drawing.Point(123, 70);
             this.ciudadTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ciudadTXT.Name = "ciudadTXT";
             this.ciudadTXT.Size = new System.Drawing.Size(123, 22);
@@ -2489,7 +2684,7 @@
             // 
             this.destinoTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.destinoTXT.ForeColor = System.Drawing.Color.Red;
-            this.destinoTXT.Location = new System.Drawing.Point(885, 171);
+            this.destinoTXT.Location = new System.Drawing.Point(885, 155);
             this.destinoTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.destinoTXT.Name = "destinoTXT";
             this.destinoTXT.ReadOnly = true;
@@ -2499,7 +2694,7 @@
             // 
             // contratoTXT
             // 
-            this.contratoTXT.Location = new System.Drawing.Point(124, 34);
+            this.contratoTXT.Location = new System.Drawing.Point(124, 30);
             this.contratoTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.contratoTXT.Name = "contratoTXT";
             this.contratoTXT.Size = new System.Drawing.Size(81, 22);
@@ -2510,7 +2705,7 @@
             // 
             // canonTXT
             // 
-            this.canonTXT.Location = new System.Drawing.Point(123, 171);
+            this.canonTXT.Location = new System.Drawing.Point(123, 155);
             this.canonTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.canonTXT.Name = "canonTXT";
             this.canonTXT.Size = new System.Drawing.Size(165, 22);
@@ -2522,7 +2717,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 37);
+            this.label4.Location = new System.Drawing.Point(61, 33);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 16);
             this.label4.TabIndex = 14;
@@ -2532,7 +2727,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(211, 37);
+            this.label1.Location = new System.Drawing.Point(211, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 9;
@@ -2541,7 +2736,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 81);
+            this.label2.Location = new System.Drawing.Point(64, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 16);
             this.label2.TabIndex = 10;
@@ -2550,7 +2745,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(827, 174);
+            this.label3.Location = new System.Drawing.Point(827, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 16);
             this.label3.TabIndex = 12;
@@ -2559,7 +2754,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(267, 81);
+            this.label5.Location = new System.Drawing.Point(267, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 16);
             this.label5.TabIndex = 16;
@@ -2568,7 +2763,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(645, 82);
+            this.label6.Location = new System.Drawing.Point(645, 74);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 16);
             this.label6.TabIndex = 18;
@@ -2577,7 +2772,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(67, 174);
+            this.label7.Location = new System.Drawing.Point(67, 158);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 16);
             this.label7.TabIndex = 20;
@@ -2777,6 +2972,7 @@
             this.tipoIdArrendatarioTXT.Name = "tipoIdArrendatarioTXT";
             this.tipoIdArrendatarioTXT.Size = new System.Drawing.Size(63, 23);
             this.tipoIdArrendatarioTXT.TabIndex = 14;
+            this.tipoIdArrendatarioTXT.Text = "C.C";
             // 
             // label24
             // 
@@ -3086,6 +3282,7 @@
             this.tipoIdPropietarioTXT.Name = "tipoIdPropietarioTXT";
             this.tipoIdPropietarioTXT.Size = new System.Drawing.Size(63, 23);
             this.tipoIdPropietarioTXT.TabIndex = 21;
+            this.tipoIdPropietarioTXT.Text = "C.C";
             // 
             // nombrePropietarioTXT
             // 
@@ -3239,6 +3436,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(5, 18);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
@@ -3328,6 +3526,54 @@
             this.richTextBox2.Size = new System.Drawing.Size(1327, 612);
             this.richTextBox2.TabIndex = 118;
             this.richTextBox2.Text = "";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.panel3);
+            this.tabPage2.Controls.Add(this.richTextBox3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1331, 659);
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "Información básica";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Purple;
+            this.panel3.Controls.Add(this.label108);
+            this.panel3.Location = new System.Drawing.Point(-12, 1);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1355, 41);
+            this.panel3.TabIndex = 121;
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.BackColor = System.Drawing.Color.Transparent;
+            this.label108.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label108.ForeColor = System.Drawing.Color.White;
+            this.label108.Location = new System.Drawing.Point(481, 10);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(293, 20);
+            this.label108.TabIndex = 2;
+            this.label108.Text = "Vista previa de contrato de propietario";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BackColor = System.Drawing.Color.White;
+            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox3.Location = new System.Drawing.Point(-12, 45);
+            this.richTextBox3.Margin = new System.Windows.Forms.Padding(1);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.richTextBox3.Size = new System.Drawing.Size(1327, 612);
+            this.richTextBox3.TabIndex = 120;
+            this.richTextBox3.Text = "";
+            this.richTextBox3.TextChanged += new System.EventHandler(this.richTextBox3_TextChanged_1);
             // 
             // menuStrip1
             // 
@@ -3488,69 +3734,21 @@
             this.modificacionTXT.TabIndex = 126;
             this.modificacionTXT.Text = "Ultima modificación:";
             // 
-            // ciudadIdCoarrendatario1TXT
+            // reajusteTXT
             // 
-            this.ciudadIdCoarrendatario1TXT.Location = new System.Drawing.Point(584, 28);
-            this.ciudadIdCoarrendatario1TXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ciudadIdCoarrendatario1TXT.Name = "ciudadIdCoarrendatario1TXT";
-            this.ciudadIdCoarrendatario1TXT.Size = new System.Drawing.Size(52, 22);
-            this.ciudadIdCoarrendatario1TXT.TabIndex = 124;
-            this.ciudadIdCoarrendatario1TXT.Text = "CALI";
-            this.ciudadIdCoarrendatario1TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tipoIdCoarrendatario3TXT
-            // 
-            this.tipoIdCoarrendatario3TXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tipoIdCoarrendatario3TXT.FormattingEnabled = true;
-            this.tipoIdCoarrendatario3TXT.Items.AddRange(new object[] {
-            "C.C.",
-            "N.I.T.",
-            "T.E."});
-            this.tipoIdCoarrendatario3TXT.Location = new System.Drawing.Point(534, 30);
-            this.tipoIdCoarrendatario3TXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tipoIdCoarrendatario3TXT.Name = "tipoIdCoarrendatario3TXT";
-            this.tipoIdCoarrendatario3TXT.Size = new System.Drawing.Size(44, 23);
-            this.tipoIdCoarrendatario3TXT.TabIndex = 117;
-            // 
-            // ciudadIdCoarrendatario3TXT
-            // 
-            this.ciudadIdCoarrendatario3TXT.Location = new System.Drawing.Point(584, 31);
-            this.ciudadIdCoarrendatario3TXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ciudadIdCoarrendatario3TXT.Name = "ciudadIdCoarrendatario3TXT";
-            this.ciudadIdCoarrendatario3TXT.Size = new System.Drawing.Size(52, 22);
-            this.ciudadIdCoarrendatario3TXT.TabIndex = 132;
-            this.ciudadIdCoarrendatario3TXT.Text = "CALI";
-            this.ciudadIdCoarrendatario3TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ciudadIdCoarrendatario5TXT
-            // 
-            this.ciudadIdCoarrendatario5TXT.Location = new System.Drawing.Point(585, 20);
-            this.ciudadIdCoarrendatario5TXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ciudadIdCoarrendatario5TXT.Name = "ciudadIdCoarrendatario5TXT";
-            this.ciudadIdCoarrendatario5TXT.Size = new System.Drawing.Size(52, 22);
-            this.ciudadIdCoarrendatario5TXT.TabIndex = 133;
-            this.ciudadIdCoarrendatario5TXT.Text = "CALI";
-            this.ciudadIdCoarrendatario5TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ciudadIdCoarrendatario2TXT
-            // 
-            this.ciudadIdCoarrendatario2TXT.Location = new System.Drawing.Point(587, 26);
-            this.ciudadIdCoarrendatario2TXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ciudadIdCoarrendatario2TXT.Name = "ciudadIdCoarrendatario2TXT";
-            this.ciudadIdCoarrendatario2TXT.Size = new System.Drawing.Size(52, 22);
-            this.ciudadIdCoarrendatario2TXT.TabIndex = 133;
-            this.ciudadIdCoarrendatario2TXT.Text = "CALI";
-            this.ciudadIdCoarrendatario2TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ciudadIdCoarrendatario4TXT
-            // 
-            this.ciudadIdCoarrendatario4TXT.Location = new System.Drawing.Point(586, 29);
-            this.ciudadIdCoarrendatario4TXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ciudadIdCoarrendatario4TXT.Name = "ciudadIdCoarrendatario4TXT";
-            this.ciudadIdCoarrendatario4TXT.Size = new System.Drawing.Size(52, 22);
-            this.ciudadIdCoarrendatario4TXT.TabIndex = 134;
-            this.ciudadIdCoarrendatario4TXT.Text = "CALI";
-            this.ciudadIdCoarrendatario4TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.reajusteTXT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
+            this.reajusteTXT.FormattingEnabled = true;
+            this.reajusteTXT.Items.AddRange(new object[] {
+            "IPC",
+            "DTF",
+            "5%",
+            "6%",
+            "8%",
+            "10%"});
+            this.reajusteTXT.Location = new System.Drawing.Point(662, 198);
+            this.reajusteTXT.Name = "reajusteTXT";
+            this.reajusteTXT.Size = new System.Drawing.Size(94, 24);
+            this.reajusteTXT.TabIndex = 308;
             // 
             // Form1
             // 
@@ -3608,6 +3806,9 @@
             this.tabPage5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -3907,6 +4108,20 @@
         private System.Windows.Forms.TextBox ciudadIdCoarrendatario5TXT;
         private System.Windows.Forms.TextBox ciudadIdCoarrendatario2TXT;
         private System.Windows.Forms.TextBox ciudadIdCoarrendatario4TXT;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.Label btnExportarInfoTXT;
+        private System.Windows.Forms.Button btnExportarInfo;
+        private System.Windows.Forms.TextBox numeroSolicitudTXT;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.ComboBox aseguradoraTXT;
+        private System.Windows.Forms.ComboBox reajusteTXT;
     }
 }
 

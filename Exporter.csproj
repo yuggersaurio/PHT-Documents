@@ -173,6 +173,10 @@
     <Content Include="documentsicon.ico" />
     <Content Include="icon_pht.ico" />
     <Content Include="PHT-DOCUMENTICON.ico" />
+    <None Include="Resources\info_basica_icon3.png" />
+    <None Include="Resources\info_basica_icon2.png" />
+    <None Include="Resources\info_basica_icon1.png" />
+    <None Include="Resources\info_basica_icon.png" />
     <None Include="Resources\openfolder_icon1.png" />
     <None Include="Resources\openfolder_icon.png" />
     <None Include="Resources\2icon.png" />

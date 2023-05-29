@@ -121,11 +121,14 @@
   <data name="2icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="info_basica_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_basica_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="vista_previa_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vista_previa_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loader" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loader.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="salir_icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\salir_icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="generar_word_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\generar_word_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,8 +136,14 @@
   <data name="logoapp-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoapp-01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="info_basica_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_basica_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="openfolder_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\openfolder_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="openfolder_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\openfolder_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="salir_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\salir_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,17 +154,20 @@
   <data name="salir_icon12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\salir_icon12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="generar_word_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\generar_word_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="salir_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\salir_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="duplicar_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\duplicar_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="loader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loader.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="salir_icon11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\salir_icon11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="salir_icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\salir_icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="duplicar_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\duplicar_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_basica_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_basica_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="salir_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\salir_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,8 +175,8 @@
   <data name="guardar_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\guardar_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="salir_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\salir_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="generar_word_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\generar_word_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,7 +187,7 @@
   <data name="generar_word_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\generar_word_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="openfolder_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\openfolder_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="info_basica_icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_basica_icon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

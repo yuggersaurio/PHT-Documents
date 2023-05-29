@@ -70,9 +70,50 @@ namespace Exporter
             }
             //------------------------------------
 
+
+            
+
             //ABRO AUTOMATICAMENTE ARCHIVOS GENERADO
             Process.Start(rutaArchivo);
             Process.Start(rutaArchivo2);
+            //------------------------------------
+
+
+        }
+
+        public void generarWordInfo()
+        {
+
+
+            //VERIFICO SI DIRECTORIO EXISTE
+            var rutaCarpeta = @"\\servidor1\Fotos\FOTOS_FIRMA_DE_CONTRATOS\CTO_" + contratoTXT.Text + @"\" + @"DOCUMENTOS\INFO BASICA";
+
+            if (!Directory.Exists(rutaCarpeta))
+            {
+                Console.WriteLine("Creando el directorio: {0}", rutaCarpeta);
+                DirectoryInfo di = Directory.CreateDirectory(rutaCarpeta);
+            }
+
+            //--
+
+
+            //ESCRIBO ARCHIVO EN WORD INFO BASICA
+            var rutaArchivo3 = @"\\servidor1\Fotos\FOTOS_FIRMA_DE_CONTRATOS\CTO_" + contratoTXT.Text + @"\" + @"DOCUMENTOS\INFO BASICA\" + contratoTXT.Text + " INFO.rtf";
+
+            try
+            {
+                System.IO.File.WriteAllText(rutaArchivo3, richTextBox3.Rtf);
+            }
+            catch (System.IO.IOException IOEx)
+            {
+                MessageBox.Show("la INFORMACION BASICA que esta tratando de generar está en uso, cierrela y presione exportar nuevamente", "Advertencia");
+
+            }
+            //------------------------------------
+
+            //ABRO AUTOMATICAMENTE ARCHIVO GENERADO INFO BASICA
+            
+            Process.Start(rutaArchivo3);
             //------------------------------------
 
 
@@ -103,7 +144,7 @@ namespace Exporter
                 
             }
 
-            //---Llenamos formato de arrendatario
+            //---Llenamos info de contrato en formato de arrendatario 
             richTextBox1.Rtf = richTextBox1.Rtf.Replace("**contratoTXT**", contratoTXT.Text);
             richTextBox1.Rtf = richTextBox1.Rtf.Replace("**ciudadTXT**", ciudadTXT.Text);
             richTextBox1.Rtf = richTextBox1.Rtf.Replace("**destinoTXT**", destinoTXT.Text);
@@ -111,11 +152,11 @@ namespace Exporter
             richTextBox1.Rtf = richTextBox1.Rtf.Replace("**vigenciaTXT**", vigenciaTXT.Text);
             richTextBox1.Rtf = richTextBox1.Rtf.Replace("**copiasTXT**", copiasTXT.Text);
             richTextBox1.Rtf = richTextBox1.Rtf.Replace("**barrioTXT**", barrioTXT.Text);
-            
+
             //--
 
 
-            //---Llenamos formato de propietario
+            //---Llenamos info de contrato en formato de propietario
             richTextBox2.Rtf = richTextBox2.Rtf.Replace("**contratoTXT**", contratoTXT.Text);
             richTextBox2.Rtf = richTextBox2.Rtf.Replace("**ciudadTXT**", ciudadTXT.Text);
             richTextBox2.Rtf = richTextBox2.Rtf.Replace("**destinoTXT**", destinoTXT.Text);
@@ -125,6 +166,29 @@ namespace Exporter
             richTextBox2.Rtf = richTextBox2.Rtf.Replace("**barrioTXT**", barrioTXT.Text);
             richTextBox2.Rtf = richTextBox2.Rtf.Replace("**inmuebleTXT**", inmuebleTXT.Text);
             //--
+
+
+
+
+            //--llenamos formato de info basica
+
+
+            richTextBox3.Rtf = richTextBox3.Rtf.Replace("**contratoTXT**", contratoTXT.Text);
+            richTextBox3.Rtf = richTextBox3.Rtf.Replace("**ciudadTXT**", ciudadTXT.Text);
+            richTextBox3.Rtf = richTextBox3.Rtf.Replace("**destinoTXT**", destinoTXT.Text);
+            richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionTXT**", direccionTXT.Text);
+            richTextBox3.Rtf = richTextBox3.Rtf.Replace("**vigenciaTXT**", vigenciaTXT.Text);
+            richTextBox3.Rtf = richTextBox3.Rtf.Replace("**copiasTXT**", copiasTXT.Text);
+            richTextBox3.Rtf = richTextBox3.Rtf.Replace("**barrioTXT**", barrioTXT.Text);
+            richTextBox3.Rtf = richTextBox3.Rtf.Replace("**inmuebleTXT**", inmuebleTXT.Text);
+            richTextBox3.Rtf = richTextBox3.Rtf.Replace("**aseguradoraTXT**", aseguradoraTXT.Text);
+            richTextBox3.Rtf = richTextBox3.Rtf.Replace("**numeroSolicitudTXT**", numeroSolicitudTXT.Text);
+            richTextBox3.Rtf = richTextBox3.Rtf.Replace("**reajusteTXT**", reajusteTXT.Text);
+
+
+
+            //--
+
 
             //--LLENAMOS QUIEN EXPORTO LOS ARCHIVOS
             richTextBox2.Rtf = richTextBox2.Rtf.Replace("**usuarioTXT**", usuarioTXT.Text + " - "+ DateTime.Now);
@@ -180,6 +244,12 @@ namespace Exporter
             richTextBox2.Rtf = richTextBox2.Rtf.Replace("**fechaFinTXT**", fechaFinDividida[1].Humanize(LetterCasing.AllCaps));
             //--
 
+
+            //LLenamos formato de info basica
+            richTextBox3.Rtf = richTextBox3.Rtf.Replace("**fechaIniTXT**", fechaIniDividida[1].Humanize(LetterCasing.AllCaps));
+            richTextBox3.Rtf = richTextBox3.Rtf.Replace("**fechaFinTXT**", fechaFinDividida[1].Humanize(LetterCasing.AllCaps));
+            //--
+
             //PORCENTAJES A LETRAS
 
             porcentajesLetras(clausulaTXT.Text, "clausula");
@@ -192,6 +262,8 @@ namespace Exporter
             generarContratosEnWORDToolStripMenuItem.Enabled = true;
             btnExportar.Enabled = true;
             btnExportarTXT.Enabled = true;
+            btnExportarInfo.Enabled = true;
+            btnExportarInfoTXT.Enabled = true;
             datosContratoTab.SelectedIndex = 2;
             informacionTXT.Text = @"Vista previa generada, para generar una nueva vista previa debe cargar un formato nuevamente";
             informacionTXT.ForeColor = Color.Chocolate;
@@ -255,10 +327,14 @@ namespace Exporter
 
                     richTextBox2.Rtf = richTextBox2.Rtf.Replace("**canonTXT**", (numeroInteger.ToWords()).Humanize(LetterCasing.AllCaps) + dePesos + "( " + numeroFormateado + " ) ");
                     richTextBox2.Rtf = richTextBox2.Rtf.Replace("**cuantiaTXT**", (cuantiaInteger.ToWords()).Humanize(LetterCasing.AllCaps) + dePesos + "( " + cuantiaFormateado + " ) ");
+
+                    richTextBox3.Rtf = richTextBox3.Rtf.Replace("**canonTXT**",canonTXT.Text);
                     break;
                 case "admin":
                     richTextBox1.Rtf = richTextBox1.Rtf.Replace("**administracionTXT**",  (numeroInteger.ToWords()).Humanize(LetterCasing.AllCaps) + dePesos + "( " + numeroFormateado + " ) " );
                     richTextBox2.Rtf = richTextBox2.Rtf.Replace("**administracionTXT**", (numeroInteger.ToWords()).Humanize(LetterCasing.AllCaps) + dePesos + "( " + numeroFormateado + " ) ");
+
+                    richTextBox3.Rtf = richTextBox3.Rtf.Replace("**administracionTXT**", administracionTXT.Text);
                     break;
 
                 case "canonadmin":
@@ -313,15 +389,17 @@ cargarFormato(string tipoFormato)
             informacionTXT.ForeColor = Color.Blue;
 
             int i;
-           for(i=0 ; i<=1; i++) {
+           for(i=0 ; i<=2; i++) {
                 //TRAIGO EL FORMATO CORRESPONDIENTE
 
             string URL = "";
             object readOnly = true;
             object visible = true;
             object save = false;
-                if (i == 0) { URL = @"\\servidor1\sistemas\PROYECTOS\Exporter\Formatos\" + tipoFormato + @"\" + tipoFormato + "Arren.docx"; } else 
-                            { URL = @"\\servidor1\sistemas\PROYECTOS\Exporter\Formatos\" + tipoFormato + @"\" + tipoFormato + "Prop.docx"; }
+                if (i == 0) { URL = @"\\servidor1\sistemas\PROYECTOS\Exporter\Formatos\" + tipoFormato + @"\" + tipoFormato + "Arren.docx"; }
+                if (i == 1) { URL = @"\\servidor1\sistemas\PROYECTOS\Exporter\Formatos\" + tipoFormato + @"\" + tipoFormato + "Prop.docx"; }
+                if (i == 2) { URL = @"\\servidor1\sistemas\PROYECTOS\Exporter\Formatos\info\info_basica.docx"; }
+            
             object fileName = URL;
             object missing = Type.Missing;
             object newTemplate = false;
@@ -336,9 +414,11 @@ cargarFormato(string tipoFormato)
             oDoc.ActiveWindow.Selection.WholeStory();
             oDoc.ActiveWindow.Selection.Copy();
             IDataObject data = Clipboard.GetDataObject();
-                if (i == 0) { richTextBox1.Rtf = data.GetData(DataFormats.Rtf).ToString(); } else { richTextBox2.Rtf = data.GetData(DataFormats.Rtf).ToString(); }
-            
-            oWord.Quit(ref missing, ref missing, ref missing);
+                if (i == 0) { richTextBox1.Rtf = data.GetData(DataFormats.Rtf).ToString(); }
+                if (i == 1) { richTextBox2.Rtf = data.GetData(DataFormats.Rtf).ToString(); }
+                if (i == 2) { richTextBox3.Rtf = data.GetData(DataFormats.Rtf).ToString(); }
+
+                oWord.Quit(ref missing, ref missing, ref missing);
 
 
             };
@@ -410,10 +490,12 @@ cargarFormato(string tipoFormato)
             {
                 case "clausula":
                     richTextBox2.Rtf = richTextBox2.Rtf.Replace("**clausulaTXT**", porcentajeLetras + " PORCIENTO ( " + valorPorcentaje + " % )");
+                    richTextBox3.Rtf = richTextBox3.Rtf.Replace("**clausulaTXT**", clausulaTXT.Text + " %");
                     Console.WriteLine(porcentajeLetras);
                     break;
                 case "servicio":
                     richTextBox2.Rtf = richTextBox2.Rtf.Replace("**servicioCTXT**", porcentajeLetras + " PORCIENTO ( " + valorPorcentaje + " % )");
+                    richTextBox3.Rtf = richTextBox3.Rtf.Replace("**servicioCTXT**", servicioCTXT.Text + " %");
                     Console.WriteLine(porcentajeLetras);
                     break;
             }                    
@@ -505,7 +587,7 @@ cargarFormato(string tipoFormato)
 
         {
             listaContratosBox.Items.Clear();
-            dynamic respuesta = dBApi.Get("https://portalhouses.com/administrador/ApiDocuments/post.php?tipo=listar");
+            dynamic respuesta = dBApi.Get("https://portalhouses.com/administrador/ApiDocuments2/post.php?tipo=listar");
             // 
             //  Console.WriteLine(respuesta.Count);
 
@@ -625,6 +707,321 @@ cargarFormato(string tipoFormato)
             modificacionTXT.Text = "Ultima modificación por " + usuarioTXT.Text + " " + DateTime.Now;
 
         }
+
+        public void guardarContrato2(string tipoConsultaSQL, string formato)
+        {
+
+
+
+            dynamic respuesta = dBApi.Get("https://portalhouses.com/administrador/ApiDocuments2/post.php?tipo=" + tipoConsultaSQL
+
+                + "&contratoTXTdb=" + contratoTXT.Text
+                + "&direccionTXTdb=" + direccionTXT.Text
+                + "&ciudadTXTdb=" + ciudadTXT.Text
+                + "&barrioTXTdb=" + barrioTXT.Text
+                + "&inmuebleTXTdb=" + inmuebleTXT.Text
+                + "&fechaIniTXTdb=" + fechaIniTXT.Text
+                + "&fechaFinTXTdb=" + fechaFinTXT.Text
+                + "&canonTXTdb=" + canonTXT.Text
+                + "&administracionTXTdb=" + administracionTXT.Text
+                + "&destinoTXTdb=" + destinoTXT.Text
+                + "&vigenciaTXTdb=" + vigenciaTXT.Text
+                + "&servicioCTXTdb=" + servicioCTXT.Text
+                + "&clausulaTXTdb=" + clausulaTXT.Text
+                + "&aseguradoraTXTdb=" + aseguradoraTXT.Text
+                + "&numeroSolicitudTXTdb=" + numeroSolicitudTXT.Text
+                + "&reajusteTXTdb=" + reajusteTXT.Text
+
+                + "&arrendatarioTXTdb="
+                + nombreArrendatarioTXT.Text + ";"
+                + idArrendatarioTXT.Text + ";"
+                + tipoIdArrendatarioTXT.Text + ";"
+                + ciudadIdArrendatarioTXT.Text + ";"
+                + telefonoArrendatarioTXT.Text + ";"
+                + celularArrendatarioTXT.Text + ";"
+                + emailArrendatarioTXT.Text + ";"
+                + direccionArrendatarioTXT.Text + ";"
+                + empresaArrendatarioTXT.Text + ";"
+                + telEmpresaArrendatarioTXT.Text + ";"
+                + direccionEmpresaArrendatarioTXT.Text + ";"
+                + cargoEmpresaArrendatarioTXT.Text + ";"
+                + cuentaArrendatarioTXT.Text + ";"
+                + tipoCuentaArrendatarioTXT.Text + ";"
+                + bancoArrendatarioTXT.Text + ";"
+
+                + "&propietarioTXTdb="
+                + nombrePropietarioTXT.Text + ";"
+                + idPropietarioTXT.Text + ";"
+                + tipoIdPropietarioTXT.Text + ";"
+                + ciudadIdPropietarioTXT.Text + ";"
+                + telefonoPropietarioTXT.Text + ";"
+                + celularPropietarioTXT.Text + ";"
+                + emailPropietarioTXT.Text + ";"
+                + direccionPropietarioTXT.Text + ";"
+                + empresaPropietarioTXT.Text + ";"
+                + telEmpresaPropietarioTXT.Text + ";"
+                + direccionEmpresaPropietarioTXT.Text + ";"
+                + cargoEmpresaPropietarioTXT.Text + ";"
+                + cuentaPropietarioTXT.Text + ";"
+                + tipoCuentaPropietarioTXT.Text + ";"
+                + bancoPropietarioTXT.Text + ";"
+
+                + "&encargadoTXTdb="
+                + nombreEncargadoTXT.Text + ";"
+                + idEncargadoTXT.Text + ";"
+                + tipoIdEncargadoTXT.Text + ";"
+                + ciudadIdEncargadoTXT.Text + ";"
+                + telefonoEncargadoTXT.Text + ";"
+                + celularEncargadoTXT.Text + ";"
+                + emailEncargadoTXT.Text + ";"
+                + direccionEncargadoTXT.Text + ";"
+                + empresaEncargadoTXT.Text + ";"
+                + telEmpresaEncargadoTXT.Text + ";"
+                + direccionEmpresaEncargadoTXT.Text + ";"
+                + cargoEmpresaEncargadoTXT.Text + ";"
+                + cuentaEncargadoTXT.Text + ";"
+                + tipoCuentaEncargadoTXT.Text + ";"
+                + bancoEncargadoTXT.Text + ";"
+
+                + "&coarrendatario1TXTdb="
+                + nombreCoarrendatario1TXT.Text + ";"
+                + idCoarrendatario1TXT.Text + ";"
+                + tipoIdCoarrendatario1TXT.Text + ";"
+                + ciudadIdCoarrendatario1TXT.Text + ";"
+                + telefonoCoarrendatario1TXT.Text + ";"
+                + celularCoarrendatario1TXT.Text + ";"
+                + emailCoarrendatario1TXT.Text + ";"
+                + direccionCoarrendatario1TXT.Text + ";"
+                + empresaCoarrendatario1TXT.Text + ";"
+                + telEmpresaCoarrendatario1TXT.Text + ";"
+                + direccionEmpresaCoarrendatario1TXT.Text + ";"
+                + cargoEmpresaCoarrendatario1TXT.Text + ";"
+
+                 + "&coarrendatario2TXTdb="
+                + nombreCoarrendatario2TXT.Text + ";"
+                + idCoarrendatario2TXT.Text + ";"
+                + tipoIdCoarrendatario2TXT.Text + ";"
+                + ciudadIdCoarrendatario2TXT.Text + ";"
+                + telefonoCoarrendatario2TXT.Text + ";"
+                + celularCoarrendatario2TXT.Text + ";"
+                + emailCoarrendatario2TXT.Text + ";"
+                + direccionCoarrendatario2TXT.Text + ";"
+                + empresaCoarrendatario2TXT.Text + ";"
+                + telEmpresaCoarrendatario2TXT.Text + ";"
+                + direccionEmpresaCoarrendatario2TXT.Text + ";"
+                + cargoEmpresaCoarrendatario2TXT.Text + ";"
+
+                 + "&coarrendatario3TXTdb="
+                + nombreCoarrendatario3TXT.Text + ";"
+                + idCoarrendatario3TXT.Text + ";"
+                + tipoIdCoarrendatario3TXT.Text + ";"
+                + ciudadIdCoarrendatario3TXT.Text + ";"
+                + telefonoCoarrendatario3TXT.Text + ";"
+                + celularCoarrendatario3TXT.Text + ";"
+                + emailCoarrendatario3TXT.Text + ";"
+                + direccionCoarrendatario3TXT.Text + ";"
+                + empresaCoarrendatario3TXT.Text + ";"
+                + telEmpresaCoarrendatario3TXT.Text + ";"
+                + direccionEmpresaCoarrendatario3TXT.Text + ";"
+                + cargoEmpresaCoarrendatario3TXT.Text + ";"
+
+                 + "&coarrendatario4TXTdb="
+                + nombreCoarrendatario4TXT.Text + ";"
+                + idCoarrendatario4TXT.Text + ";"
+                + tipoIdCoarrendatario4TXT.Text + ";"
+                + ciudadIdCoarrendatario4TXT.Text + ";"
+                + telefonoCoarrendatario4TXT.Text + ";"
+                + celularCoarrendatario4TXT.Text + ";"
+                + emailCoarrendatario4TXT.Text + ";"
+                + direccionCoarrendatario4TXT.Text + ";"
+                + empresaCoarrendatario4TXT.Text + ";"
+                + telEmpresaCoarrendatario4TXT.Text + ";"
+                + direccionEmpresaCoarrendatario4TXT.Text + ";"
+                + cargoEmpresaCoarrendatario4TXT.Text + ";"
+
+                 + "&coarrendatario5TXTdb="
+                + nombreCoarrendatario5TXT.Text + ";"
+                + idCoarrendatario5TXT.Text + ";"
+                + tipoIdCoarrendatario5TXT.Text + ";"
+                + ciudadIdCoarrendatario5TXT.Text + ";"
+                + telefonoCoarrendatario5TXT.Text + ";"
+                + celularCoarrendatario5TXT.Text + ";"
+                + emailCoarrendatario5TXT.Text + ";"
+                + direccionCoarrendatario5TXT.Text + ";"
+                + empresaCoarrendatario5TXT.Text + ";"
+                + telEmpresaCoarrendatario5TXT.Text + ";"
+                + direccionEmpresaCoarrendatario5TXT.Text + ";"
+                + cargoEmpresaCoarrendatario5TXT.Text + ";"
+
+                + "&modificacionTXTdb=" + "Ultima modificación por " + usuarioTXT.Text + " " + DateTime.Now
+
+
+                );
+
+            Console.WriteLine("https://portalhouses.com/administrador/ApiDocuments2/post.php?tipo=" + tipoConsultaSQL
+
+                + "&contratoTXTdb=" + contratoTXT.Text
+                + "&direccionTXTdb=" + direccionTXT.Text
+                + "&ciudadTXTdb=" + ciudadTXT.Text
+                + "&barrioTXTdb=" + barrioTXT.Text
+                + "&inmuebleTXTdb=" + inmuebleTXT.Text
+                + "&fechaIniTXTdb=" + fechaIniTXT.Text
+                + "&fechaFinTXTdb=" + fechaFinTXT.Text
+                + "&canonTXTdb=" + canonTXT.Text
+                + "&administracionTXTdb=" + administracionTXT.Text
+                + "&destinoTXTdb=" + destinoTXT.Text
+                + "&vigenciaTXTdb=" + vigenciaTXT.Text
+                + "&servicioCTXTdb=" + servicioCTXT.Text
+                + "&clausulaTXTdb=" + clausulaTXT.Text
+
+                + "&arrendatarioTXTdb="
+                + nombreArrendatarioTXT.Text + ";"
+                + idArrendatarioTXT.Text + ";"
+                + tipoIdArrendatarioTXT.Text + ";"
+                + ciudadIdArrendatarioTXT.Text + ";"
+                + telefonoArrendatarioTXT.Text + ";"
+                + celularArrendatarioTXT.Text + ";"
+                + emailArrendatarioTXT.Text + ";"
+                + direccionArrendatarioTXT.Text + ";"
+                + empresaArrendatarioTXT.Text + ";"
+                + telEmpresaArrendatarioTXT.Text + ";"
+                + direccionEmpresaArrendatarioTXT.Text + ";"
+                + cargoEmpresaArrendatarioTXT.Text + ";"
+                + cuentaArrendatarioTXT.Text + ";"
+                + tipoCuentaArrendatarioTXT.Text + ";"
+                + bancoArrendatarioTXT.Text + ";"
+
+                + "&propietarioTXTdb="
+                + nombrePropietarioTXT.Text + ";"
+                + idPropietarioTXT.Text + ";"
+                + tipoIdPropietarioTXT.Text + ";"
+                + ciudadIdPropietarioTXT.Text + ";"
+                + telefonoPropietarioTXT.Text + ";"
+                + celularPropietarioTXT.Text + ";"
+                + emailPropietarioTXT.Text + ";"
+                + direccionPropietarioTXT.Text + ";"
+                + empresaPropietarioTXT.Text + ";"
+                + telEmpresaPropietarioTXT.Text + ";"
+                + direccionEmpresaPropietarioTXT.Text + ";"
+                + cargoEmpresaPropietarioTXT.Text + ";"
+                + cuentaPropietarioTXT.Text + ";"
+                + tipoCuentaPropietarioTXT.Text + ";"
+                + bancoPropietarioTXT.Text + ";"
+
+                + "&encargadoTXTdb="
+                + nombreEncargadoTXT.Text + ";"
+                + idEncargadoTXT.Text + ";"
+                + tipoIdEncargadoTXT.Text + ";"
+                + ciudadIdEncargadoTXT.Text + ";"
+                + telefonoEncargadoTXT.Text + ";"
+                + celularEncargadoTXT.Text + ";"
+                + emailEncargadoTXT.Text + ";"
+                + direccionEncargadoTXT.Text + ";"
+                + empresaEncargadoTXT.Text + ";"
+                + telEmpresaEncargadoTXT.Text + ";"
+                + direccionEmpresaEncargadoTXT.Text + ";"
+                + cargoEmpresaEncargadoTXT.Text + ";"
+                + cuentaEncargadoTXT.Text + ";"
+                + tipoCuentaEncargadoTXT.Text + ";"
+                + bancoEncargadoTXT.Text + ";"
+
+                + "&coarrendatario1TXTdb="
+                + nombreCoarrendatario1TXT.Text + ";"
+                + idCoarrendatario1TXT.Text + ";"
+                + tipoIdCoarrendatario1TXT.Text + ";"
+                + ciudadIdCoarrendatario1TXT.Text + ";"
+                + telefonoCoarrendatario1TXT.Text + ";"
+                + celularCoarrendatario1TXT.Text + ";"
+                + emailCoarrendatario1TXT.Text + ";"
+                + direccionCoarrendatario1TXT.Text + ";"
+                + empresaCoarrendatario1TXT.Text + ";"
+                + telEmpresaCoarrendatario1TXT.Text + ";"
+                + direccionEmpresaCoarrendatario1TXT.Text + ";"
+                + cargoEmpresaCoarrendatario1TXT.Text + ";"
+
+                 + "&coarrendatario2TXTdb="
+                + nombreCoarrendatario2TXT.Text + ";"
+                + idCoarrendatario2TXT.Text + ";"
+                + tipoIdCoarrendatario2TXT.Text + ";"
+                + ciudadIdCoarrendatario2TXT.Text + ";"
+                + telefonoCoarrendatario2TXT.Text + ";"
+                + celularCoarrendatario2TXT.Text + ";"
+                + emailCoarrendatario2TXT.Text + ";"
+                + direccionCoarrendatario2TXT.Text + ";"
+                + empresaCoarrendatario2TXT.Text + ";"
+                + telEmpresaCoarrendatario2TXT.Text + ";"
+                + direccionEmpresaCoarrendatario2TXT.Text + ";"
+                + cargoEmpresaCoarrendatario2TXT.Text + ";"
+
+                 + "&coarrendatario3TXTdb="
+                + nombreCoarrendatario3TXT.Text + ";"
+                + idCoarrendatario3TXT.Text + ";"
+                + tipoIdCoarrendatario3TXT.Text + ";"
+                + ciudadIdCoarrendatario3TXT.Text + ";"
+                + telefonoCoarrendatario3TXT.Text + ";"
+                + celularCoarrendatario3TXT.Text + ";"
+                + emailCoarrendatario3TXT.Text + ";"
+                + direccionCoarrendatario3TXT.Text + ";"
+                + empresaCoarrendatario3TXT.Text + ";"
+                + telEmpresaCoarrendatario3TXT.Text + ";"
+                + direccionEmpresaCoarrendatario3TXT.Text + ";"
+                + cargoEmpresaCoarrendatario3TXT.Text + ";"
+
+                 + "&coarrendatario4TXTdb="
+                + nombreCoarrendatario4TXT.Text + ";"
+                + idCoarrendatario4TXT.Text + ";"
+                + tipoIdCoarrendatario4TXT.Text + ";"
+                + ciudadIdCoarrendatario4TXT.Text + ";"
+                + telefonoCoarrendatario4TXT.Text + ";"
+                + celularCoarrendatario4TXT.Text + ";"
+                + emailCoarrendatario4TXT.Text + ";"
+                + direccionCoarrendatario4TXT.Text + ";"
+                + empresaCoarrendatario4TXT.Text + ";"
+                + telEmpresaCoarrendatario4TXT.Text + ";"
+                + direccionEmpresaCoarrendatario4TXT.Text + ";"
+                + cargoEmpresaCoarrendatario4TXT.Text + ";"
+
+                 + "&coarrendatario5TXTdb="
+                + nombreCoarrendatario5TXT.Text + ";"
+                + idCoarrendatario5TXT.Text + ";"
+                + tipoIdCoarrendatario5TXT.Text + ";"
+                + ciudadIdCoarrendatario5TXT.Text + ";"
+                + telefonoCoarrendatario5TXT.Text + ";"
+                + celularCoarrendatario5TXT.Text + ";"
+                + emailCoarrendatario5TXT.Text + ";"
+                + direccionCoarrendatario5TXT.Text + ";"
+                + empresaCoarrendatario5TXT.Text + ";"
+                + telEmpresaCoarrendatario5TXT.Text + ";"
+                + direccionEmpresaCoarrendatario5TXT.Text + ";"
+                + cargoEmpresaCoarrendatario5TXT.Text + ";"
+
+                + "&modificacionTXTdb=" + "Ultima modificación por " + usuarioTXT.Text + " " + DateTime.Now
+
+
+                );
+            Console.WriteLine("&servicioCTXTdb=" + servicioCTXT.Text
+                + "&clausulaTXTdb=" + clausulaTXT.Text);
+
+            //ACTIVAMOS BOTONES Y TABS
+
+            btnDuplicar.Visible = true;
+            btnGuardarTXT.Text = "Duplicar";
+            btnActualizar.Enabled = true;
+            btnActualizarTXT.Enabled = true;
+            GuardarDuplicarToolStripMenuItem.Text = "Duplicar cómo contrato nuevo";
+            GuardartoolStripMenuItem.Enabled = true;
+            btnVerCarpeta.Enabled = true;
+            btnVerCarpetaTXT.Enabled = true;
+
+
+            //-----
+
+            listarContratos(); //---LISTAMOS CONTRATOS EN COMBOBOX
+
+            modificacionTXT.Text = "Ultima modificación por " + usuarioTXT.Text + " " + DateTime.Now;
+
+        }
+
         public void traerInfoApi(string Contrato)
         {
 
@@ -722,9 +1119,22 @@ cargarFormato(string tipoFormato)
             arregloTiposConsulta[0] =  apiURL + Contrato + "&tipoTerceroTXTdb=arrendatario";
 
 
-
-
             dynamic respuesta = dBApi.Get(arregloTiposConsulta[0]);
+
+            contratoTXT.Text = respuesta[0].contratoTXTdb.ToString();
+            direccionTXT.Text = respuesta[0].direccionTXTdb.ToString();
+            ciudadTXT.Text = respuesta[0].ciudadTXTdb.ToString();
+            inmuebleTXT.Text = respuesta[0].inmuebleTXTdb.ToString();
+            barrioTXT.Text = respuesta[0].barrioTXTdb.ToString();
+            fechaIniTXT.Text = respuesta[0].fechaIniTXTdb.ToString();
+            fechaFinTXT.Text = respuesta[0].fechaFinTXTdb.ToString();
+            canonTXT.Text = respuesta[0].canonTXTdb.ToString();
+            administracionTXT.Text = respuesta[0].administracionTXTdb.ToString();
+            vigenciaTXT.Text = respuesta[0].vigenciaTXTdb.ToString();
+            aseguradoraTXT.Text = respuesta[0].aseguradoraTXTdb.ToString();
+            numeroSolicitudTXT.Text = respuesta[0].numeroSolicitudTXTdb.ToString();
+            reajusteTXT.Text = respuesta[0].reajusteTXTdb.ToString();
+
 
 
 
@@ -884,90 +1294,198 @@ cargarFormato(string tipoFormato)
                 switch (i)
                 {
                     case 0:
-                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idArrendatarioTXT**", tipoIdArrendatarioTXT.Text + ": " + terceroFormateado + " DE CALI");
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idArrendatarioTXT**", tipoIdArrendatarioTXT.Text + ": " + terceroFormateado + " de "+ ciudadIdArrendatarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreArrendatarioTXT**", nombreArrendatarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoArrendatarioTXT**", telefonoArrendatarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularArrendatarioTXT**", celularArrendatarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailArrendatarioTXT**", emailArrendatarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionArrendatarioTXT**", direccionArrendatarioTXT.Text);
 
+    
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**idArrendatarioTXT**", tipoIdArrendatarioTXT.Text + ": " + terceroFormateado + " de " + ciudadIdArrendatarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**nombreArrendatarioTXT**", nombreArrendatarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telefonoArrendatarioTXT**", telefonoArrendatarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**celularArrendatarioTXT**", celularArrendatarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**emailArrendatarioTXT**", emailArrendatarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionArrendatarioTXT**", direccionArrendatarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**empresaArrendatarioTXT**", empresaArrendatarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telEmpresaArrendatarioTXT**", telEmpresaArrendatarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionEmpresaArrendatarioTXT**", direccionEmpresaArrendatarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**cargoEmpresaArrendatarioTXT**", cargoEmpresaArrendatarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**cuentaArrendatarioTXT**", cuentaArrendatarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**tipoCuentaArrendatarioTXT**", tipoCuentaArrendatarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**bancoArrendatarioTXT**", bancoArrendatarioTXT.Text);
+
+
                         break;
                     case 1:
-                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idPropietarioTXT**", tipoIdPropietarioTXT.Text + ": " + terceroFormateado + " DE CALI");
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idPropietarioTXT**", tipoIdPropietarioTXT.Text + ": " + terceroFormateado + " de " + ciudadIdPropietarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombrePropietarioTXT**", nombrePropietarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoPropietarioTXT**", telefonoPropietarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularPropietarioTXT**", celularPropietarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailPropietarioTXT**", emailPropietarioTXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionPropietarioTXT**", direccionPropietarioTXT.Text);
 
-                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**idPropietarioTXT**", tipoIdPropietarioTXT.Text + ": " + terceroFormateado + " DE CALI");
+                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**idPropietarioTXT**", tipoIdPropietarioTXT.Text + ": " + terceroFormateado + " de " + ciudadIdPropietarioTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**nombrePropietarioTXT**", nombrePropietarioTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**telefonoPropietarioTXT**", telefonoPropietarioTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**celularPropietarioTXT**", celularPropietarioTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**emailPropietarioTXT**", emailPropietarioTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**direccionPropietarioTXT**", direccionPropietarioTXT.Text);
 
-                       
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**idPropietarioTXT**", tipoIdPropietarioTXT.Text + ": " + terceroFormateado + " de " + ciudadIdPropietarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**nombrePropietarioTXT**", nombrePropietarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telefonoPropietarioTXT**", telefonoPropietarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**celularPropietarioTXT**", celularPropietarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**emailPropietarioTXT**", emailPropietarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionPropietarioTXT**", direccionPropietarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**empresaPropietarioTXT**", empresaPropietarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telEmpresaPropietarioTXT**", telEmpresaPropietarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionEmpresaPropietarioTXT**", direccionEmpresaPropietarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**cargoEmpresaPropietarioTXT**", cargoEmpresaPropietarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**cuentaPropietarioTXT**", cuentaPropietarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**tipoCuentaPropietarioTXT**", tipoCuentaPropietarioTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**bancoPropietarioTXT**", bancoPropietarioTXT.Text);
+
                         break;
                     case 2:
                         if (checkCoarrendatario1.Checked) { checkCoarrendatarios("check", "1");} else { checkCoarrendatarios("uncheck", "1"); }
                             
 
-                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario1TXT**", tipoIdCoarrendatario1TXT.Text + ": " + terceroFormateado + " DE CALI");
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario1TXT**", tipoIdCoarrendatario1TXT.Text + ": " + terceroFormateado + " de " + ciudadIdCoarrendatario1TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario1TXT**", nombreCoarrendatario1TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoCoarrendatario1TXT**", telefonoCoarrendatario1TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularCoarrendatario1TXT**", celularCoarrendatario1TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionCoarrendatario1TXT**", direccionCoarrendatario1TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailCoarrendatario1TXT**", emailCoarrendatario1TXT.Text);
+
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**idCoarrendatario1TXT**", tipoIdCoarrendatario1TXT.Text + ": " + terceroFormateado + " de " + ciudadIdCoarrendatario1TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**nombreCoarrendatario1TXT**", nombreCoarrendatario1TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telefonoCoarrendatario1TXT**", telefonoCoarrendatario1TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**celularCoarrendatario1TXT**", celularCoarrendatario1TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionCoarrendatario1TXT**", direccionCoarrendatario1TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**emailCoarrendatario1TXT**", emailCoarrendatario1TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**empresaCoarrendatario1TXT**", empresaCoarrendatario1TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telEmpresaCoarrendatario1TXT**", telEmpresaCoarrendatario1TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionEmpresaCoarrendatario1TXT**", direccionEmpresaCoarrendatario1TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**cargoEmpresaCoarrendatario1TXT**", cargoEmpresaCoarrendatario1TXT.Text);
+                        
+
+
                         break;
                     case 3:
                         if (checkCoarrendatario2.Checked) { checkCoarrendatarios("check", "2"); } else { checkCoarrendatarios("uncheck", "2"); }
 
-                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario2TXT**", tipoIdCoarrendatario2TXT.Text + ": " + terceroFormateado + " DE CALI");
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario2TXT**", tipoIdCoarrendatario2TXT.Text + ": " + terceroFormateado + " de " + ciudadIdCoarrendatario2TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario2TXT**", nombreCoarrendatario2TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoCoarrendatario2TXT**", telefonoCoarrendatario2TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularCoarrendatario2TXT**", celularCoarrendatario2TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionCoarrendatario2TXT**", direccionCoarrendatario2TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailCoarrendatario2TXT**", emailCoarrendatario2TXT.Text);
+
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**idCoarrendatario2TXT**", tipoIdCoarrendatario2TXT.Text + ": " + terceroFormateado + " de " + ciudadIdCoarrendatario2TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**nombreCoarrendatario2TXT**", nombreCoarrendatario2TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telefonoCoarrendatario2TXT**", telefonoCoarrendatario2TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**celularCoarrendatario2TXT**", celularCoarrendatario2TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionCoarrendatario2TXT**", direccionCoarrendatario2TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**emailCoarrendatario2TXT**", emailCoarrendatario2TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**empresaCoarrendatario2TXT**", empresaCoarrendatario2TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telEmpresaCoarrendatario2TXT**", telEmpresaCoarrendatario2TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionEmpresaCoarrendatario2TXT**", direccionEmpresaCoarrendatario2TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**cargoEmpresaCoarrendatario2TXT**", cargoEmpresaCoarrendatario2TXT.Text);
+
+
                         break;
                     case 4:
                         if (checkCoarrendatario3.Checked) { checkCoarrendatarios("check", "3"); } else { checkCoarrendatarios("uncheck", "3"); }
-                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario3TXT**", tipoIdCoarrendatario3TXT.Text + ": " + terceroFormateado + " DE CALI");
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario3TXT**", tipoIdCoarrendatario3TXT.Text + ": " + terceroFormateado + " de " + ciudadIdCoarrendatario3TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario3TXT**", nombreCoarrendatario3TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoCoarrendatario3TXT**", telefonoCoarrendatario3TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularCoarrendatario3TXT**", celularCoarrendatario3TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionCoarrendatario3TXT**", direccionCoarrendatario3TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailCoarrendatario3TXT**", emailCoarrendatario3TXT.Text);
 
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**idCoarrendatario3TXT**", tipoIdCoarrendatario3TXT.Text + ": " + terceroFormateado + " de " + ciudadIdCoarrendatario3TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**nombreCoarrendatario3TXT**", nombreCoarrendatario3TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telefonoCoarrendatario3TXT**", telefonoCoarrendatario3TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**celularCoarrendatario3TXT**", celularCoarrendatario3TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionCoarrendatario3TXT**", direccionCoarrendatario3TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**emailCoarrendatario3TXT**", emailCoarrendatario3TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**empresaCoarrendatario3TXT**", empresaCoarrendatario3TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telEmpresaCoarrendatario3TXT**", telEmpresaCoarrendatario3TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionEmpresaCoarrendatario3TXT**", direccionEmpresaCoarrendatario3TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**cargoEmpresaCoarrendatario3TXT**", cargoEmpresaCoarrendatario3TXT.Text);
+
+
                         break;
                     case 5:
                         if (checkCoarrendatario4.Checked) { checkCoarrendatarios("check", "4"); } else { checkCoarrendatarios("uncheck", "4"); }
-                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario4TXT**", tipoIdCoarrendatario4TXT.Text + ": " + terceroFormateado + " DE CALI");
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario4TXT**", tipoIdCoarrendatario4TXT.Text + ": " + terceroFormateado + " de " + ciudadIdCoarrendatario4TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario4TXT**", nombreCoarrendatario4TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoCoarrendatario4TXT**", telefonoCoarrendatario4TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularCoarrendatario4TXT**", celularCoarrendatario4TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionCoarrendatario4TXT**", direccionCoarrendatario4TXT.Text);
                         richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailCoarrendatario4TXT**", emailCoarrendatario4TXT.Text);
 
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**idCoarrendatario4TXT**", tipoIdCoarrendatario4TXT.Text + ": " + terceroFormateado + " de " + ciudadIdCoarrendatario4TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**nombreCoarrendatario4TXT**", nombreCoarrendatario4TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telefonoCoarrendatario4TXT**", telefonoCoarrendatario4TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**celularCoarrendatario4TXT**", celularCoarrendatario4TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionCoarrendatario4TXT**", direccionCoarrendatario4TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**emailCoarrendatario4TXT**", emailCoarrendatario4TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**empresaCoarrendatario4TXT**", empresaCoarrendatario4TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telEmpresaCoarrendatario4TXT**", telEmpresaCoarrendatario4TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionEmpresaCoarrendatario4TXT**", direccionEmpresaCoarrendatario4TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**cargoEmpresaCoarrendatario4TXT**", cargoEmpresaCoarrendatario4TXT.Text);
+
+
                         break;
                     case 6:
-                        if (checkCoarrendatario4.Checked) { checkCoarrendatarios("check", "4"); } else { checkCoarrendatarios("uncheck", "4"); }
-                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**idEncargadoTXT**", tipoIdEncargadoTXT.Text + ": " + terceroFormateado + " DE CALI");
+                       
+                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**idEncargadoTXT**", tipoIdEncargadoTXT.Text + ": " + terceroFormateado + " de " + ciudadIdEncargadoTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**nombreEncargadoTXT**", nombreEncargadoTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**telefonoEncargadoTXT**", telefonoEncargadoTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**celularEncargadoTXT**", celularEncargadoTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**emailEncargadoTXT**", emailEncargadoTXT.Text);
                         richTextBox2.Rtf = richTextBox2.Rtf.Replace("**direccionEncargadoTXT**", direccionEncargadoTXT.Text);
 
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**idEncargadoTXT**", tipoIdEncargadoTXT.Text + ": " + terceroFormateado + " de " + ciudadIdEncargadoTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**nombreEncargadoTXT**", nombreEncargadoTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telefonoEncargadoTXT**", telefonoEncargadoTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**celularEncargadoTXT**", celularEncargadoTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**emailEncargadoTXT**", emailEncargadoTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionEncargadoTXT**", direccionEncargadoTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**empresaEncargadoTXT**", empresaEncargadoTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telEmpresaEncargadoTXT**", telEmpresaEncargadoTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionEmpresaEncargadoTXT**", direccionEmpresaEncargadoTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**cargoEmpresaEncargadoTXT**", cargoEmpresaEncargadoTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**cuentaEncargadoTXT**", cuentaEncargadoTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**tipoCuentaEncargadoTXT**", tipoCuentaEncargadoTXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**bancoEncargadoTXT**", bancoEncargadoTXT.Text);
+
+
+
                         break;
                     case 7:
                         if (checkCoarrendatario5.Checked) { checkCoarrendatarios("check", "5"); } else { checkCoarrendatarios("uncheck", "5"); }
-                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**idEncargadoTXT**", tipoIdCoarrendatario5TXT.Text + ": " + terceroFormateado + " DE CALI");
-                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**nombreEncargadoTXT**", nombreEncargadoTXT.Text);
-                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**telefonoEncargadoTXT**", telefonoEncargadoTXT.Text);
-                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**celularEncargadoTXT**", celularEncargadoTXT.Text);
-                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**emailEncargadoTXT**", emailEncargadoTXT.Text);
-                        richTextBox2.Rtf = richTextBox2.Rtf.Replace("**direccionEncargadoTXT**", direccionEncargadoTXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**idCoarrendatario5TXT**", tipoIdCoarrendatario5TXT.Text + ": " + terceroFormateado + " de " + ciudadIdCoarrendatario3TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**nombreCoarrendatario5TXT**", nombreCoarrendatario5TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**telefonoCoarrendatario5TXT**", telefonoCoarrendatario5TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**celularCoarrendatario5TXT**", celularCoarrendatario5TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**direccionCoarrendatario5TXT**", direccionCoarrendatario5TXT.Text);
+                        richTextBox1.Rtf = richTextBox1.Rtf.Replace("**emailCoarrendatario5TXT**", emailCoarrendatario5TXT.Text);
+
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**idCoarrendatario5TXT**", tipoIdCoarrendatario5TXT.Text + ": " + terceroFormateado + " de " + ciudadIdCoarrendatario3TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**nombreCoarrendatario5TXT**", nombreCoarrendatario5TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telefonoCoarrendatario5TXT**", telefonoCoarrendatario5TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**celularCoarrendatario5TXT**", celularCoarrendatario5TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionCoarrendatario5TXT**", direccionCoarrendatario5TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**emailCoarrendatario5TXT**", emailCoarrendatario5TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**empresaCoarrendatario5TXT**", empresaCoarrendatario5TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**telEmpresaCoarrendatario5TXT**", telEmpresaCoarrendatario5TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**direccionEmpresaCoarrendatario5TXT**", direccionEmpresaCoarrendatario5TXT.Text);
+                        richTextBox3.Rtf = richTextBox3.Rtf.Replace("**cargoEmpresaCoarrendatario5TXT**", cargoEmpresaCoarrendatario5TXT.Text);
+
 
                         break;
 
@@ -1504,7 +2022,7 @@ cargarFormato(string tipoFormato)
             // Console.WriteLine("seleccionado es " + listaContratosBox.Text);
            // menuStrip1.Items().Enabled = true;
             //guardarBTN.Text = "Duplicar";
-            traerInfoApi(listaContratosBox.Text);
+            traerInfoApi2(listaContratosBox.Text);
             btnDuplicar.Visible = true;
             btnGuardarTXT.Text = "Duplicar";
             GuardarDuplicarToolStripMenuItem.Text = "Duplicar contrato"; //---CAMBIAMOS NOMBRE EN EL MENU
@@ -1534,9 +2052,9 @@ cargarFormato(string tipoFormato)
         private void nuevoContratoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             datosContratoTab.Enabled = true;
-            //guardarBTN.Enabled = true;
-            //guardarBTN.Text = "Guardar";
+
             limpiarCampos();
+
             GuardarDuplicarToolStripMenuItem.Enabled = true;
             GuardartoolStripMenuItem.Enabled = false;
             generarVistaPreviaToolStripMenuItem.Enabled = false;
@@ -1556,6 +2074,10 @@ cargarFormato(string tipoFormato)
             checkCoarrendatario3.Checked = false;
             checkCoarrendatario4.Checked = false;
             checkCoarrendatario5.Checked = false;
+            btnExportar.Enabled = false;
+            btnExportarTXT.Enabled = false;
+            btnExportarInfo.Enabled = false;
+            btnExportarInfoTXT.Enabled = false;
             clausulaTXT.Text = "3.5";
             servicioCTXT.Text = "10";
         }
@@ -1697,13 +2219,13 @@ cargarFormato(string tipoFormato)
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            guardarContrato("insertar", "formato1");
+            guardarContrato2("insertar", "formato1");
             listarContratos();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            guardarContrato("actualizar", "formato1");
+            guardarContrato2("actualizar", "formato1");
             listarContratos();
         }
 
@@ -2136,7 +2658,37 @@ cargarFormato(string tipoFormato)
 
         private void button1_Click_18(object sender, EventArgs e)
         {
-            traerInfoApi2("9999");
+            
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            guardarContrato2("insertar", "formato1");
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            guardarContrato2("actualizar", "formato1");
+        }
+
+        private void richTextBox3_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            generarWordInfo();
+        }
+
+        private void label110_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label109_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
